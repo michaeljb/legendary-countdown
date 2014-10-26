@@ -57,11 +57,23 @@ class Scheme
     0
   end
 
+  def villain_deck_can_win_and_play_last_card?
+    true
+  end
+
+  def villain_deck_play_master_strike_on_bottom?
+    true
+  end
+
   def max_win_turn_modifier
     0
   end
 
-  def play_master_strike_on_bottom?
+  # Can the last Master Strike be played with the Heroes still winning? e.g.,
+  # against Galactus the last Master Strike can be played (villain deck's max
+  # turns to empty), but we cannot win on that turn, since Galactus's fifth
+  # Master Strike is a win condition
+  def win_deck_play_master_strike_on_bottom?
     true
   end
 end

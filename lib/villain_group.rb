@@ -11,7 +11,7 @@ class VillainGroup
     0
   end
 
-  def play_master_strike_on_bottom?
+  def villain_deck_play_master_strike_on_bottom?
     true
   end
 end

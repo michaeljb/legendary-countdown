@@ -7,7 +7,11 @@ class UnleashThePowerOfTheCosmicCube < Scheme
 
   # Master Strike on bottom can't be played if playing the nth Scheme Twist is a
   # win condition
-  def play_master_strike_on_bottom?
+  def villain_deck_play_master_strike_on_bottom?
+    false
+  end
+
+  def villain_deck_can_win_and_play_last_card?
     false
   end
 end

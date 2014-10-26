@@ -10,7 +10,11 @@ class TurnRange
   end
 
   def min
-    base_max + @villains.reduce(0) { |memo, v| memo + v.villain_deck_min_turn_modifier }
+    min_modifiers = [@villains, @scheme].flatten.reduce(0) do |memo, m|
+      memo + m.villain_deck_min_turn_modifier
+    end
+
+    base_max + min_modifiers
   end
 
   def max
@@ -33,7 +37,7 @@ class TurnRange
   def master_strike_turns
     return 5 unless @players == 1
 
-    return 1 if @scheme.play_master_strike_on_bottom?
+    return 1 if @scheme.villain_deck_play_master_strike_on_bottom?
     0
   end
 
