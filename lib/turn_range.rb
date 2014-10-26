@@ -5,8 +5,8 @@ class TurnRange
   def initialize(params)
     @players = params[:players].to_i
     @scheme = params[:scheme]
-    @villains = params[:villains]
     @mastermind = params[:mastermind]
+    @villains = params[:villains]
   end
 
   def min

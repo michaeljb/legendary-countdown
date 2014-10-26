@@ -1,6 +1,7 @@
 require 'require_all'
 require 'json'
 require_relative 'scheme'
+require_relative 'max_winning_turn'
 require_relative 'turn_range'
 require_relative 'villain_group'
 require_all File.join(File.dirname(__FILE__), 'schemes', '*.rb')
@@ -16,8 +17,15 @@ class SubmissionHandler
     @turn_range = TurnRange.new(
         players: params['playerCount'],
         scheme: @scheme,
-        villains: villains,
-        mastermind: params['mastermind']
+        mastermind: params['mastermind'],
+        villains: villains
+      )
+
+    @max_winning_turn = MaxWinningTurn.new(
+        turn_range: @turn_range,
+        scheme: @scheme,
+        mastermind: params['mastermind'],
+        villains: villains
       )
   end
 
@@ -25,7 +33,7 @@ class SubmissionHandler
     {
       villain_deck_contents: @scheme.villain_deck_contents,
       villain_deck_empty: @turn_range.hash,
-      max_win_turn: 19
+      max_win_turn: @max_winning_turn.turn
     }.to_json
   end
 
