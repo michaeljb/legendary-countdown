@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <h1>Legendary Countdown</h1>
+    <form id="countdown">
+      <div>
+        Players:
+        <select id="player-count">
+          <% player_counts.each do |count| %>
+            <option><%= count %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div>
+        Scheme:
+        <select id="schemes">
+          <% schemes.each do |scheme| %>
+            <option><%= scheme %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div>
+        Mastermind:
+        <select id="mastermind">
+          <% masterminds.each do |mastermind| %>
+            <option><%= mastermind %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div>
+        Villains:
+        <select id="villains">
+          <% villain_groups.each do |group| %>
+            <option><%= group %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div>
+        Henchmen:
+        <select id="henchmen">
+          <% henchmen_groups.each do |group| %>
+            <option><%= group %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <input type="submit" id="submitButton"  name="submitButton" value="Submit">
+    </form>
+
+    <div class="result" display="none" />
+
+    <script type="text/javascript">
+      $('#countdown').submit(function (event) {
+        event.preventDefault();
+        var $form = $(this);
+
+        var posting = $.post('/submit', {
+          playerCount: $("#player-count").val(),
+          scheme: $("#schemes").val(),
+          mastermind: $("#mastermind").val(),
+          villains: $("#villains").val(),
+          henchmen: $("#henchmen").val()
+        });
+
+        posting.done(function (data) {
+          $('.result').text(data);
+          $('.result').show();
+        });
+     });
+    </script>
+  </body>
+</html>
