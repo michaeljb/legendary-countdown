@@ -16,4 +16,5 @@ Feature: Display Contents of Villain Deck
     And the Villain Deck should contain <bystander_count> Bystanders
 
     Examples:
-    | players | scheme | mastermind | villains | henchmen | twist_count | master_strike_count | villain_count | henchmen_count | bystander_count |
+    | players | scheme                               | mastermind | villains | henchmen  | twist_count | master_strike_count | villain_count | henchmen_count | bystander_count |
+    |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA    | Sentinels |           8 |                   5 |             8 |              3 |               1 |

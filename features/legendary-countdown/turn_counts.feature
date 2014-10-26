@@ -13,4 +13,5 @@ Feature: Display Contents of Villain Deck
     And the maximum winning turn count should be <max_win>
 
     Examples:
-    | players | scheme | mastermind | villains | henchmen | min_empty | max_empty | max_win |
+    | players | scheme                               | mastermind | villains | henchmen  | min_empty | max_empty | max_win |
+    |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA    | Sentinels |        14 |        20 |      19 |
