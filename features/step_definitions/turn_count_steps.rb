@@ -1,4 +1,4 @@
-Then(/^the Villain Deck should empty in (\d+) to (\d+) turns$/) do |min_empty, max_empty|
+Then(/^the Villain Deck should empty in (\d+) to (\d+) turns$/) do |min, max|
   pending
 end
 
