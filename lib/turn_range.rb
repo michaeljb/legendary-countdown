@@ -10,7 +10,7 @@ class TurnRange
   end
 
   def min
-    14
+    base_max + @villains.reduce(0) { |memo, v| memo + v.villain_deck_min_turn_modifier }
   end
 
   def max

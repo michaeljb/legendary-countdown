@@ -2,15 +2,21 @@ require 'require_all'
 require 'json'
 require_relative 'scheme'
 require_relative 'turn_range'
-require_all File.join(File.dirname(__FILE__), 'schemes/*.rb')
+require_relative 'villain_group'
+require_all File.join(File.dirname(__FILE__), 'schemes', '*.rb')
+require_all File.join(File.dirname(__FILE__), 'villain_groups', '*.rb')
 
 class SubmissionHandler
   def initialize(params)
     @scheme = scheme_class(params['scheme']).new(params['playerCount'])
+
+    villains = params['villains']
+      .reject { |v| v == 'N/A' }.map { |v| villain_class(v).new }
+
     @turn_range = TurnRange.new(
         players: params['playerCount'],
         scheme: @scheme,
-        villains: params['villains'],
+        villains: villains,
         mastermind: params['mastermind']
       )
   end
@@ -25,9 +31,19 @@ class SubmissionHandler
 
   private
 
-  def scheme_class(name)
+  def tokenize(name)
     Object.const_get(name.split(' ').map(&:capitalize).join)
+  end
+
+  def scheme_class(name)
+    tokenize(name)
   rescue NameError
     Scheme
+  end
+
+  def villain_class(name)
+    tokenize(name)
+  rescue NameError
+    VillainGroup
   end
 end

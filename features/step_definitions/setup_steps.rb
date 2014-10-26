@@ -15,11 +15,28 @@ Given(/^the Mastermind is (.*)$/) do |mastermind|
 end
 
 Given(/^the Villain Group\(s\) is\/are (.*)$/) do |villains|
-  select(villains, from: 'villains')
+  select('N/A', from: 'villains1')
+  select('N/A', from: 'villains2')
+  select('N/A', from: 'villains3')
+  select('N/A', from: 'villains4')
+
+  villain_groups = villains.split(',')
+
+  villain_groups.each_with_index do |group, index|
+    select(group, from: "villains#{index + 1}")
+  end
 end
 
 Given(/^the Henchmen Group\(s\) is\/are (.*)$/) do |henchmen|
-  select(henchmen, from: 'henchmen')
+  select('N/A', from: 'henchmen1')
+  select('N/A', from: 'henchmen2')
+  select('N/A', from: 'henchmen3')
+
+  henchmen_groups = henchmen.split(',')
+
+  henchmen_groups.each_with_index do |group, index|
+    select(group, from: "henchmen#{index + 1}")
+  end
 end
 
 When(/^I press submit$/) do
