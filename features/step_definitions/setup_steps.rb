@@ -1,4 +1,8 @@
-Given(/^there are (\d+) players$/) do |players|
+Given(/^I am on the page$/) do
+
+end
+
+Given(/^the number of players is (\d+)$/) do |players|
   pending
 end
 
@@ -15,5 +19,9 @@ Given(/^the Villain Group\(s\) is\/are (.*)$/) do |villains|
 end
 
 Given(/^the Henchmen Group\(s\) is\/are (.*)$/) do |henchmen|
+  pending
+end
+
+When(/^I press submit$/) do
   pending
 end

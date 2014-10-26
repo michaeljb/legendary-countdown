@@ -4,11 +4,13 @@ Feature: Display Contents of Villain Deck
   I want to see the required contents of the Villain Deck
 
   Scenario Outline:
-    Given there are <players> players
+    Given I am on the page
+    And the number of players is <players>
     And the Scheme is <scheme>
     And the Mastermind is <mastermind>
     And the Villain Group(s) is/are <villains>
     And the Henchmen Group(s) is/are <henchmen>
+    When I press submit
     Then the Villain Deck should contain <twist_count> Scheme Twists
     And the Villain Deck should contain <master_strike_count> Master Strikes
     And the Villain Deck should contain <villain_count> Villains

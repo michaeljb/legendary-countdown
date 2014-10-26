@@ -4,11 +4,13 @@ Feature: Display Contents of Villain Deck
   I want to know the maximum winning turn and how fast the Villain Deck will run out
 
   Scenario Outline:
-    Given there are <players> players
+    Given I am on the page
+    And the number of players is <players>
     And the Scheme is <scheme>
     And the Mastermind is <mastermind>
     And the Villain Group(s) is/are <villains>
     And the Henchmen Group(s) is/are <henchmen>
+    When I press submit
     Then the Villain Deck should empty in <min_empty> to <max_empty> turns
     And the maximum winning turn count should be <max_win>
 
