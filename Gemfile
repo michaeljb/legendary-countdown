@@ -7,6 +7,7 @@ group :development do
   gem 'cucumber'
   gem 'guard'
   gem 'guard-rubocop'
+  gem 'rake'
   gem 'rubocop'
   gem 'pry-byebug'
 end
