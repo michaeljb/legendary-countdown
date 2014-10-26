@@ -1,3 +1,5 @@
 Then(/^the Villain Deck should contain (\d+) (.*)$/) do |count, card|
-  pending
+  card.chomp!('s') if count.to_i == 1 && card.end_with?('s')
+
+  expect(find('.result')).to have_content("#{count} #{card}")
 end

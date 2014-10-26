@@ -7,12 +7,23 @@ class LegendaryCountdown < Sinatra::Application
       File.join(File.dirname(__FILE__), 'conf', 'setup_choices.yaml')
     )
 
+  set :submit_js, File.read(
+          File.join(File.dirname(__FILE__), 'js', 'submit.js')
+        )
+
   get '/' do
-    erb :index, locals: settings.setup_choices
+    locals = {
+      submit: settings.submit_js
+    }
+    erb :index, locals: locals.merge(settings.setup_choices)
   end
 
   post '/submit' do
-    "Your Mastermind was #{params['mastermind']}"
+    [
+      'Villain Deck contents: 8 Scheme Twists, 5 Master Strikes, 8 Villains, 3 Henchmen, 1 Bystander',
+      'The Villain Deck will empty in 14-20 turns',
+      'Maximum Winning Turn Count: 19'
+    ].join
   end
 
   # start the server if ruby file executed directly

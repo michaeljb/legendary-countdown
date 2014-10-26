@@ -1,27 +1,27 @@
 Given(/^I am on the page$/) do
-
+  visit('/')
 end
 
 Given(/^the number of players is (\d+)$/) do |players|
-  pending
+  select(players, :from => 'player-count')
 end
 
 Given(/^the Scheme is (.*)$/) do |scheme|
-  pending
+  select(scheme, :from => 'schemes')
 end
 
 Given(/^the Mastermind is (.*)$/) do |mastermind|
-  pending
+  select(mastermind, :from => 'mastermind')
 end
 
 Given(/^the Villain Group\(s\) is\/are (.*)$/) do |villains|
-  pending
+  select(villains, :from => 'villains')
 end
 
 Given(/^the Henchmen Group\(s\) is\/are (.*)$/) do |henchmen|
-  pending
+  select(henchmen, :from => 'henchmen')
 end
 
 When(/^I press submit$/) do
-  pending
+  click_button('submitButton')
 end
