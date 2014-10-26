@@ -3,6 +3,10 @@ require 'sinatra'
 require 'sinatra/base'
 require 'yaml'
 
+# This is the server-side for an application that takes the parameters of a
+# Legendary game setup (i.e., Scheme/Mastermind/etc.), and tells the user what
+# the composition of the Villain should be, how quickly the Villain Deck can run
+# out, and the maximum number of turns in which they can achieve victory.
 class LegendaryCountdown < Sinatra::Application
   set :setup_choices, YAML.load_file(
       File.join(File.dirname(__FILE__), 'conf', 'setup_choices.yaml')
@@ -37,5 +41,5 @@ class LegendaryCountdown < Sinatra::Application
   end
 
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
