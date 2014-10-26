@@ -5,3 +5,8 @@ AllCops:
     - 'Rakefile'
   Exclude:
     - 'gem/**/*'
+
+Style/Documentation:
+  Exclude:
+    - 'lib/schemes/*.rb'
+    - 'lib/villain_groups/*.rb'

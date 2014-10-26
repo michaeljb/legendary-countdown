@@ -40,5 +40,4 @@ class TurnRange
     return 1 if @scheme.villain_deck_play_master_strike_on_bottom?
     0
   end
-
 end
