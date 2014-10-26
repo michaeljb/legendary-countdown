@@ -1,3 +1,4 @@
+require 'json'
 require 'sinatra'
 require 'sinatra/base'
 require 'yaml'
@@ -19,11 +20,20 @@ class LegendaryCountdown < Sinatra::Application
   end
 
   post '/submit' do
-    [
-      'Villain Deck contents: 8 Scheme Twists, 5 Master Strikes, 8 Villains, 3 Henchmen, 1 Bystander',
-      'The Villain Deck will empty in 14-20 turns',
-      'Maximum Winning Turn Count: 19'
-    ].join
+    {
+      villain_deck_contents: {
+        'Scheme Twists' => 8,
+        'Master Strikes' => 5,
+        'Villains' => 8,
+        'Henchmen' => 3,
+        'Bystanders' => 1
+      },
+      villain_deck_empty: {
+        min: 14,
+        max: 20
+      },
+      max_win_turn: 19
+    }.to_json
   end
 
   # start the server if ruby file executed directly

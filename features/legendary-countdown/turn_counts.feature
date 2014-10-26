@@ -12,7 +12,7 @@ Feature: Display Contents of Villain Deck
     And the Henchmen Group(s) is/are <henchmen>
     When I press submit
     Then the Villain Deck should empty in <min_empty> to <max_empty> turns
-    And the maximum winning turn count should be <max_win>
+    And the maximum winning turn should be <max_win>
 
     Examples:
     | players | scheme                               | mastermind | villains | henchmen  | min_empty | max_empty | max_win |

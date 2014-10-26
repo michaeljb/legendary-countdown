@@ -54,7 +54,17 @@
       <input type="submit" id="submitButton"  name="submitButton" value="Submit">
     </form>
 
-    <div class="result" display="none" />
+    <div class="result" style="display: none">
+      <div id="villain-deck-contents">
+        Villain Deck Contents: <span class="value"></span>
+      </div>
+      <div id="villain-deck-turns">
+        The Villain Deck will empty in <span class="min"></span>-<span class="max"></span> turns
+      </div>
+      <div id="maximum-winning-turn">
+        Maximum Winning Turn: <span class="value"></span>
+      </div>
+    </div>
 
     <script type="text/javascript" id="submit-script">
       <%= submit %>
