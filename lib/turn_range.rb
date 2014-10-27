@@ -14,7 +14,7 @@ class TurnRange
       memo + m.villain_deck_min_turn_modifier
     end
 
-    base_max + min_modifiers
+    max + min_modifiers
   end
 
   def max
