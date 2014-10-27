@@ -1,5 +1,6 @@
 class Hydra < VillainGroup
-  # defeating all 3 copies of Endless Armies of HYDRA can really speed things up
+  # Endless Armies of HYDRA (3 copies) has "Fight: Play the top two cards of the
+  # Villain Deck."
   def villain_deck_min_turn_modifier
     -6
   end
