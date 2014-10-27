@@ -24,3 +24,4 @@ Feature: Display Contents of Villain Deck
     |       3 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels             |           8 |                   5 |            24 |             10 |               8 |
     |       4 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels,Hand Ninjas |           8 |                   5 |            24 |             20 |               8 |
     |       5 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls,Masters of Evil | Sentinels,Hand Ninjas |           8 |                   5 |            32 |             20 |              12 |
+    |       1 | Midtown Bank Robbery                 | Magneto    | Brotherhood                               | Sentinels             |           8 |                   5 |             8 |              3 |              12 |
