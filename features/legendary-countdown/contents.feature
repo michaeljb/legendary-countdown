@@ -19,9 +19,13 @@ Feature: Display Contents of Villain Deck
 
     Examples:
     | players | scheme                               | mastermind | villains                                  | henchmen              | twist_count | master_strike_count | villain_count | henchmen_count | bystander_count |
+
+    # "Your First Game" from the Legendary rulebook, pg 3
     |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA                                     | Sentinels             |           8 |                   5 |             8 |              3 |               1 |
     |       2 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes                         | Sentinels             |           8 |                   5 |            16 |             10 |               2 |
     |       3 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels             |           8 |                   5 |            24 |             10 |               8 |
     |       4 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels,Hand Ninjas |           8 |                   5 |            24 |             20 |               8 |
     |       5 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls,Masters of Evil | Sentinels,Hand Ninjas |           8 |                   5 |            32 |             20 |              12 |
+
+    # Adding Midtown Bank Robbery
     |       1 | Midtown Bank Robbery                 | Magneto    | Brotherhood                               | Sentinels             |           8 |                   5 |             8 |              3 |              12 |

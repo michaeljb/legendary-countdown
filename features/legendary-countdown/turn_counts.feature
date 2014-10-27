@@ -16,6 +16,8 @@ Feature: Display Contents of Villain Deck
 
     Examples:
     | players | scheme                               | mastermind | villains                                  | henchmen              | min_empty | max_empty | max_win |
+
+    # "Your First Game" from the Legendary rulebook, pg 3
     |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA                                     | Sentinels             |        14 |        20 |      19 |
     |       2 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes                         | Sentinels             |        35 |        41 |      40 |
     |       3 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels             |        49 |        55 |      54 |
