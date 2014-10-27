@@ -18,5 +18,9 @@ Feature: Display Contents of Villain Deck
     And the Villain Deck should contain <bystander_count> Bystanders
 
     Examples:
-    | players | scheme                               | mastermind | villains | henchmen  | twist_count | master_strike_count | villain_count | henchmen_count | bystander_count |
-    |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA    | Sentinels |           8 |                   5 |             8 |              3 |               1 |
+    | players | scheme                               | mastermind | villains                                  | henchmen              | twist_count | master_strike_count | villain_count | henchmen_count | bystander_count |
+    |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA                                     | Sentinels             |           8 |                   5 |             8 |              3 |               1 |
+    |       2 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes                         | Sentinels             |           8 |                   5 |            16 |             10 |               2 |
+    |       3 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels             |           8 |                   5 |            24 |             10 |               8 |
+    |       4 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels,Hand Ninjas |           8 |                   5 |            24 |             20 |               8 |
+    |       5 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls,Masters of Evil | Sentinels,Hand Ninjas |           8 |                   5 |            32 |             20 |              12 |

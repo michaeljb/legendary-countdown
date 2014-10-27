@@ -15,5 +15,9 @@ Feature: Display Contents of Villain Deck
     And the maximum winning turn should be <max_win>
 
     Examples:
-    | players | scheme                               | mastermind | villains | henchmen  | min_empty | max_empty | max_win |
-    |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA    | Sentinels |        14 |        20 |      19 |
+    | players | scheme                               | mastermind | villains                                  | henchmen              | min_empty | max_empty | max_win |
+    |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA                                     | Sentinels             |        14 |        20 |      19 |
+    |       2 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes                         | Sentinels             |        35 |        41 |      40 |
+    |       3 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels             |        49 |        55 |      54 |
+    |       4 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels,Hand Ninjas |        59 |        65 |      64 |
+    |       5 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls,Masters of Evil | Sentinels,Hand Ninjas |        71 |        77 |      76 |
