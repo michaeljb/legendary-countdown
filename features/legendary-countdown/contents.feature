@@ -55,3 +55,43 @@ Feature: Display Contents of Villain Deck
     |       3 | Unleash the Power of the Cosmic Cube        |           8 |            24 |             10 |               8 |             |            |
     |       4 | Unleash the Power of the Cosmic Cube        |           8 |            24 |             20 |               8 |             |            |
     |       5 | Unleash the Power of the Cosmic Cube        |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Capture Baby Hope                           |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Capture Baby Hope                           |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Capture Baby Hope                           |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Capture Baby Hope                           |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Capture Baby Hope                           |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Detonate the Helicarrier                    |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Detonate the Helicarrier                    |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Detonate the Helicarrier                    |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Detonate the Helicarrier                    |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Detonate the Helicarrier                    |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Massive Earthquake Generator                |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Massive Earthquake Generator                |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Massive Earthquake Generator                |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Massive Earthquake Generator                |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Massive Earthquake Generator                |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Organized Crime Wave                        |           8 |             8 |             10 |               1 |             |            |
+    |       2 | Organized Crime Wave                        |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Organized Crime Wave                        |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Organized Crime Wave                        |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Organized Crime Wave                        |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Save Humanity                               |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Save Humanity                               |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Save Humanity                               |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Save Humanity                               |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Save Humanity                               |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Steal the Weaponized Plutonium              |           8 |            16 |              3 |               1 |             |            |
+    |       2 | Steal the Weaponized Plutonium              |           8 |            24 |             10 |               2 |             |            |
+    |       3 | Steal the Weaponized Plutonium              |           8 |            32 |             10 |               8 |             |            |
+    |       4 | Steal the Weaponized Plutonium              |           8 |            32 |             20 |               8 |             |            |
+    |       5 | Steal the Weaponized Plutonium              |           8 |            40 |             20 |              12 |             |            |
+    |       1 | Transform Citizens Into Demons              |           8 |             8 |              3 |               0 |          14 | Jean Greys |
+    |       2 | Transform Citizens Into Demons              |           8 |            16 |             10 |               0 |          14 | Jean Greys |
+    |       3 | Transform Citizens Into Demons              |           8 |            24 |             10 |               0 |          14 | Jean Greys |
+    |       4 | Transform Citizens Into Demons              |           8 |            24 |             20 |               0 |          14 | Jean Greys |
+    |       5 | Transform Citizens Into Demons              |           8 |            32 |             20 |               0 |          14 | Jean Greys |
+    |       1 | X-Cutioner's Song                           |           8 |             8 |              3 |               0 |          14 | Heroes     |
+    |       2 | X-Cutioner's Song                           |           8 |            16 |             10 |               0 |          14 | Heroes     |
+    |       3 | X-Cutioner's Song                           |           8 |            24 |             10 |               0 |          14 | Heroes     |
+    |       4 | X-Cutioner's Song                           |           8 |            24 |             20 |               0 |          14 | Heroes     |
+    |       5 | X-Cutioner's Song                           |           8 |            32 |             20 |               0 |          14 | Heroes     |
