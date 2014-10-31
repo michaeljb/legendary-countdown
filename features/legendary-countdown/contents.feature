@@ -115,3 +115,23 @@ Feature: Display Contents of Villain Deck
     |       3 | Pull Reality Into the Negative Zone         |           8 |            24 |             10 |               8 |             |            |
     |       4 | Pull Reality Into the Negative Zone         |           8 |            24 |             20 |               8 |             |            |
     |       5 | Pull Reality Into the Negative Zone         |           8 |            32 |             20 |              12 |             |            |
+    |       1 | The Clone Saga                              |           8 |             8 |              3 |               1 |             |            |
+    |       2 | The Clone Saga                              |           8 |            16 |             10 |               2 |             |            |
+    |       3 | The Clone Saga                              |           8 |            24 |             10 |               8 |             |            |
+    |       4 | The Clone Saga                              |           8 |            24 |             20 |               8 |             |            |
+    |       5 | The Clone Saga                              |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Invade the Daily Bugle News HQ              |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Invade the Daily Bugle News HQ              |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Invade the Daily Bugle News HQ              |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Invade the Daily Bugle News HQ              |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Invade the Daily Bugle News HQ              |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Splice Humans with Spider DNA               |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Splice Humans with Spider DNA               |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Splice Humans with Spider DNA               |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Splice Humans with Spider DNA               |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Splice Humans with Spider DNA               |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Weave a Web of Lies                         |           7 |             8 |              3 |               1 |             |            |
+    |       2 | Weave a Web of Lies                         |           7 |            16 |             10 |               2 |             |            |
+    |       3 | Weave a Web of Lies                         |           7 |            24 |             10 |               8 |             |            |
+    |       4 | Weave a Web of Lies                         |           7 |            24 |             20 |               8 |             |            |
+    |       5 | Weave a Web of Lies                         |           7 |            32 |             20 |              12 |             |            |
