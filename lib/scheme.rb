@@ -11,7 +11,7 @@ class Scheme
       'Villains' => villains,
       'Henchmen' => henchmen,
       'Bystanders' => bystanders
-    }
+    }.merge(other)
   end
 
   def bystanders
@@ -47,6 +47,12 @@ class Scheme
       4 => 24,
       5 => 32
     }[@players]
+  end
+
+  # some schemes add other cards to the Villain Deck, like Hero cards taken from
+  # the Hero Deck in "Secret Invasion of the Skrull Shapeshifters"
+  def other
+    {}
   end
 
   def villain_deck_max_turn_modifier

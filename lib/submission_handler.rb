@@ -40,6 +40,7 @@ class SubmissionHandler
   private
 
   def tokenize(name)
+    name.delete!("'")
     Object.const_get(name.split(' ').map(&:capitalize).join)
   end
 
