@@ -95,3 +95,23 @@ Feature: Display Contents of Villain Deck
     |       3 | X-Cutioner's Song                           |           8 |            24 |             10 |               0 |          14 | Heroes     |
     |       4 | X-Cutioner's Song                           |           8 |            24 |             20 |               0 |          14 | Heroes     |
     |       5 | X-Cutioner's Song                           |           8 |            32 |             20 |               0 |          14 | Heroes     |
+    |       1 | Bathe the Earth in Cosmic Rays              |           6 |             8 |              3 |               1 |             |            |
+    |       2 | Bathe the Earth in Cosmic Rays              |           6 |            16 |             10 |               2 |             |            |
+    |       3 | Bathe the Earth in Cosmic Rays              |           6 |            24 |             10 |               8 |             |            |
+    |       4 | Bathe the Earth in Cosmic Rays              |           6 |            24 |             20 |               8 |             |            |
+    |       5 | Bathe the Earth in Cosmic Rays              |           6 |            32 |             20 |              12 |             |            |
+    |       1 | Flood the Planet with Melted Glaciers       |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Flood the Planet with Melted Glaciers       |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Flood the Planet with Melted Glaciers       |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Flood the Planet with Melted Glaciers       |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Flood the Planet with Melted Glaciers       |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Invincible Force Field                      |           7 |             8 |              3 |               1 |             |            |
+    |       2 | Invincible Force Field                      |           7 |            16 |             10 |               2 |             |            |
+    |       3 | Invincible Force Field                      |           7 |            24 |             10 |               8 |             |            |
+    |       4 | Invincible Force Field                      |           7 |            24 |             20 |               8 |             |            |
+    |       5 | Invincible Force Field                      |           7 |            32 |             20 |              12 |             |            |
+    |       1 | Pull Reality Into the Negative Zone         |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Pull Reality Into the Negative Zone         |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Pull Reality Into the Negative Zone         |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Pull Reality Into the Negative Zone         |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Pull Reality Into the Negative Zone         |           8 |            32 |             20 |              12 |             |            |
