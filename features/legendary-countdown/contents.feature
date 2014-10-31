@@ -135,3 +135,23 @@ Feature: Display Contents of Villain Deck
     |       3 | Weave a Web of Lies                         |           7 |            24 |             10 |               8 |             |            |
     |       4 | Weave a Web of Lies                         |           7 |            24 |             20 |               8 |             |            |
     |       5 | Weave a Web of Lies                         |           7 |            32 |             20 |              12 |             |            |
+    |       1 | Forge the Infinity Gauntlet                 |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Forge the Infinity Gauntlet                 |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Forge the Infinity Gauntlet                 |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Forge the Infinity Gauntlet                 |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Forge the Infinity Gauntlet                 |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Intergalactic Kree Nega-Bomb                |           8 |             8 |              3 |               1 |             |            |
+    |       2 | Intergalactic Kree Nega-Bomb                |           8 |            16 |             10 |               2 |             |            |
+    |       3 | Intergalactic Kree Nega-Bomb                |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Intergalactic Kree Nega-Bomb                |           8 |            24 |             20 |               8 |             |            |
+    |       5 | Intergalactic Kree Nega-Bomb                |           8 |            32 |             20 |              12 |             |            |
+    |       1 | The Kree-Skrull War                         |           8 |            16 |              3 |               1 |             |            |
+    |       2 | The Kree-Skrull War                         |           8 |            16 |             10 |               2 |             |            |
+    |       3 | The Kree-Skrull War                         |           8 |            24 |             10 |               8 |             |            |
+    |       4 | The Kree-Skrull War                         |           8 |            24 |             20 |               8 |             |            |
+    |       5 | The Kree-Skrull War                         |           8 |            32 |             20 |              12 |             |            |
+    |       1 | Unite the Shards                            |           6 |             8 |              3 |               1 |             |            |
+    |       2 | Unite the Shards                            |           7 |            16 |             10 |               2 |             |            |
+    |       3 | Unite the Shards                            |           8 |            24 |             10 |               8 |             |            |
+    |       4 | Unite the Shards                            |           9 |            24 |             20 |               8 |             |            |
+    |       5 | Unite the Shards                            |          10 |            32 |             20 |              12 |             |            |
