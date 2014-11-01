@@ -27,7 +27,8 @@ Feature: Display Contents of Villain Deck
     # just the base set; in addition to those cards that have some interesting
     # effect on the turn count, use The Legacy Virus for an "uninteresting"
     # Scheme, Loki for an uninteresting Mastermind, and Enemies of Asgard for an
-    # uninteresting Villain Group
+    # uninteresting Villain Group. As Negative Zone Prison Breakout is not
+    # officially supported for 1 player, ignore it here.
     | 1 | The Legacy Virus     | Loki     | Enemies of Asgard | 20-21 | 21 |
     | 1 | The Legacy Virus     | Loki     | Brotherhood       | 20-21 | 21 |
     | 1 | The Legacy Virus     | Loki     | HYDRA             | 14-21 | 21 |
@@ -44,14 +45,6 @@ Feature: Display Contents of Villain Deck
     | 1 | Midtown Bank Robbery | Dr. Doom | Brotherhood       | 21-24 | 25 |
     | 1 | Midtown Bank Robbery | Dr. Doom | HYDRA             | 17-24 | 25 |
     | 1 | Midtown Bank Robbery | Dr. Doom | Radiation         | 21-22 | 23 |
-    # | 1 | Negative Zone Prison Breakout        | Loki     | Enemies of Asgard | | |
-    # | 1 | Negative Zone Prison Breakout        | Loki     | Brotherhood       | | |
-    # | 1 | Negative Zone Prison Breakout        | Loki     | HYDRA             | | |
-    # | 1 | Negative Zone Prison Breakout        | Loki     | Radiation         | | |
-    # | 1 | Negative Zone Prison Breakout        | Dr. Doom | Enemies of Asgard | | |
-    # | 1 | Negative Zone Prison Breakout        | Dr. Doom | Brotherhood       | | |
-    # | 1 | Negative Zone Prison Breakout        | Dr. Doom | HYDRA             | | |
-    # | 1 | Negative Zone Prison Breakout        | Dr. Doom | Radiation         | | |
     # | 1 | Portals to Dark Dimension            | Loki     | Enemies of Asgard | | |
     # | 1 | Portals to Dark Dimension            | Loki     | Brotherhood       | | |
     # | 1 | Portals to Dark Dimension            | Loki     | HYDRA             | | |
