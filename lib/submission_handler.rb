@@ -49,6 +49,7 @@ class SubmissionHandler
   def tokenize(name)
     name.gsub!('-', ' ')
     name.gsub!("'", '')
+    name.gsub!('.', '')
     Object.const_get(name.split(' ').map(&:capitalize).join)
   end
 
