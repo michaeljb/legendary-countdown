@@ -6,7 +6,11 @@ AllCops:
   Exclude:
     - 'gem/**/*'
 
+Metrics/MethodLength:
+  Max: 20
+
 Style/Documentation:
   Exclude:
+    - 'lib/masterminds/*.rb'
     - 'lib/schemes/*.rb'
     - 'lib/villain_groups/*.rb'

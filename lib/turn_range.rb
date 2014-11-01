@@ -74,6 +74,10 @@ class TurnRange
   private
 
   def total_villain_deck_cards
-    @scheme.bystanders + @scheme.henchmen + @scheme.twists + @scheme.villains + @mastermind.master_strikes
+    @scheme.bystanders +
+      @scheme.henchmen +
+      @scheme.twists +
+      @scheme.villains +
+      @mastermind.master_strikes
   end
 end

@@ -14,11 +14,11 @@ class MaxWinningTurn
     if (twist_on = @scheme.evil_wins_on_twist).nil?
 
       # if cards are at the bottom that play more cards, make sure none of them
-      # being played is a guaranteed lose condition; for now this only applies to
-      # Galactus's Master Strikes
+      # being played is a guaranteed lose condition; for now this only applies
+      # to Galactus's Master Strikes
       if @turn_range.any_play_more
         strike_on = @mastermind.evil_wins_on_master_strike
-        total -= 1 if !strike_on.nil?
+        total -= 1 unless strike_on.nil?
       end
 
     else

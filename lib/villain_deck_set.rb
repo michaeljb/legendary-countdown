@@ -1,3 +1,5 @@
+# A set of cards that goes into the Villain Deck, e.g, Master Strikes,
+# Bystanders, or Scheme Twists.
 class VillainDeckSet
   def plays_more_villain_cards
     0

@@ -10,6 +10,7 @@ require_all File.join(File.dirname(__FILE__), 'masterminds', '*.rb')
 require_all File.join(File.dirname(__FILE__), 'schemes', '*.rb')
 require_all File.join(File.dirname(__FILE__), 'villain_groups', '*.rb')
 
+# takes in the submitted parameters and returns all the calculated info
 class SubmissionHandler
   def initialize(params)
     players = params['playerCount'].to_i
@@ -18,8 +19,9 @@ class SubmissionHandler
 
     mastermind = mastermind_class(params['mastermind']).new(players)
 
-    villains = params['villains']
-      .reject { |v| v == 'N/A' }.map { |v| villain_class(v).new(@scheme, mastermind) }
+    villains = params['villains'].reject { |v| v == 'N/A' }.map do |v|
+      villain_class(v).new(@scheme, mastermind)
+    end
 
     @turn_range = TurnRange.new(
         players: players,
