@@ -9,10 +9,31 @@ class MaxWinningTurn
   end
 
   def turn
-    max_modifiers = [@villains, @scheme].flatten.reduce(0) do |memo, m|
-      memo + m.max_win_turn_modifier
+    total = @turn_range.max
+
+    if (twist_on = @scheme.evil_wins_on_twist).nil?
+
+      # if cards are at the bottom that play more cards, make sure none of them
+      # being played is a guaranteed lose condition; for now this only applies to
+      # Galactus's Master Strikes
+      if @turn_range.any_play_more
+        strike_on = @mastermind.evil_wins_on_master_strike
+        total -= 1 if !strike_on.nil?
+      end
+
+    else
+
+      total -= (@scheme.twists - twist_on + 1)
+
+      # any play-more cards at the bottom cannot be played if evil wins on turn
+      # X, so remove the bonus turn that was added to the max
+      total -= 1 if @turn_range.any_play_more
+
     end
 
-    @turn_range.max + max_modifiers
+    # add extra turns from cards like "Secrets of Time Travel"
+    total += @mastermind.bonus_turns
+
+    total
   end
 end

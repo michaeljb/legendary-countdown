@@ -2,6 +2,8 @@
 # played. This class takes info from the Scheme, Villain Groups, and Mastermind
 # Tactics to determine when the Villain Deck might be depleted.
 class TurnRange
+  attr_reader :any_play_more
+
   def initialize(params)
     @players = params[:players].to_i
     @scheme = params[:scheme]
@@ -10,15 +12,49 @@ class TurnRange
   end
 
   def min
-    min_modifiers = [@villains, @scheme].flatten.reduce(0) do |memo, m|
-      memo + m.villain_deck_min_turn_modifier
+    total = max
+
+    # take off the bonus turn from cards that play more cards being placed at
+    # the bottom
+    total -= 1 if @any_play_more
+
+    # the first card each scheme twist plays is already accounted for in `max`,
+    # so subtract 1 to find how the min is effected
+    if @scheme.plays_more_villain_cards > 0
+      total -= (@scheme.twists * (@scheme.plays_more_villain_cards - 1))
     end
 
-    max + min_modifiers
+    @villains.each do |villain|
+      next if villain.play_more_possible.size == 0
+
+      total -= villain.play_more_possible.reduce(0) { |a, (k, v)| a + (k * v) }
+    end
+
+    total
   end
 
   def max
-    base_max + master_strike_turns + @scheme.villain_deck_max_turn_modifier
+    total = total_villain_deck_cards
+
+    @any_play_more = false
+
+    # the max turn for the villain deck to run out is reduced by one per twist
+    # if that twist plays any more cards from the Villain Deck
+    if @scheme.plays_more_villain_cards > 0
+      total -= @scheme.twists
+      @any_play_more = true
+    end
+
+    if @mastermind.plays_more_villain_cards > 0
+      total -= @mastermind.master_strikes
+      @any_play_more = true
+    end
+
+    # if one or more of the required multipliers are at the bottom of the
+    # Villain Deck, we get one more turn than you might expect
+    total += 1 if @any_play_more
+
+    total
   end
 
   def hash
@@ -30,14 +66,7 @@ class TurnRange
 
   private
 
-  def base_max
-    @scheme.bystanders + @scheme.henchmen + @scheme.twists + @scheme.villains
-  end
-
-  def master_strike_turns
-    return 5 unless @players == 1
-
-    return 1 if @scheme.villain_deck_play_master_strike_on_bottom?
-    0
+  def total_villain_deck_cards
+    @scheme.bystanders + @scheme.henchmen + @scheme.twists + @scheme.villains + @mastermind.master_strikes
   end
 end

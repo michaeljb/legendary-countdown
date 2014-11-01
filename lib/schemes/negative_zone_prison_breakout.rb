@@ -8,4 +8,8 @@ class NegativeZonePrisonBreakout < Scheme
       5 => 30
     }[@players]
   end
+
+  def plays_more_villain_cards
+    2
+  end
 end

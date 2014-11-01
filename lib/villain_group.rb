@@ -1,17 +1,8 @@
-class VillainGroup
-  def villain_deck_max_turn_modifier
-    0
-  end
+require_relative 'villain_deck_set'
 
-  def villain_deck_min_turn_modifier
-    0
-  end
-
-  def max_win_turn_modifier
-    0
-  end
-
-  def villain_deck_play_master_strike_on_bottom?
-    true
+class VillainGroup < VillainDeckSet
+  def initialize(scheme, mastermind)
+    @scheme = scheme
+    @mastermind = mastermind
   end
 end

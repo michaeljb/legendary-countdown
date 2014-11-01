@@ -1,5 +1,7 @@
+require_relative 'villain_deck_set'
+
 # Base class for all Schemes to inherit from.
-class Scheme
+class Scheme < VillainDeckSet
   def initialize(players)
     @players = players.to_i
   end
@@ -55,31 +57,15 @@ class Scheme
     {}
   end
 
-  def villain_deck_max_turn_modifier
-    0
+  def required_multipliers
+    {
+      plays_more_villain_cards => twists
+    }
   end
 
-  def villain_deck_min_turn_modifier
-    0
-  end
-
-  def villain_deck_can_win_and_play_last_card?
-    true
-  end
-
-  def villain_deck_play_master_strike_on_bottom?
-    true
-  end
-
-  def max_win_turn_modifier
-    0
-  end
-
-  # Can the last Master Strike be played with the Heroes still winning? e.g.,
-  # against Galactus the last Master Strike can be played (villain deck's max
-  # turns to empty), but we cannot win on that turn, since Galactus's fifth
-  # Master Strike is a win condition
-  def win_deck_play_master_strike_on_bottom?
-    true
+  # some schemes have "Twist 8: Evil Wins!", causing the maximum winning turn to
+  # be earlier than when the Villain Deck might run out
+  def evil_wins_on_twist
+    nil
   end
 end

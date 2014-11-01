@@ -1,6 +1,6 @@
-Then(/^the Villain Deck should empty in (\d+) to (\d+) turns$/) do |min, max|
+Then(/^the Villain Deck should empty in (.*) turns$/) do |turns|
   expect(find('.result'))
-    .to have_content("The Villain Deck will empty in #{min}-#{max} turns")
+    .to have_content("The Villain Deck will empty in #{turns} turns")
 end
 
 Then(/^the maximum winning turn should be (\d+)$/) do |turn|

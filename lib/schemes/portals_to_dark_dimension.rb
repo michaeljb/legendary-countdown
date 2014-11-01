@@ -4,4 +4,8 @@ class PortalsToDarkDimension < Scheme
   def twists
     7
   end
+
+  def evil_wins_on_twist
+    7
+  end
 end

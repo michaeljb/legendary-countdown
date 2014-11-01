@@ -1,30 +1,37 @@
 require 'require_all'
 require 'json'
 require_relative 'scheme'
+require_relative 'mastermind'
 require_relative 'max_winning_turn'
 require_relative 'turn_range'
+require_relative 'villain_deck_set'
 require_relative 'villain_group'
+require_all File.join(File.dirname(__FILE__), 'masterminds', '*.rb')
 require_all File.join(File.dirname(__FILE__), 'schemes', '*.rb')
 require_all File.join(File.dirname(__FILE__), 'villain_groups', '*.rb')
 
 class SubmissionHandler
   def initialize(params)
+    players = params['playerCount'].to_i
+
     @scheme = scheme_class(params['scheme']).new(params['playerCount'])
 
+    mastermind = mastermind_class(params['mastermind']).new(players)
+
     villains = params['villains']
-      .reject { |v| v == 'N/A' }.map { |v| villain_class(v).new }
+      .reject { |v| v == 'N/A' }.map { |v| villain_class(v).new(@scheme, mastermind) }
 
     @turn_range = TurnRange.new(
-        players: params['playerCount'],
+        players: players,
         scheme: @scheme,
-        mastermind: params['mastermind'],
+        mastermind: mastermind,
         villains: villains
       )
 
     @max_winning_turn = MaxWinningTurn.new(
         turn_range: @turn_range,
         scheme: @scheme,
-        mastermind: params['mastermind'],
+        mastermind: mastermind,
         villains: villains
       )
   end
@@ -43,6 +50,12 @@ class SubmissionHandler
     name.gsub!('-', ' ')
     name.gsub!("'", '')
     Object.const_get(name.split(' ').map(&:capitalize).join)
+  end
+
+  def mastermind_class(name)
+    tokenize(name)
+  rescue
+    Mastermind
   end
 
   def scheme_class(name)
