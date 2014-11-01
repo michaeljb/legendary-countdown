@@ -9,19 +9,18 @@ Feature: Display Contents of Villain Deck
     And the Scheme is <scheme>
     And the Mastermind is <mastermind>
     And the Villain Group(s) is/are <villains>
-    And the Henchmen Group(s) is/are <henchmen>
     When I press submit
     Then the Villain Deck should empty in <empty> turns
     And the maximum winning turn should be <max_win>
 
     Examples:
-    | players | scheme                               | mastermind | villains                                  | henchmen              | empty | max_win |
-    |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA                                     | Sentinels             | 14-21 |      19 |
-    |       2 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes                         | Sentinels             | 35-41 |      40 |
-    |       3 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels             | 49-55 |      54 |
-    |       4 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | Sentinels,Hand Ninjas | 59-65 |      64 |
-    |       5 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls,Masters of Evil | Sentinels,Hand Ninjas | 71-77 |      76 |
-    |       1 | Unleash the Power of the Cosmic Cube | Galactus   | Skrulls                                   | Sentinels             | 20-21 |      19 |
-    |       1 | Midtown Bank Robbery                 | Galactus   | Skrulls                                   | Sentinels             | 23-24 |      23 |
-    |       1 | The Legacy Virus                     | Galactus   | Skrulls                                   | Sentinels             | 20-21 |      20 |
-    |       1 | The Legacy Virus                     | Red Skull  | Skrulls                                   | Sentinels             | 20-21 |      21 |
+    | players | scheme                               | mastermind | villains                                  | empty | max_win |
+    |       1 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA                                     | 14-21 |      19 |
+    |       2 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes                         | 35-41 |      40 |
+    |       3 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | 49-55 |      54 |
+    |       4 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls                 | 59-65 |      64 |
+    |       5 | Unleash the Power of the Cosmic Cube | Red Skull  | HYDRA,Spider-Foes,Skrulls,Masters of Evil | 71-77 |      76 |
+    |       1 | Unleash the Power of the Cosmic Cube | Galactus   | Skrulls                                   | 20-21 |      19 |
+    |       1 | Midtown Bank Robbery                 | Galactus   | Skrulls                                   | 23-24 |      23 |
+    |       1 | The Legacy Virus                     | Galactus   | Skrulls                                   | 20-21 |      20 |
+    |       1 | The Legacy Virus                     | Red Skull  | Skrulls                                   | 20-21 |      21 |
