@@ -50,6 +50,13 @@ class TurnRange
       @any_play_more = true
     end
 
+    @villains.each do |villain|
+      next if villain.play_more_required == {}
+
+      total -= villain.play_more_required.reduce(0) { |a, (k, v)| a + (k * v) }
+      @any_play_more = true
+    end
+
     # if one or more of the required multipliers are at the bottom of the
     # Villain Deck, we get one more turn than you might expect
     total += 1 if @any_play_more

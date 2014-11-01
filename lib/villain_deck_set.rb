@@ -7,6 +7,10 @@ class VillainDeckSet
     {}
   end
 
+  def play_more_required
+    {}
+  end
+
   # can this card provide any additional turns?
   def bonus_turns
     0
