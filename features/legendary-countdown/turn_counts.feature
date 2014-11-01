@@ -3,7 +3,7 @@ Feature: Display Contents of Villain Deck
   In order to help players track turn counts
   I want to know the maximum winning turn and how fast the Villain Deck will run out
 
-  Scenario Outline:
+  Scenario Outline: Villain Deck timer and Maximum Winning Turn
     Given I am on the page
     And the number of players is <players>
     And the Scheme is <scheme>

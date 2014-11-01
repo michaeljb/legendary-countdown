@@ -3,7 +3,7 @@ Feature: Display Contents of Villain Deck
   In order to help players have the correct setup
   I want to see the required contents of the Villain Deck
 
-  Scenario Outline:
+  Scenario Outline: Villain Deck Setup for <scheme> with <players> players
     Given I am on the page
     And the number of players is <players>
     And the Scheme is <scheme>
