@@ -120,10 +120,10 @@ Feature: Display Contents of Villain Deck
     | 1 | Transform Citizens Into Demons | Kingpin      | Emissaries of Evil | 26-34 | 34 |
     | 1 | Transform Citizens Into Demons | Kingpin      | Marauders          | 30-34 | 34 |
     | 1 | Transform Citizens Into Demons | Kingpin      | MLF                | 28-34 | 34 |
-    | 1 | Transform Citizens Into Demons | Mr. Sinister | Four Horsemen      | 32-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Mr. Sinister | Four Horsemen      | 33-34 | 34 |
     | 1 | Transform Citizens Into Demons | Mr. Sinister | Emissaries of Evil | 29-34 | 34 |
     | 1 | Transform Citizens Into Demons | Mr. Sinister | Marauders          | 33-34 | 34 |
-    | 1 | Transform Citizens Into Demons | Mr. Sinister | MLF                | 30-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Mr. Sinister | MLF                | 31-34 | 34 |
     | 1 | Transform Citizens Into Demons | Stryfe       | Four Horsemen      | 28-34 | 34 |
     | 1 | Transform Citizens Into Demons | Stryfe       | Emissaries of Evil | 24-34 | 34 |
     | 1 | Transform Citizens Into Demons | Stryfe       | Marauders          | 28-34 | 34 |

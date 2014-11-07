@@ -104,6 +104,7 @@ class TurnRange
       @scheme.henchmen +
       @scheme.twists +
       @scheme.villains +
-      @mastermind.master_strikes
+      @mastermind.master_strikes +
+      @scheme.other.reduce(0) { |a, (k, v) | a + v }
   end
 end
