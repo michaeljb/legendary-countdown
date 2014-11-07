@@ -64,18 +64,18 @@ Feature: Display Contents of Villain Deck
 
     # All "interesting" combos in Dark City; base of Save Humanity, Apocalypse,
     # Four Horsemen
-    | 1 | Save Humanity | Apocalypse | Four Horsemen      | 20-21 | 21 |
-    | 1 | Save Humanity | Apocalypse | Emissaries of Evil | 15-21 | 21 |
-    | 1 | Save Humanity | Apocalypse | Marauders          | 19-21 | 21 |
-    | 1 | Save Humanity | Apocalypse | MLF                | 18-21 | 21 |
-    | 1 | Save Humanity | Kingpin    | Four Horsemen      | 17-21 | 21 |
-    | 1 | Save Humanity | Kingpin    | Emissaries of Evil | 12-21 | 21 |
-    | 1 | Save Humanity | Kingpin    | Marauders          | 16-21 | 21 |
-    | 1 | Save Humanity | Kingpin    | MLF                | 15-21 | 21 |
-    # | 1 | Save Humanity                  | Mr. Sinister | Four Horsemen      | 19-21 | 21 |
-    # | 1 | Save Humanity                  | Mr. Sinister | Emissaries of Evil | 15-21 | 21 |
-    # | 1 | Save Humanity                  | Mr. Sinister | Marauders          | 19-21 | 21 |
-    # | 1 | Save Humanity                  | Mr. Sinister | MLF                | 17-21 | 21 |
+    | 1 | Save Humanity | Apocalypse   | Four Horsemen      | 20-21 | 21 |
+    | 1 | Save Humanity | Apocalypse   | Emissaries of Evil | 15-21 | 21 |
+    | 1 | Save Humanity | Apocalypse   | Marauders          | 19-21 | 21 |
+    | 1 | Save Humanity | Apocalypse   | MLF                | 18-21 | 21 |
+    | 1 | Save Humanity | Kingpin      | Four Horsemen      | 17-21 | 21 |
+    | 1 | Save Humanity | Kingpin      | Emissaries of Evil | 12-21 | 21 |
+    | 1 | Save Humanity | Kingpin      | Marauders          | 16-21 | 21 |
+    | 1 | Save Humanity | Kingpin      | MLF                | 15-21 | 21 |
+    | 1 | Save Humanity | Mr. Sinister | Four Horsemen      | 19-21 | 21 |
+    | 1 | Save Humanity | Mr. Sinister | Emissaries of Evil | 15-21 | 21 |
+    | 1 | Save Humanity | Mr. Sinister | Marauders          | 19-21 | 21 |
+    | 1 | Save Humanity | Mr. Sinister | MLF                | 17-21 | 21 |
     # | 1 | Save Humanity                  | Stryfe       | Four Horsemen      | 15-21 | 21 |
     # | 1 | Save Humanity                  | Stryfe       | Emissaries of Evil | 10-21 | 21 |
     # | 1 | Save Humanity                  | Stryfe       | Marauders          | 14-21 | 21 |
