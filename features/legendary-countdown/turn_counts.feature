@@ -128,19 +128,19 @@ Feature: Display Contents of Villain Deck
     | 1 | Transform Citizens Into Demons | Stryfe       | Emissaries of Evil | 24-34 | 34 |
     | 1 | Transform Citizens Into Demons | Stryfe       | Marauders          | 28-34 | 34 |
     | 1 | Transform Citizens Into Demons | Stryfe       | MLF                | 28-34 | 34 |
-    # | 1 | X-Cutioner's Song              | Apocalypse   | Four Horsemen      | 20-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Apocalypse   | Emissaries of Evil | 15-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Apocalypse   | Marauders          | 19-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Apocalypse   | MLF                | 18-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Kingpin      | Four Horsemen      | 17-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Kingpin      | Emissaries of Evil | 12-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Kingpin      | Marauders          | 16-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Kingpin      | MLF                | 15-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Mr. Sinister | Four Horsemen      | 19-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Mr. Sinister | Emissaries of Evil | 15-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Mr. Sinister | Marauders          | 19-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Mr. Sinister | MLF                | 17-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Stryfe       | Four Horsemen      | 15-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Stryfe       | Emissaries of Evil | 10-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Stryfe       | Marauders          | 14-21 | 21 |
-    # | 1 | X-Cutioner's Song              | Stryfe       | MLF                | 15-21 | 21 |
+    | 1 | X-Cutioner's Song              | Apocalypse   | Four Horsemen      | 33-34 | 34 |
+    | 1 | X-Cutioner's Song              | Apocalypse   | Emissaries of Evil | 29-34 | 34 |
+    | 1 | X-Cutioner's Song              | Apocalypse   | Marauders          | 33-34 | 34 |
+    | 1 | X-Cutioner's Song              | Apocalypse   | MLF                | 31-34 | 34 |
+    | 1 | X-Cutioner's Song              | Kingpin      | Four Horsemen      | 30-34 | 34 |
+    | 1 | X-Cutioner's Song              | Kingpin      | Emissaries of Evil | 26-34 | 34 |
+    | 1 | X-Cutioner's Song              | Kingpin      | Marauders          | 30-34 | 34 |
+    | 1 | X-Cutioner's Song              | Kingpin      | MLF                | 28-34 | 34 |
+    | 1 | X-Cutioner's Song              | Mr. Sinister | Four Horsemen      | 33-34 | 34 |
+    | 1 | X-Cutioner's Song              | Mr. Sinister | Emissaries of Evil | 29-34 | 34 |
+    | 1 | X-Cutioner's Song              | Mr. Sinister | Marauders          | 33-34 | 34 |
+    | 1 | X-Cutioner's Song              | Mr. Sinister | MLF                | 31-34 | 34 |
+    | 1 | X-Cutioner's Song              | Stryfe       | Four Horsemen      | 28-34 | 34 |
+    | 1 | X-Cutioner's Song              | Stryfe       | Emissaries of Evil | 24-34 | 34 |
+    | 1 | X-Cutioner's Song              | Stryfe       | Marauders          | 28-34 | 34 |
+    | 1 | X-Cutioner's Song              | Stryfe       | MLF                | 28-34 | 34 |
