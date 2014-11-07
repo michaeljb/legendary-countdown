@@ -40,11 +40,11 @@ class TurnRange
       villain: 0
     }
 
-    @villains.each do |villain|
-      next if villain.play_more_possible.size == 0
+    [@mastermind, @villains].flatten.each do |enemy|
+      next if enemy.play_more_possible.size == 0
 
       [:any, :bystander, :master_strike, :twist, :villain].each do |card|
-        play_more_possible[card] += (villain.play_more_possible[card] || 0)
+        play_more_possible[card] += (enemy.play_more_possible[card] || 0)
       end
     end
 
