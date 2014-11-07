@@ -24,10 +24,34 @@ class TurnRange
       total -= (@scheme.twists * (@scheme.plays_more_villain_cards - 1))
     end
 
+
+    count = {
+      bystander: @scheme.bystanders,
+      master_strike: @mastermind.master_strikes,
+      twist: @scheme.twists,
+      villain: @scheme.henchmen + @scheme.villains
+    }
+
+    play_more_possible = {
+      any: 0,
+      bystander: 0,
+      master_strike: 0,
+      twist: 0,
+      villain: 0
+    }
+
     @villains.each do |villain|
       next if villain.play_more_possible.size == 0
 
-      total -= villain.play_more_possible.reduce(0) { |a, (k, v)| a + (k * v) }
+      [:any, :bystander, :master_strike, :twist, :villain].each do |card|
+        play_more_possible[card] += (villain.play_more_possible[card] || 0)
+      end
+    end
+
+    total -= play_more_possible[:any]
+
+    [:bystander, :master_strike, :twist, :villain].each do |card|
+      total -= [count[card], play_more_possible[card]].min
     end
 
     total
