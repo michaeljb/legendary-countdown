@@ -76,10 +76,10 @@ Feature: Display Contents of Villain Deck
     | 1 | Save Humanity | Mr. Sinister | Emissaries of Evil | 15-21 | 21 |
     | 1 | Save Humanity | Mr. Sinister | Marauders          | 19-21 | 21 |
     | 1 | Save Humanity | Mr. Sinister | MLF                | 17-21 | 21 |
-    # | 1 | Save Humanity                  | Stryfe       | Four Horsemen      | 15-21 | 21 |
-    # | 1 | Save Humanity                  | Stryfe       | Emissaries of Evil | 10-21 | 21 |
-    # | 1 | Save Humanity                  | Stryfe       | Marauders          | 14-21 | 21 |
-    # | 1 | Save Humanity                  | Stryfe       | MLF                | 13-21 | 21 |
+    | 1 | Save Humanity | Stryfe       | Four Horsemen      | 15-21 | 21 |
+    | 1 | Save Humanity | Stryfe       | Emissaries of Evil | 10-21 | 21 |
+    | 1 | Save Humanity | Stryfe       | Marauders          | 14-21 | 21 |
+    | 1 | Save Humanity | Stryfe       | MLF                | 15-21 | 21 |
     # | 1 | Organized Crime Wave           | Apocalypse   | Four Horsemen      | 20-21 | 21 |
     # | 1 | Organized Crime Wave           | Apocalypse   | Emissaries of Evil | 20-21 | 21 |
     # | 1 | Organized Crime Wave           | Apocalypse   | Marauders          | 20-21 | 21 |
