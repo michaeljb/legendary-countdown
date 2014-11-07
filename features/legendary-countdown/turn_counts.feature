@@ -92,10 +92,10 @@ Feature: Display Contents of Villain Deck
     | 1 | Organized Crime Wave | Mr. Sinister | Emissaries of Evil | 12-18 | 18 |
     | 1 | Organized Crime Wave | Mr. Sinister | Marauders          | 16-18 | 18 |
     | 1 | Organized Crime Wave | Mr. Sinister | MLF                | 14-18 | 18 |
-    # | 1 | Organized Crime Wave           | Stryfe       | Four Horsemen      | 20-21 | 21 |
-    # | 1 | Organized Crime Wave           | Stryfe       | Emissaries of Evil | 20-21 | 21 |
-    # | 1 | Organized Crime Wave           | Stryfe       | Marauders          | 20-21 | 21 |
-    # | 1 | Organized Crime Wave           | Stryfe       | MLF                | 20-21 | 21 |
+    | 1 | Organized Crime Wave | Stryfe       | Four Horsemen      | 12-18 | 18 |
+    | 1 | Organized Crime Wave | Stryfe       | Emissaries of Evil |  7-18 | 18 |
+    | 1 | Organized Crime Wave | Stryfe       | Marauders          | 11-18 | 18 |
+    | 1 | Organized Crime Wave | Stryfe       | MLF                | 12-18 | 18 |
     # | 1 | Steal the Weaponized Plutonium | Apocalypse   | Four Horsemen      | 20-21 | 21 |
     # | 1 | Steal the Weaponized Plutonium | Apocalypse   | Emissaries of Evil | 20-21 | 21 |
     # | 1 | Steal the Weaponized Plutonium | Apocalypse   | Marauders          | 20-21 | 21 |
