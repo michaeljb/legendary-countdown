@@ -112,22 +112,22 @@ Feature: Display Contents of Villain Deck
     | 1 | Steal the Weaponized Plutonium | Stryfe       | Emissaries of Evil | 10-21 | 21 |
     | 1 | Steal the Weaponized Plutonium | Stryfe       | Marauders          | 14-21 | 21 |
     | 1 | Steal the Weaponized Plutonium | Stryfe       | MLF                | 15-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Apocalypse   | Four Horsemen      | 20-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Apocalypse   | Emissaries of Evil | 15-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Apocalypse   | Marauders          | 19-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Apocalypse   | MLF                | 18-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Kingpin      | Four Horsemen      | 17-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Kingpin      | Emissaries of Evil | 12-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Kingpin      | Marauders          | 16-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Kingpin      | MLF                | 15-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Mr. Sinister | Four Horsemen      | 19-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Mr. Sinister | Emissaries of Evil | 15-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Mr. Sinister | Marauders          | 19-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Mr. Sinister | MLF                | 17-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Stryfe       | Four Horsemen      | 15-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Stryfe       | Emissaries of Evil | 10-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Stryfe       | Marauders          | 14-21 | 21 |
-    # | 1 | Transform Citizens Into Demons | Stryfe       | MLF                | 15-21 | 21 |
+    | 1 | Transform Citizens Into Demons | Apocalypse   | Four Horsemen      | 33-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Apocalypse   | Emissaries of Evil | 29-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Apocalypse   | Marauders          | 33-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Apocalypse   | MLF                | 31-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Kingpin      | Four Horsemen      | 30-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Kingpin      | Emissaries of Evil | 26-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Kingpin      | Marauders          | 30-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Kingpin      | MLF                | 28-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Mr. Sinister | Four Horsemen      | 32-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Mr. Sinister | Emissaries of Evil | 29-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Mr. Sinister | Marauders          | 33-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Mr. Sinister | MLF                | 30-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Stryfe       | Four Horsemen      | 28-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Stryfe       | Emissaries of Evil | 24-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Stryfe       | Marauders          | 28-34 | 34 |
+    | 1 | Transform Citizens Into Demons | Stryfe       | MLF                | 28-34 | 34 |
     # | 1 | X-Cutioner's Song              | Apocalypse   | Four Horsemen      | 20-21 | 21 |
     # | 1 | X-Cutioner's Song              | Apocalypse   | Emissaries of Evil | 15-21 | 21 |
     # | 1 | X-Cutioner's Song              | Apocalypse   | Marauders          | 19-21 | 21 |
