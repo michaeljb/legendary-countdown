@@ -88,10 +88,10 @@ Feature: Display Contents of Villain Deck
     | 1 | Organized Crime Wave | Kingpin      | Emissaries of Evil |  9-18 | 18 |
     | 1 | Organized Crime Wave | Kingpin      | Marauders          | 13-18 | 18 |
     | 1 | Organized Crime Wave | Kingpin      | MLF                | 12-18 | 18 |
-    # | 1 | Organized Crime Wave           | Mr. Sinister | Four Horsemen      | 20-21 | 21 |
-    # | 1 | Organized Crime Wave           | Mr. Sinister | Emissaries of Evil | 20-21 | 21 |
-    # | 1 | Organized Crime Wave           | Mr. Sinister | Marauders          | 20-21 | 21 |
-    # | 1 | Organized Crime Wave           | Mr. Sinister | MLF                | 20-21 | 21 |
+    | 1 | Organized Crime Wave | Mr. Sinister | Four Horsemen      | 16-18 | 18 |
+    | 1 | Organized Crime Wave | Mr. Sinister | Emissaries of Evil | 12-18 | 18 |
+    | 1 | Organized Crime Wave | Mr. Sinister | Marauders          | 16-18 | 18 |
+    | 1 | Organized Crime Wave | Mr. Sinister | MLF                | 14-18 | 18 |
     # | 1 | Organized Crime Wave           | Stryfe       | Four Horsemen      | 20-21 | 21 |
     # | 1 | Organized Crime Wave           | Stryfe       | Emissaries of Evil | 20-21 | 21 |
     # | 1 | Organized Crime Wave           | Stryfe       | Marauders          | 20-21 | 21 |
