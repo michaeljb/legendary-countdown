@@ -144,3 +144,19 @@ Feature: Display Contents of Villain Deck
     | 1 | X-Cutioner's Song              | Stryfe       | Emissaries of Evil | 24-34 | 34 |
     | 1 | X-Cutioner's Song              | Stryfe       | Marauders          | 28-34 | 34 |
     | 1 | X-Cutioner's Song              | Stryfe       | MLF                | 28-34 | 34 |
+
+    # All "interesting" combos in Fantastic Four; base of Flood the Planet With
+    # Melted Glaciers, Apocalypse (both FF Masterminds affect the Villain Deck
+    # turn range); neither of the FF Villain Groups affect the Villain Deck turn range
+    | 1 | Flood the Planet with Melted Glaciers | Apocalypse | N/A | 20-21 | 21 |
+    | 1 | Flood the Planet with Melted Glaciers | Galactus   | N/A | 20-21 | 20 |
+    | 1 | Flood the Planet with Melted Glaciers | Mole Man   | N/A | 14-21 | 21 |
+    | 1 | Bathe the Earth in Cosmic Rays        | Apocalypse | N/A | 18-19 | 19 |
+    | 1 | Bathe the Earth in Cosmic Rays        | Galactus   | N/A | 18-19 | 18 |
+    | 1 | Bathe the Earth in Cosmic Rays        | Mole Man   | N/A | 12-19 | 19 |
+    | 1 | Invincible Force Field                | Apocalypse | N/A | 19-20 | 18 |
+    | 1 | Invincible Force Field                | Galactus   | N/A | 19-20 | 18 |
+    | 1 | Invincible Force Field                | Mole Man   | N/A | 13-20 | 18 |
+    | 1 | Pull Reality Into the Negative Zone   | Apocalypse | N/A | 20-21 | 18 |
+    | 1 | Pull Reality Into the Negative Zone   | Galactus   | N/A | 20-21 | 18 |
+    | 1 | Pull Reality Into the Negative Zone   | Mole Man   | N/A | 14-21 | 18 |
