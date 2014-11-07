@@ -74,10 +74,12 @@ class TurnRange
       @any_play_more = true
     end
 
-    @villains.each do |villain|
-      next if villain.play_more_required == {}
+    # sometimes Schemes can change the abilities of an enemy, like Organized
+    # Crime Wave modifying Maggia Goons
+    [@scheme, @mastermind, @villains].flatten.each do |enemy|
+      next if enemy.play_more_required == {}
 
-      total -= villain.play_more_required.reduce(0) { |a, (k, v)| a + (k * v) }
+      total -= enemy.play_more_required.reduce(0) { |a, (k, v)| a + (k * v) }
       @any_play_more = true
     end
 
