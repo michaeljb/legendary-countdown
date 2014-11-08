@@ -12,7 +12,7 @@ class TurnRange
   end
 
   def min
-    total = max
+    total = max - @scheme.additional_max_empty_turns
 
     # take off the bonus turn from cards that play more cards being placed at
     # the bottom
@@ -82,6 +82,8 @@ class TurnRange
       total -= enemy.play_more_required.reduce(0) { |a, (k, v)| a + (k * v) }
       @any_play_more = true
     end
+
+    total += @scheme.additional_max_empty_turns
 
     # if one or more of the required multipliers are at the bottom of the
     # Villain Deck, we get one more turn than you might expect

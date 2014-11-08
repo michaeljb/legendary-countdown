@@ -72,4 +72,10 @@ class Scheme < VillainDeckSet
   def evil_wins_when_villain_deck_empty?
     false
   end
+
+  # potential turns that can be added before the Villain Deck runs out, as a
+  # result of placing cards back on top of the Villain Deck
+  def additional_max_empty_turns
+    0
+  end
 end

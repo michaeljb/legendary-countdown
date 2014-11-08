@@ -5,12 +5,13 @@ class SpliceHumansWithSpiderDna < Scheme
   end
 
   # Twist: Each player puts a Sinister Six Villain from their Victory Pile on
-  # top of the Villain Deck. No matter how many players did so, play a single
-  # card from the Villain Deck.
-  #
-  # Max turn case: every player puts a Sinister Six Villain back on top of the
-  # Villain Deck every time
-  # Min turn case: no player ever puts back a Sinister Six Villain
+  # top of the Villain Deck.
+  def additional_max_empty_turns
+    twists * (@players - 1)
+  end
+
+  # Twist: ... No matter how many players did so, play a single card from the
+  # Villain Deck.
   def play_more_possible
     {
       any: twists

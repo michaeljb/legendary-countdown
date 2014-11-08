@@ -23,6 +23,14 @@ Feature: Display Contents of Villain Deck
     | 4 | Unleash the Power of the Cosmic Cube | Red Skull | HYDRA,Spider-Foes,Skrulls                 | 59-65 | 64 |
     | 5 | Unleash the Power of the Cosmic Cube | Red Skull | HYDRA,Spider-Foes,Skrulls,Masters of Evil | 71-77 | 76 |
 
+    # for N players, the Splice Humans with Spider DNA Twist can add up to
+    # (N - 1) to the number of turns before the Villain Deck runs out
+    | 1 | Splice Humans with Spider DNA | Apocalypse | N/A |  12-21 |  20  |
+    | 2 | Splice Humans with Spider DNA | Apocalypse | N/A |  33-49 |  48  |
+    | 3 | Splice Humans with Spider DNA | Apocalypse | N/A |  47-71 |  70  |
+    | 4 | Splice Humans with Spider DNA | Apocalypse | N/A |  57-89 |  88  |
+    | 5 | Splice Humans with Spider DNA | Apocalypse | N/A | 69-109 | 108  |
+
     # All "interesting" combos of Schemes/Masterminds/Villians for 1 player with
     # just the base set; in addition to those cards that have some interesting
     # effect on the turn count, use The Legacy Virus for an "uninteresting"
@@ -182,8 +190,6 @@ Feature: Display Contents of Villain Deck
     | 1 | Unite the Shards            | Thanos | Infinity Gems  | 18-19 | 20 |
 
     # TODO:
-    # - Splice Humans with Spider DNA with more than 1 player
-    #
     # - Mr. Sinister with a Scheme that makes Bystander cards not actual Bystanders
     #
     # - some case where Mole Man playing only Subterranea Villains, instead of
