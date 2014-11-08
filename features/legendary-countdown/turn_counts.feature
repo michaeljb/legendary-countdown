@@ -31,6 +31,11 @@ Feature: Display Contents of Villain Deck
     | 4 | Splice Humans with Spider DNA | Apocalypse | N/A |  57-89 |  88  |
     | 5 | Splice Humans with Spider DNA | Apocalypse | N/A | 69-109 | 108  |
 
+    # Mr. Sinister can capture a whole lot of Bystanders from the top of the
+    # Villain Deck, but Killbots don't actually count as Bystanders
+    | 1 | Replace Earth's Leaders with Killbots | Apocalypse   | N/A | 34-35 | 35 |
+    | 1 | Replace Earth's Leaders with Killbots | Mr. Sinister | N/A | 34-35 | 35 |
+
     # All "interesting" combos of Schemes/Masterminds/Villians for 1 player with
     # just the base set; in addition to those cards that have some interesting
     # effect on the turn count, use The Legacy Virus for an "uninteresting"
@@ -190,7 +195,5 @@ Feature: Display Contents of Villain Deck
     | 1 | Unite the Shards            | Thanos | Infinity Gems  | 18-19 | 20 |
 
     # TODO:
-    # - Mr. Sinister with a Scheme that makes Bystander cards not actual Bystanders
-    #
     # - some case where Mole Man playing only Subterranea Villains, instead of
     #   any Villain/Henchmen, changes how it affects the turn range
