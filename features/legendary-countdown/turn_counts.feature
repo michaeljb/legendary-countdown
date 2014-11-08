@@ -171,3 +171,11 @@ Feature: Display Contents of Villain Deck
     | 1 | Splice Humans with Spider DNA  | Mysterio | N/A |  7-21 | 20 |
     | 1 | Weave a Web of Lies            | Carnage  | N/A | 19-20 | 18 |
     | 1 | Weave a Web of Lies            | Mysterio | N/A | 14-20 | 18 |
+
+    # TODO:
+    # - Splice Humans with Spider DNA with more than 1 player
+    #
+    # - Mr. Sinister with a Scheme that makes Bystander cards not actual Bystanders
+    #
+    # - some case where Mole Man playing only Subterranea Villains, instead of
+    #   any Villain/Henchmen, changes how it affects the turn range
