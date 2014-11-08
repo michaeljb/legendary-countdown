@@ -145,7 +145,7 @@ Feature: Display Contents of Villain Deck
     | 1 | X-Cutioner's Song              | Stryfe       | Marauders          | 28-34 | 34 |
     | 1 | X-Cutioner's Song              | Stryfe       | MLF                | 28-34 | 34 |
 
-    # All "interesting" combos in Fantastic Four; base of Flood the Planet With
+    # All "interesting" combos in Fantastic Four; base of Flood the Planet with
     # Melted Glaciers, Apocalypse (both FF Masterminds affect the Villain Deck
     # turn range); neither of the FF Villain Groups affect the Villain Deck turn range
     | 1 | Flood the Planet with Melted Glaciers | Apocalypse | N/A | 20-21 | 21 |
