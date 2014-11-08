@@ -193,7 +193,3 @@ Feature: Display Contents of Villain Deck
     | 1 | The Kree-Skrull War         | Thanos | Infinity Gems  | 28-29 | 30 |
     | 1 | Unite the Shards            | Thanos | Kree Starforce | 18-19 | 19 |
     | 1 | Unite the Shards            | Thanos | Infinity Gems  | 18-19 | 20 |
-
-    # TODO:
-    # - some case where Mole Man playing only Subterranea Villains, instead of
-    #   any Villain/Henchmen, changes how it affects the turn range
