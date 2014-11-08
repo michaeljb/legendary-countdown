@@ -11,7 +11,13 @@ class MaxWinningTurn
   def turn
     total = @turn_range.max
 
-    if (twist_on = @scheme.evil_wins_on_twist).nil?
+    if @scheme.evil_wins_when_villain_deck_empty?
+
+      # if Evil Wins when the Villain Deck is empty, you simply have to win one
+      # turn before it runs out
+      total -= 1
+
+    elsif (twist_on = @scheme.evil_wins_on_twist).nil?
 
       # if cards are at the bottom that play more cards, make sure none of them
       # being played is a guaranteed lose condition; for now this only applies

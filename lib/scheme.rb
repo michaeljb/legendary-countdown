@@ -68,4 +68,8 @@ class Scheme < VillainDeckSet
   def evil_wins_on_twist
     nil
   end
+
+  def evil_wins_when_villain_deck_empty?
+    false
+  end
 end

@@ -160,3 +160,14 @@ Feature: Display Contents of Villain Deck
     | 1 | Pull Reality Into the Negative Zone   | Apocalypse | N/A | 20-21 | 18 |
     | 1 | Pull Reality Into the Negative Zone   | Galactus   | N/A | 20-21 | 18 |
     | 1 | Pull Reality Into the Negative Zone   | Mole Man   | N/A | 14-21 | 18 |
+
+    # All "interesting" combos in Paint the Town Red; base of Invade the Daily
+    # Bugle News HQ and Carnage
+    | 1 | Invade the Daily Bugle News HQ | Carnage  | N/A | 20-21 | 21 |
+    | 1 | Invade the Daily Bugle News HQ | Mysterio | N/A | 15-21 | 21 |
+    | 1 | The Clone Saga                 | Carnage  | N/A | 20-21 | 20 |
+    | 1 | The Clone Saga                 | Mysterio | N/A | 15-21 | 20 |
+    | 1 | Splice Humans with Spider DNA  | Carnage  | N/A | 12-21 | 20 |
+    | 1 | Splice Humans with Spider DNA  | Mysterio | N/A |  7-21 | 20 |
+    | 1 | Weave a Web of Lies            | Carnage  | N/A | 19-20 | 18 |
+    | 1 | Weave a Web of Lies            | Mysterio | N/A | 14-20 | 18 |
