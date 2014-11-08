@@ -38,7 +38,9 @@ class MaxWinningTurn
     end
 
     # add extra turns from cards like "Secrets of Time Travel"
-    total += @mastermind.bonus_turns
+    total += [@mastermind, @villains].flatten.reduce(0) do |acc, enemy|
+      acc + enemy.bonus_turns
+    end
 
     total
   end
