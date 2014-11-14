@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.1.5
+  - 2.0.0-p598
 script: 'bundle exec rake travis'
 deploy:
   provider: heroku

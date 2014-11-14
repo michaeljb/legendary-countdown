@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.5-p265'
+ruby '2.0.0-p598'
 
 gem 'sinatra'
 gem 'rake'
