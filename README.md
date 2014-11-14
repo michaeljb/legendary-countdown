@@ -22,7 +22,7 @@ possibly reducing how much time the Heroes have to save the city and claim a
 victory for Good.
 
 Inspired by the
-[match setup info for season 4 of Legendary Online League](http://boardgamegeek.com/article/17058875#17058875),
+[match setup info for season 4 of the Legendary Online League](http://boardgamegeek.com/article/17058875#17058875),
 which includes the Villain Deck Composition and Maximum Winning Turn Count for
 each match's setup, Legendary Countdown takes a given enemy setup, and reports
 not only the Villain Deck Composition and Maximum Winning Turn Count, but also
