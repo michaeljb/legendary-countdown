@@ -16,4 +16,7 @@ namespace :server do
   end
 end
 
-task default: [:'rubocop:auto_correct', :features]
+task :travis do
+  sh 'bundle exec rubocop'
+  sh 'xvfb-run bundle exec cucumber'
+end
