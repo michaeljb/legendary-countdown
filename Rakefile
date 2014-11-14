@@ -20,7 +20,7 @@ task :default do
 end
 
 desc 'git push to both github and heroku'
-task :push do
+task push: :default do
   sh 'git push origin master'
   sh 'git push heroku master'
 end
