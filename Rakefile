@@ -18,3 +18,9 @@ task :default do
   sh 'bundle exec rubocop'
   sh 'bundle exec cucumber'
 end
+
+desc 'git push to both github and heroku'
+task :push do
+  sh 'git push origin master'
+  sh' git push heroku master'
+end
