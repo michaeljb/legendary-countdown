@@ -6,7 +6,7 @@ deploy:
   provider: heroku
   api_key:
     secure: FJQqWD7oMwoNfRZpoQPhdx2HzS8B/rwJrzwBCQVOzoJr599JbzCS6Wz0MdZXW25iu0vuUVDDUXMK8lVpkrdlEgfxCPhpOCnTj15aHem4s0ZeT+BlAQrepIgpT1XuWoZJHq9lgdDm02DDqY2qn9eIu6R0K8I7egdaz4QRo+vJlEk=
-  run: "rake server:start"
+  run: "bundle exec rake server:start"
   app: legendary-countdown
   on:
     repo: michaeljb/legendary-countdown
