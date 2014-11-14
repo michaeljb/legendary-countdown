@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.1.3'
 
 gem 'sinatra'
+gem 'rake'
 gem 'require_all'
 
 group :development do
@@ -9,7 +11,6 @@ group :development do
   gem 'cucumber'
   gem 'guard'
   gem 'guard-rubocop'
-  gem 'rake'
   gem 'rspec'
   gem 'rubocop'
   gem 'pry-byebug'
