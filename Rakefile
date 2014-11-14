@@ -9,18 +9,18 @@ end
 
 desc 'Run rubocop and feature tests (with xvfb)'
 task :travis do
-  sh 'bundle exec rubocop'
+  sh 'bundle exec rubocop --display-cop-names'
   sh 'xvfb-run bundle exec cucumber'
 end
 
 desc 'Run rubocop and feature tests'
 task :default do
-  sh 'bundle exec rubocop'
+  sh 'bundle exec rubocop --display-cop-names --auto-correct'
   sh 'bundle exec cucumber'
 end
 
 desc 'git push to both github and heroku'
 task :push do
   sh 'git push origin master'
-  sh' git push heroku master'
+  sh 'git push heroku master'
 end
