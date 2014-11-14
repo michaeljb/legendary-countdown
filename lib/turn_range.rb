@@ -24,7 +24,6 @@ class TurnRange
       total -= (@scheme.twists * (@scheme.plays_more_villain_cards - 1))
     end
 
-
     count = {
       bystander: @scheme.bystanders,
       master_strike: @mastermind.master_strikes,
@@ -107,6 +106,6 @@ class TurnRange
       @scheme.twists +
       @scheme.villains +
       @mastermind.master_strikes +
-      @scheme.other.reduce(0) { |a, (k, v) | a + v }
+      @scheme.other.reduce(0) { |a, (_k, v) | a + v }
   end
 end

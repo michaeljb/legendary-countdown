@@ -15,3 +15,5 @@ namespace :server do
     sh 'ruby lib/app.rb'
   end
 end
+
+task default: [:'rubocop:auto_correct', :features]

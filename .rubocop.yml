@@ -7,7 +7,7 @@ AllCops:
     - 'gem/**/*'
 
 Metrics/MethodLength:
-  Max: 20
+  Max: 30
 
 Style/Documentation:
   Exclude:
