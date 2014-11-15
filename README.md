@@ -1,8 +1,7 @@
 # Legendary Countdown
 
 [![Build Status](https://travis-ci.org/michaeljb/legendary-countdown.svg?branch=master)](https://travis-ci.org/michaeljb/legendary-countdown)
-
-http://legendary-countdown.herokuapp.com/
+[![Heroku](https://heroku-badge.herokuapp.com/?app=legendary-countdown)](https://legendary-countdown.herokuapp.com)
 
 In
 [Legendary: A Marvel Deck-Building Game](http://www.upperdeck.com/products/entertainment/marvel/marvel-legendary.aspx),
