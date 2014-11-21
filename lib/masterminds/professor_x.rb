@@ -3,8 +3,14 @@
 #   Adversaries you revealed that have "X-Treme Attack".
 class ProfessorX < Mastermind
   def play_more_possible
+    groups = [
+      'Uncanny Avengers',
+      'Uncanny X-Men',
+      'X-Men First Class'
+    ]
+
     {
-      villain: 3
+      villain: groups.any? { |group| @villain_groups.include?(group) } ? 3 : 0
     }
   end
 end
