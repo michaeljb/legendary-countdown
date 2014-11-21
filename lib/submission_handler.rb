@@ -15,7 +15,10 @@ class SubmissionHandler
   def initialize(params)
     players = params['playerCount'].to_i
 
-    @scheme = scheme_class(params['scheme']).new(params['playerCount'])
+    @scheme = scheme_class(params['scheme']).new(
+      players: params['playerCount'],
+      villain_groups: params['villains']
+    )
 
     mastermind = mastermind_class(params['mastermind']).new(
       players: players,
