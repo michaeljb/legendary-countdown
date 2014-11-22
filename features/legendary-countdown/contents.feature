@@ -155,3 +155,43 @@ Feature: Display Contents of Villain Deck
     |       3 | Unite the Shards                            |           8 |            24 |             10 |               8 |             |                            |
     |       4 | Unite the Shards                            |           9 |            24 |             20 |               8 |             |                            |
     |       5 | Unite the Shards                            |          10 |            32 |             20 |              12 |             |                            |
+    |       1 | Build an Underground MegaVault Prison       |           8 |             8 |              3 |               1 |             |                            |
+    |       2 | Build an Underground MegaVault Prison       |           8 |            16 |             10 |               2 |             |                            |
+    |       3 | Build an Underground MegaVault Prison       |           8 |            24 |             10 |               8 |             |                            |
+    |       4 | Build an Underground MegaVault Prison       |           8 |            24 |             20 |               8 |             |                            |
+    |       5 | Build an Underground MegaVault Prison       |           8 |            32 |             20 |              12 |             |                            |
+    |       1 | Cage Villains in Power-Supressing Cells     |           8 |             8 |              3 |               1 |             |                            |
+    |       2 | Cage Villains in Power-Supressing Cells     |           8 |            16 |             10 |               2 |             |                            |
+    |       3 | Cage Villains in Power-Supressing Cells     |           8 |            24 |             10 |               8 |             |                            |
+    |       4 | Cage Villains in Power-Supressing Cells     |           8 |            24 |             20 |               8 |             |                            |
+    |       5 | Cage Villains in Power-Supressing Cells     |           8 |            32 |             20 |              12 |             |                            |
+    |       1 | Crown Thor King of Asgard                   |           8 |             8 |              3 |               1 |             |                            |
+    |       2 | Crown Thor King of Asgard                   |           8 |            16 |             10 |               2 |             |                            |
+    |       3 | Crown Thor King of Asgard                   |           8 |            24 |             10 |               8 |             |                            |
+    |       4 | Crown Thor King of Asgard                   |           8 |            24 |             20 |               8 |             |                            |
+    |       5 | Crown Thor King of Asgard                   |           8 |            32 |             20 |              12 |             |                            |
+    |       1 | Crush HYDRA                                 |           8 |             8 |              3 |               1 |             |                            |
+    |       2 | Crush HYDRA                                 |           8 |            16 |             10 |               2 |             |                            |
+    |       3 | Crush HYDRA                                 |           8 |            24 |             10 |               8 |             |                            |
+    |       4 | Crush HYDRA                                 |           8 |            24 |             20 |               8 |             |                            |
+    |       5 | Crush HYDRA                                 |           8 |            32 |             20 |              12 |             |                            |
+    |       1 | Graduation at Xavier's X-Academy            |           8 |             8 |              3 |               1 |             |                            |
+    |       2 | Graduation at Xavier's X-Academy            |           8 |            16 |             10 |               2 |             |                            |
+    |       3 | Graduation at Xavier's X-Academy            |           8 |            24 |             10 |               8 |             |                            |
+    |       4 | Graduation at Xavier's X-Academy            |           8 |            24 |             20 |               8 |             |                            |
+    |       5 | Graduation at Xavier's X-Academy            |           8 |            32 |             20 |              12 |             |                            |
+    |       1 | Infiltrate the Lair With Spies              |           8 |             8 |              3 |               1 |             |                            |
+    |       2 | Infiltrate the Lair With Spies              |           8 |            16 |             10 |               2 |             |                            |
+    |       3 | Infiltrate the Lair With Spies              |           8 |            24 |             10 |               8 |             |                            |
+    |       4 | Infiltrate the Lair With Spies              |           8 |            24 |             20 |               8 |             |                            |
+    |       5 | Infiltrate the Lair With Spies              |           8 |            32 |             20 |              12 |             |                            |
+    |       1 | Mass Produce War Machine Armor              |           8 |             8 |             10 |               1 |             |                            |
+    |       2 | Mass Produce War Machine Armor              |           8 |            16 |             10 |               2 |             |                            |
+    |       3 | Mass Produce War Machine Armor              |           8 |            24 |             10 |               8 |             |                            |
+    |       4 | Mass Produce War Machine Armor              |           8 |            24 |             20 |               8 |             |                            |
+    |       5 | Mass Produce War Machine Armor              |           8 |            32 |             20 |              12 |             |                            |
+    |       1 | Resurrect Heroes With Norn Stones           |           8 |             8 |              3 |               1 |             |                            |
+    |       2 | Resurrect Heroes With Norn Stones           |           8 |            16 |             10 |               2 |             |                            |
+    |       3 | Resurrect Heroes With Norn Stones           |           8 |            24 |             10 |               8 |             |                            |
+    |       4 | Resurrect Heroes With Norn Stones           |           8 |            24 |             20 |               8 |             |                            |
+    |       5 | Resurrect Heroes With Norn Stones           |           8 |            32 |             20 |              12 |             |                            |
