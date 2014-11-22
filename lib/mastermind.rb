@@ -4,8 +4,9 @@ require_relative 'villain_deck_set'
 # Strikes do things differently in Advanced Solo Mode, and some Masterminds can
 # influence the rate at which the Villain Deck runs out.
 class Mastermind < VillainDeckSet
-  def initialize(players)
-    @players = players
+  def initialize(**opts)
+    @players        = opts[:players]
+    @villain_groups = opts[:villain_groups] || []
   end
 
   # can be 2 if playing non-Advanced Solo Mode

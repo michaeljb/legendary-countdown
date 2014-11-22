@@ -185,6 +185,50 @@ Feature: Display Contents of Villain Deck
     | 1 | Weave a Web of Lies            | Carnage  | N/A | 19-20 | 18 |
     | 1 | Weave a Web of Lies            | Mysterio | N/A | 14-20 | 18 |
 
+    # All "interesting" combos in Villains; base of Crush HYDRA, Nick Fury, and
+    # Defenders
+    #
+    # Crown Thor King of Asgard interacts with Avengers
+    #
+    # Professor X interacts with Uncanny Avengers, Uncanny X-Men, X-Men First
+    # Class
+    #
+    # Uncanny Avengers increase max turn the deck runs out and maxiumum winning
+    # turn by a difficult-to-count amount; TODO add a special note
+    | 1 | Crush HYDRA                       | Nick Fury   | Defenders        | 20-21 | 21 |
+    | 1 | Crush HYDRA                       | Nick Fury   | Uncanny Avengers | 20-21 | 21 |
+    | 1 | Crush HYDRA                       | Dr. Strange | Defenders        | 15-21 | 21 |
+    | 1 | Crush HYDRA                       | Dr. Strange | Uncanny Avengers | 15-21 | 21 |
+    | 1 | Crush HYDRA                       | Professor X | Defenders        | 20-21 | 21 |
+    | 1 | Crush HYDRA                       | Professor X | Uncanny Avengers | 17-21 | 21 |
+    | 1 | Crown Thor King of Asgard         | Nick Fury   | Avengers         | 19-20 | 20 |
+    | 1 | Crown Thor King of Asgard         | Nick Fury   | Defenders        | 20-21 | 21 |
+    | 1 | Crown Thor King of Asgard         | Nick Fury   | Uncanny Avengers | 20-21 | 21 |
+    | 1 | Crown Thor King of Asgard         | Dr. Strange | Avengers         | 14-20 | 20 |
+    | 1 | Crown Thor King of Asgard         | Dr. Strange | Defenders        | 15-21 | 21 |
+    | 1 | Crown Thor King of Asgard         | Dr. Strange | Uncanny Avengers | 15-21 | 21 |
+    | 1 | Crown Thor King of Asgard         | Professor X | Avengers         | 19-20 | 20 |
+    | 1 | Crown Thor King of Asgard         | Professor X | Defenders        | 20-21 | 21 |
+    | 1 | Crown Thor King of Asgard         | Professor X | Uncanny Avengers | 17-21 | 21 |
+    | 1 | Graduation at Xavier's X-Academy  | Nick Fury   | Defenders        | 20-21 | 19 |
+    | 1 | Graduation at Xavier's X-Academy  | Nick Fury   | Uncanny Avengers | 20-21 | 19 |
+    | 1 | Graduation at Xavier's X-Academy  | Dr. Strange | Defenders        | 15-21 | 19 |
+    | 1 | Graduation at Xavier's X-Academy  | Dr. Strange | Uncanny Avengers | 15-21 | 19 |
+    | 1 | Graduation at Xavier's X-Academy  | Professor X | Defenders        | 20-21 | 19 |
+    | 1 | Graduation at Xavier's X-Academy  | Professor X | Uncanny Avengers | 17-21 | 19 |
+    | 1 | Mass Produce War Machine Armor    | Nick Fury   | Defenders        | 27-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Nick Fury   | Uncanny Avengers | 27-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Dr. Strange | Defenders        | 22-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Dr. Strange | Uncanny Avengers | 22-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Professor X | Defenders        | 27-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Professor X | Uncanny Avengers | 24-28 | 28 |
+    | 1 | Resurrect Heroes With Norn Stones | Nick Fury   | Defenders        | 14-15 | 15 |
+    | 1 | Resurrect Heroes With Norn Stones | Nick Fury   | Uncanny Avengers | 14-15 | 15 |
+    | 1 | Resurrect Heroes With Norn Stones | Dr. Strange | Defenders        |  9-15 | 15 |
+    | 1 | Resurrect Heroes With Norn Stones | Dr. Strange | Uncanny Avengers |  9-15 | 15 |
+    | 1 | Resurrect Heroes With Norn Stones | Professor X | Defenders        | 14-15 | 15 |
+    | 1 | Resurrect Heroes With Norn Stones | Professor X | Uncanny Avengers | 11-15 | 15 |
+
     # All "interesting" combos in Guardians of the Galaxy; base of Forge the
     # Infinity Gauntlet, Thanos, and the Kree Starforce
     | 1 | Forge the Infinity Gauntlet | Thanos | Kree Starforce | 20-21 | 21 |

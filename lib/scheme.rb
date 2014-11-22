@@ -2,8 +2,9 @@ require_relative 'villain_deck_set'
 
 # Base class for all Schemes to inherit from.
 class Scheme < VillainDeckSet
-  def initialize(players)
-    @players = players.to_i
+  def initialize(**opts)
+    @players        = opts[:players].to_i
+    @villain_groups = opts[:villain_groups] || []
   end
 
   def villain_deck_contents

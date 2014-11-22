@@ -17,4 +17,7 @@ class VillainDeckSet
   def bonus_turns
     0
   end
+
+  def notes
+  end
 end
