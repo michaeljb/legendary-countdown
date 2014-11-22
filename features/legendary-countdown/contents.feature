@@ -46,6 +46,7 @@ Feature: Display Contents of Villain Deck
     |       3 | Secret Invasion of the Skrull Shapeshifters |           8 |            24 |             10 |               8 |          12 | Heroes                     |
     |       4 | Secret Invasion of the Skrull Shapeshifters |           8 |            24 |             20 |               8 |          12 | Heroes                     |
     |       5 | Secret Invasion of the Skrull Shapeshifters |           8 |            32 |             20 |              12 |          12 | Heroes                     |
+    |       1 | Super Hero Civil War                        |           8 |             8 |              3 |               1 |             |                            |
     |       2 | Super Hero Civil War                        |           8 |            16 |             10 |               2 |             |                            |
     |       3 | Super Hero Civil War                        |           8 |            24 |             10 |               8 |             |                            |
     |       4 | Super Hero Civil War                        |           5 |            24 |             20 |               8 |             |                            |
