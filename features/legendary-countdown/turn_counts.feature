@@ -216,6 +216,12 @@ Feature: Display Contents of Villain Deck
     | 1 | Graduation at Xavier's X-Academy  | Dr. Strange | Uncanny Avengers | 15-21 | 19 |
     | 1 | Graduation at Xavier's X-Academy  | Professor X | Defenders        | 20-21 | 19 |
     | 1 | Graduation at Xavier's X-Academy  | Professor X | Uncanny Avengers | 17-21 | 19 |
+    | 1 | Mass Produce War Machine Armor    | Nick Fury   | Defenders        | 27-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Nick Fury   | Uncanny Avengers | 27-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Dr. Strange | Defenders        | 22-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Dr. Strange | Uncanny Avengers | 22-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Professor X | Defenders        | 27-28 | 28 |
+    | 1 | Mass Produce War Machine Armor    | Professor X | Uncanny Avengers | 24-28 | 28 |
     | 1 | Resurrect Heroes With Norn Stones | Nick Fury   | Defenders        | 14-15 | 15 |
     | 1 | Resurrect Heroes With Norn Stones | Nick Fury   | Uncanny Avengers | 14-15 | 15 |
     | 1 | Resurrect Heroes With Norn Stones | Dr. Strange | Defenders        |  9-15 | 15 |
