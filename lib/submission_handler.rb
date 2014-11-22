@@ -15,6 +15,8 @@ class SubmissionHandler
   def initialize(params)
     players = params['playerCount'].to_i
 
+    @notes = []
+
     @scheme = scheme_class(params['scheme']).new(
       players: params['playerCount'],
       villain_groups: params['villains']
@@ -28,6 +30,8 @@ class SubmissionHandler
     villains = params['villains'].reject { |v| v == 'N/A' }.map do |v|
       villain_class(v).new(@scheme, mastermind)
     end
+
+    villains.each { |v| @notes.push(v.notes) }
 
     @turn_range = TurnRange.new(
         players: players,
@@ -48,7 +52,8 @@ class SubmissionHandler
     {
       villain_deck_contents: @scheme.villain_deck_contents,
       villain_deck_empty: @turn_range.hash,
-      max_win_turn: @max_winning_turn.turn
+      max_win_turn: @max_winning_turn.turn,
+      notes: @notes.flatten.compact
     }.to_json
   end
 
