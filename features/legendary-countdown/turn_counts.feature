@@ -232,8 +232,8 @@ Feature: Display Contents of Villain Deck
     # All "interesting" combos in Guardians of the Galaxy; base of Forge the
     # Infinity Gauntlet, Thanos, and the Kree Starforce
     | 1 | Forge the Infinity Gauntlet | Thanos | Kree Starforce | 20-21 | 21 |
-    | 1 | Forge the Infinity Gauntlet | Thanos | Infinity Gems  | 20-21 | 22 |
+    | 1 | Forge the Infinity Gauntlet | Thanos | Infinity Gems  | 19-20 | 21 |
     | 1 | The Kree-Skrull War         | Thanos | Kree Starforce | 28-29 | 29 |
-    | 1 | The Kree-Skrull War         | Thanos | Infinity Gems  | 28-29 | 30 |
+    | 1 | The Kree-Skrull War         | Thanos | Infinity Gems  | 27-28 | 29 |
     | 1 | Unite the Shards            | Thanos | Kree Starforce | 18-19 | 19 |
-    | 1 | Unite the Shards            | Thanos | Infinity Gems  | 18-19 | 20 |
+    | 1 | Unite the Shards            | Thanos | Infinity Gems  | 17-18 | 19 |

@@ -5,4 +5,11 @@ class InfinityGems < VillainGroup
   def bonus_turns
     1
   end
+
+  # Time Gem has "Ambush: Play another card from the Villain Deck."
+  def play_more_required
+    {
+      1 => 1
+    }
+  end
 end
