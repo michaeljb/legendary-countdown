@@ -141,22 +141,22 @@ Feature: Display Contents of Villain Deck
     | 1 | Transform Citizens Into Demons | Stryfe       | Emissaries of Evil | 24-34 | 34 |
     | 1 | Transform Citizens Into Demons | Stryfe       | Marauders          | 28-34 | 34 |
     | 1 | Transform Citizens Into Demons | Stryfe       | MLF                | 28-34 | 34 |
-    | 1 | X-Cutioner's Song              | Apocalypse   | Four Horsemen      | 33-34 | 34 |
-    | 1 | X-Cutioner's Song              | Apocalypse   | Emissaries of Evil | 29-34 | 34 |
-    | 1 | X-Cutioner's Song              | Apocalypse   | Marauders          | 33-34 | 34 |
-    | 1 | X-Cutioner's Song              | Apocalypse   | MLF                | 31-34 | 34 |
-    | 1 | X-Cutioner's Song              | Kingpin      | Four Horsemen      | 30-34 | 34 |
-    | 1 | X-Cutioner's Song              | Kingpin      | Emissaries of Evil | 26-34 | 34 |
-    | 1 | X-Cutioner's Song              | Kingpin      | Marauders          | 30-34 | 34 |
-    | 1 | X-Cutioner's Song              | Kingpin      | MLF                | 28-34 | 34 |
-    | 1 | X-Cutioner's Song              | Mr. Sinister | Four Horsemen      | 33-34 | 34 |
-    | 1 | X-Cutioner's Song              | Mr. Sinister | Emissaries of Evil | 29-34 | 34 |
-    | 1 | X-Cutioner's Song              | Mr. Sinister | Marauders          | 33-34 | 34 |
-    | 1 | X-Cutioner's Song              | Mr. Sinister | MLF                | 31-34 | 34 |
-    | 1 | X-Cutioner's Song              | Stryfe       | Four Horsemen      | 28-34 | 34 |
-    | 1 | X-Cutioner's Song              | Stryfe       | Emissaries of Evil | 24-34 | 34 |
-    | 1 | X-Cutioner's Song              | Stryfe       | Marauders          | 28-34 | 34 |
-    | 1 | X-Cutioner's Song              | Stryfe       | MLF                | 28-34 | 34 |
+    | 1 | X-Cutioner's Song              | Apocalypse   | Four Horsemen      | 25-26 | 26 |
+    | 1 | X-Cutioner's Song              | Apocalypse   | Emissaries of Evil | 21-26 | 26 |
+    | 1 | X-Cutioner's Song              | Apocalypse   | Marauders          | 25-26 | 26 |
+    | 1 | X-Cutioner's Song              | Apocalypse   | MLF                | 23-26 | 26 |
+    | 1 | X-Cutioner's Song              | Kingpin      | Four Horsemen      | 22-26 | 26 |
+    | 1 | X-Cutioner's Song              | Kingpin      | Emissaries of Evil | 18-26 | 26 |
+    | 1 | X-Cutioner's Song              | Kingpin      | Marauders          | 22-26 | 26 |
+    | 1 | X-Cutioner's Song              | Kingpin      | MLF                | 20-26 | 26 |
+    | 1 | X-Cutioner's Song              | Mr. Sinister | Four Horsemen      | 25-26 | 26 |
+    | 1 | X-Cutioner's Song              | Mr. Sinister | Emissaries of Evil | 21-26 | 26 |
+    | 1 | X-Cutioner's Song              | Mr. Sinister | Marauders          | 25-26 | 26 |
+    | 1 | X-Cutioner's Song              | Mr. Sinister | MLF                | 23-26 | 26 |
+    | 1 | X-Cutioner's Song              | Stryfe       | Four Horsemen      | 20-26 | 26 |
+    | 1 | X-Cutioner's Song              | Stryfe       | Emissaries of Evil | 16-26 | 26 |
+    | 1 | X-Cutioner's Song              | Stryfe       | Marauders          | 20-26 | 26 |
+    | 1 | X-Cutioner's Song              | Stryfe       | MLF                | 20-26 | 26 |
 
     # All "interesting" combos in Fantastic Four; base of Flood the Planet with
     # Melted Glaciers, Apocalypse (both FF Masterminds affect the Villain Deck

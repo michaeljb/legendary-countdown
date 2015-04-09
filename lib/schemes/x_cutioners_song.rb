@@ -10,4 +10,9 @@ class XCutionersSong < Scheme
       'Heroes' => 14
     }
   end
+
+  # Twist: ... Then play another card from the Villain Deck.
+  def plays_more_villain_cards
+    1
+  end
 end
