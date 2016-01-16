@@ -33,6 +33,7 @@ class SubmissionHandler
     end
 
     villains.each { |v| @notes.push(v.notes) }
+    @notes.push(scheme.notes)
 
     @turn_range = TurnRange.new(
         players: players,
