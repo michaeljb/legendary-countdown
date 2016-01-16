@@ -237,3 +237,7 @@ Feature: Display Contents of Villain Deck
     | 1 | The Kree-Skrull War         | Thanos | Infinity Gems  | 27-28 | 29 |
     | 1 | Unite the Shards            | Thanos | Kree Starforce | 18-19 | 19 |
     | 1 | Unite the Shards            | Thanos | Infinity Gems  | 17-18 | 19 |
+
+    # "First Game" but with the Secret Wars volume 1 scheme "Crush Them With My Bare Hands"
+    # 8 villains + 3 henchmen + 1 bystander + 5 twists/master strikes + 5 master strikes + extra villain group
+    | 1 | Crush Them With My Bare Hands | Red Skull | HYDRA,Enemies of Asgard | 14-21  | 20   |

@@ -24,7 +24,8 @@ class SubmissionHandler
 
     mastermind = mastermind_class(params['mastermind']).new(
       players: players,
-      villain_groups: params['villains']
+      villain_groups: params['villains'],
+      scheme_class: scheme_class(params['scheme'])
     )
 
     villains = params['villains'].reject { |v| v == 'N/A' }.map do |v|
