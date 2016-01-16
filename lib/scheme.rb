@@ -79,4 +79,8 @@ class Scheme < VillainDeckSet
   def additional_max_empty_turns
     0
   end
+
+  def city_spaces
+    5
+  end
 end
