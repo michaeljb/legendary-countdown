@@ -4,4 +4,8 @@ class DarkAlliance < Scheme
       'Tactics can affect how fast the Villain Deck runs out and the maximum ' \
       'winning turn. '
   end
+
+  def evil_wins_on_twist
+    7
+  end
 end
