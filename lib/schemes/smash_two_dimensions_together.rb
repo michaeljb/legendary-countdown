@@ -11,11 +11,15 @@ class SmashTwoDimensionsTogether < Scheme
     3
   end
 
+  def plays_more_villain_cards
+    2
+  end
+
   # Setup: 8 Twists.
   # Twist 1-7: Play two cards from the Villain Deck.
   def required_multipliers
     {
-      2 => 7
+      plays_more_villain_cards => 7
     }
   end
 end
