@@ -75,7 +75,7 @@ class Scheme < VillainDeckSet
   end
 
   # potential turns that can be added before the Villain Deck runs out, as a
-  # result of placing cards back on top of the Villain Deck
+  # result adding/returning cards to the Villain Deck
   def additional_max_empty_turns
     0
   end
