@@ -61,9 +61,7 @@ class SubmissionHandler
       }
     end
 
-    if max_win_turn == Float::INFINITY
-      max_win_turn = 'Infinity'
-    end
+    max_win_turn = 'Infinity' if max_win_turn == Float::INFINITY
 
     {
       villain_deck_contents: @scheme.villain_deck_contents,

@@ -17,7 +17,7 @@ class ChangeTheOutcomeOfWwii < Scheme
   end
 
   def play_more_required
-    2 => 7
+    { 2 => 7 }
   end
 
   # stuff could get weird here with some Ambush effects
