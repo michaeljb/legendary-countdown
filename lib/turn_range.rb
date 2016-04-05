@@ -12,6 +12,8 @@ class TurnRange
   end
 
   def min
+    return Float::INFINITY if @scheme.unlimited_turns
+
     total = max - @scheme.additional_max_empty_turns
 
     # take off the bonus turn from cards that play more cards being placed at
@@ -57,6 +59,8 @@ class TurnRange
   end
 
   def max
+    return Float::INFINITY if @scheme.unlimited_turns
+
     total = total_villain_deck_cards
 
     @any_play_more = false

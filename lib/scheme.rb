@@ -83,4 +83,8 @@ class Scheme < VillainDeckSet
   def city_spaces
     5
   end
+
+  def unlimited_turns
+    false
+  end
 end

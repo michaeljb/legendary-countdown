@@ -51,10 +51,24 @@ class SubmissionHandler
   end
 
   def json
+    villain_deck_empty = @turn_range.hash
+    max_win_turn = @max_winning_turn.turn
+
+    if villain_deck_empty[:min] == Float::INFINITY
+      villain_deck_empty = {
+        min: 'Infinity',
+        max: 'Infinity'
+      }
+    end
+
+    if max_win_turn == Float::INFINITY
+      max_win_turn = 'Infinity'
+    end
+
     {
       villain_deck_contents: @scheme.villain_deck_contents,
-      villain_deck_empty: @turn_range.hash,
-      max_win_turn: @max_winning_turn.turn,
+      villain_deck_empty: villain_deck_empty,
+      max_win_turn: max_win_turn,
       notes: @notes.flatten.compact
     }.to_json
   end
