@@ -1,0 +1,24 @@
+{
+  "name": "legendary-countdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --content-base build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaeljb/legendary-countdown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaeljb/legendary-countdown/issues"
+  },
+  "homepage": "https://github.com/michaeljb/legendary-countdown#readme",
+  "devDependencies": {
+    "webpack": "^1.12.15",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
