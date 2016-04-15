@@ -24,7 +24,7 @@ const common = {
   },
   output: {
     path: PATHS.build,
-    filename: 'bundle.js'
+    filename: 'bundle.min.js'
   },
   module: {
     preLoaders: [
@@ -56,7 +56,10 @@ const common = {
   },
   postcss: function () {
     return [stylelint(configSuitcss)];
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({minimize: true})
+  ]
 };
 
 if (TARGET === 'start' || !TARGET) {
