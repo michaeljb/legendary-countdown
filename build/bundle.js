@@ -44,12 +44,13 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	__webpack_require__(1);
 
 	var component = __webpack_require__(5);
 
 	document.body.appendChild(component());
-
 
 /***/ },
 /* 1 */
@@ -67,8 +68,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./main.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./main.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/postcss-loader/index.js!./main.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/postcss-loader/index.js!./main.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -403,6 +404,8 @@
 /* 5 */
 /***/ function(module, exports) {
 
+	'use strict';
+
 	module.exports = function () {
 	  var element = document.createElement('h1');
 
@@ -410,7 +413,6 @@
 
 	  return element;
 	};
-
 
 /***/ }
 /******/ ]);

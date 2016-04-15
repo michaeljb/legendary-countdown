@@ -17,6 +17,9 @@ const common = {
   entry: {
     app: PATHS.app
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   output: {
     path: PATHS.build,
     filename: 'bundle.js'
@@ -41,6 +44,11 @@ const common = {
         loaders: ['style', 'css'],
         // Include accepts either a path or an array of paths.
         include: PATHS.app
+      },
+      {
+	test: /\.jsx?$/,
+	loaders: ['babel?cacheDirectory'],
+	include: PATHS.app
       }
     ]
   },
