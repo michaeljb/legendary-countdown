@@ -2,7 +2,7 @@
   "name": "legendary-countdown",
   "version": "1.0.0",
   "description": "",
-  "main": "app/index.js",
+  "main": "app/index.jsx",
   "scripts": {
     "build": "webpack",
     "lint": "eslint . --ext .js --ext .jsx",
@@ -40,5 +40,9 @@
     "webpack": "^1.12.15",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.10.0"
+  },
+  "dependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
   }
 }
