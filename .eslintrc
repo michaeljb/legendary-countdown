@@ -18,6 +18,7 @@
   ],
   "rules": {
     "eol-last": 0,
+    "indent": ["error", 2],
     "jsx-quotes": 1,
     "no-console": 0,
     "no-underscore-dangle": 0,
@@ -37,6 +38,7 @@
     "babel/new-cap": 1,
     "babel/object-curly-spacing": 1,
     "babel/object-shorthand": 1,
+
     "babel/no-await-in-loop": 1,
     "babel/flow-object-type": 1,
 
