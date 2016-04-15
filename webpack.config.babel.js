@@ -56,10 +56,7 @@ const common = {
   },
   postcss: function () {
     return [stylelint(configSuitcss)];
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
-  ]
+  }
 };
 
 if (TARGET === 'start' || !TARGET) {
@@ -98,5 +95,9 @@ if (TARGET === 'start' || !TARGET) {
 }
 
 if(TARGET === 'build') {
-  module.exports = merge(common, {});
+  module.exports = merge(common, {
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({minimize: true})
+    ]
+  });
 }
