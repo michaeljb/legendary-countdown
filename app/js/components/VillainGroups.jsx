@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   }
 };
 
-let VillainGroups = ({villainGroups}) => {
+const VillainGroups = ({villainGroups}) => {
 
   return (
     <div>

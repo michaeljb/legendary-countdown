@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-let Mode = ({mode, onBlur}) => {
+const Mode = ({mode, onBlur}) => {
   let input;
 
   return (

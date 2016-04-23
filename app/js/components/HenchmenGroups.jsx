@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   }
 };
 
-let HenchmenGroups = ({henchmenGroups}) => {
+const HenchmenGroups = ({henchmenGroups}) => {
 
   return (
     <div>
