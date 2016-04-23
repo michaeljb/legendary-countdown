@@ -11,7 +11,7 @@ const defaultState = {
     'count': 1,
     'values': ['Any']
   },
-  henchmen: {
+  henchmenGroups: {
     'count': 1,
     'values': ['Any']
   },

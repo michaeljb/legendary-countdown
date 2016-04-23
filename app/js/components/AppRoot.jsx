@@ -5,7 +5,7 @@ import Mode from './Mode.jsx';
 import Scheme from './Scheme.jsx';
 import Masterminds from './Masterminds.jsx';
 import Villains from './Villains.jsx';
-import Henchmen from './Henchmen.jsx';
+import HenchmenGroups from './HenchmenGroups.jsx';
 import Output from './Output.jsx';
 import store from '../store';
 
@@ -17,7 +17,7 @@ const App = () => (
     <Scheme />
     <Masterminds />
     <Villains />
-    <Henchmen />
+    <HenchmenGroups />
     <Output />
   </div>
 );
