@@ -4,3 +4,15 @@ export const setMode = (text) => {
     text
   };
 };
+
+export const addMastermind = () => {
+  return {
+    type: 'ADD_MASTERMIND'
+  }
+};
+
+export const removeMastermind = () => {
+  return {
+    type: 'REMOVE_MASTERMIND'
+  }
+};

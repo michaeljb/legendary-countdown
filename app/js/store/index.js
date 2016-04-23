@@ -1,12 +1,16 @@
 import {createStore} from 'redux';
 
+let mastermindID = 0;
+
 const defaultState = {
   mode: 'Advanced Solo mode',
   scheme: 'Any Scheme',
-  masterminds: {
-    'count': 1,
-    'values': ['Any Mastermind']
-  },
+  masterminds: [
+    {
+      name: 'Any Mastermind',
+      id: mastermindID++
+    }
+  ],
   villainGroups: {
     'count': 1,
     'values': ['Any Villain Group']
@@ -28,6 +32,24 @@ const reducer = (state = defaultState, action) => {
       ...state,
       mode: action.text
     };
+  case 'ADD_MASTERMIND':
+    var newMastermind = {
+      name: 'Any Mastermind',
+      id: mastermindID++
+    }
+
+    return {
+      ...state,
+      masterminds: [
+        ...state.masterminds,
+        newMastermind
+      ]
+    }
+  case 'REMOVE_MASTERMIND':
+    return {
+      ...state,
+      masterminds: state.masterminds.slice(0, -1)
+    }
   default:
     return state;
   }
