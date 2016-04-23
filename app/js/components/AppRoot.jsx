@@ -1,7 +1,7 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 
-import Players from './Players.jsx';
+import Mode from './Mode.jsx';
 import Scheme from './Scheme.jsx';
 import Masterminds from './Masterminds.jsx';
 import Villains from './Villains.jsx';
@@ -13,7 +13,7 @@ store.subscribe(() => console.log(store.getState()));
 
 const App = () => (
   <div>
-    <Players />
+    <Mode />
     <Scheme />
     <Masterminds />
     <Villains />

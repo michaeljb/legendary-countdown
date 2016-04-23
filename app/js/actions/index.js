@@ -1,6 +1,6 @@
-export const setPlayers = (text) => {
+export const setMode = (text) => {
   return {
-    type: 'SET_PLAYERS',
+    type: 'SET_MODE',
     text
   };
 };
