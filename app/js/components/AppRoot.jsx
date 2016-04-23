@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import Mode from './Mode.jsx';
 import Scheme from './Scheme.jsx';
 import Masterminds from './Masterminds.jsx';
-import Villains from './Villains.jsx';
+import VillainGroups from './VillainGroups.jsx';
 import HenchmenGroups from './HenchmenGroups.jsx';
 import Output from './Output.jsx';
 import store from '../store';
@@ -16,7 +16,7 @@ const App = () => (
     <Mode />
     <Scheme />
     <Masterminds />
-    <Villains />
+    <VillainGroups />
     <HenchmenGroups />
     <Output />
   </div>

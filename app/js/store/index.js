@@ -2,18 +2,18 @@ import {createStore} from 'redux';
 
 const defaultState = {
   mode: 'Advanced Solo mode',
-  scheme: 'Any',
+  scheme: 'Any Scheme',
   masterminds: {
     'count': 1,
-    'values': ['Any']
+    'values': ['Any Mastermind']
   },
-  villains: {
+  villainGroups: {
     'count': 1,
-    'values': ['Any']
+    'values': ['Any Villain Group']
   },
   henchmenGroups: {
     'count': 1,
-    'values': ['Any']
+    'values': ['Any Henchmen Group']
   },
 
   villainDeckContents: '8 Scheme Twists, 5 Master Strikes, 8 Villains, 3 Henchmen, 1 Bystander',
