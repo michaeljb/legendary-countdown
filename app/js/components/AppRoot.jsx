@@ -9,6 +9,8 @@ import Henchmen from './Henchmen.jsx';
 import Output from './Output.jsx';
 import store from '../store';
 
+store.subscribe(() => console.log(store.getState()));
+
 const App = () => (
   <div>
     <Players />
