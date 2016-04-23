@@ -17,14 +17,15 @@ const common = {
   // Entry accepts a path or an object of entries. We'll be using the
   // latter form given it's convenient with more complex configurations.
   entry: {
-    app: PATHS.app
+    javascript: './app/js/app.js',
+    html: './app/index.html'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   output: {
     path: PATHS.build,
-    filename: 'bundle.min.js'
+    filename: './js/app.js'
   },
   module: {
     preLoaders: [
@@ -40,6 +41,10 @@ const common = {
       }
     ],
     loaders: [
+      {
+	test: /\.html$/,
+	loader: 'file?name=[name].[ext]'
+      },
       {
         // Test expects a RegExp! Note the slashes!
         test: /\.css$/,
