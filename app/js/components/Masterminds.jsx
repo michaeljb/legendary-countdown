@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {addMastermind} from '../actions';
-import {removeMastermind} from '../actions';
+import {setMastermind} from '../actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,45 +11,88 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickPlusMastermind: () => {
-      dispatch(addMastermind());
-    },
-    onClickMinusMastermind: () => {
-      dispatch(removeMastermind());
+    onEditMastermind: (id, name) => {
+      dispatch(setMastermind(id, name));
     }
   }
 };
 
-const Mastermind = ({
-  mastermind,
-  onClickPlus,
-  onClickMinus
-}) => (
-  <li>
-    {mastermind.name}
-    <button onClick={onClickPlus}>
-      +
-    </button>
-    <button onClick={onClickMinus}>
-      -
-    </button>
-  </li>
-);
+class Mastermind extends React.Component {
+  constructor(props) {
+    super(props);
+
+    console.log(props.mastermind);
+
+    this.state = {
+      editing: false
+    };
+  }
+
+  render() {
+    if (this.state.editing) {
+      return this.renderEdit();
+    } else {
+      return this.renderMastermind();
+    }
+  }
+
+  renderEdit = () => {
+    return <input type="text"
+      ref={
+        (e) => e ? e.selectionStart = this.props.mastermind.name.length : null
+      }
+      autoFocus={true}
+      defaultValue={this.props.mastermind.name}
+      onBlur={this.finishEdit}
+      onKeyPress={this.checkEnter} />;
+  };
+
+  renderMastermind = () => {
+    return (
+      <div onClick={this.edit}>
+	<span>{this.props.mastermind.name}</span>
+      </div>
+    )
+  };
+
+  edit = () => {
+    this.setState({
+      editing: true
+    });
+  };
+
+  checkEnter = (e) => {
+    if (e.key === 'Enter') {
+      this.finishEdit(e);
+    }
+  };
+
+  finishEdit = (e) => {
+    const value = e.target.value;
+
+    if (this.props.onEdit) {
+      this.props.onEdit(this.props.mastermind.id, value);
+
+      this.setState({
+        editing: false
+      })
+    }
+  };
+}
 
 const Masterminds = ({
   masterminds,
-  onClickPlusMastermind,
-  onClickMinusMastermind
-}) =>  (
-  <ul>
-    {masterminds.map((mastermind) =>
+  onEditMastermind
+}) =>  { return (
+  <ul>{masterminds.map((mastermind) =>
+    <li key={mastermind.id}>
       <Mastermind
         mastermind={mastermind}
-        onClickPlus={onClickPlusMastermind}
-        onClickMinus={onClickMinusMastermind}
-    />)}
-  </ul>
-)
+        onEdit={onEditMastermind}
+        />
+    </li>
+  )}</ul>
+) }
 
 export default connect(
   mapStateToProps,

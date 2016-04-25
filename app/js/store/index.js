@@ -4,10 +4,10 @@ let mastermindID = 0;
 let villainGroupID = 0;
 let henchmenGroupID = 0;
 
-const newMastermind = (name = 'Any Mastermind') => {
+const newMastermind = (id, name = 'Any Mastermind') => {
   return {
     name,
-    id: mastermindID++
+    id
   }
 }
 
@@ -28,7 +28,7 @@ const newHenchmenGroup = (name = 'Any Henchmen Group') => {
 const defaultState = {
   mode: 'Advanced Solo mode',
   scheme: 'Any Scheme',
-  masterminds: [newMastermind()],
+  masterminds: [newMastermind(mastermindID++)],
   villainGroups: [newVillainGroup()],
   henchmenGroups: [newHenchmenGroup()],
 
@@ -50,7 +50,7 @@ const reducer = (state = defaultState, action) => {
         ...state,
         masterminds: [
           ...state.masterminds,
-          newMastermind()
+          newMastermind(mastermindID++)
         ]
       }
     case 'REMOVE_MASTERMIND':
@@ -61,6 +61,19 @@ const reducer = (state = defaultState, action) => {
       return {
         ...state,
         masterminds: state.masterminds.slice(0, -1)
+      }
+    case 'SET_MASTERMIND':
+      var index;
+      for (var i = 0; i < state.masterminds.length; i++) {
+        if (state.masterminds[i].id === action.id) {
+          index = i;
+        }
+      }
+      var masterminds = state.masterminds.slice();
+      masterminds[index] = newMastermind(action.id, action.name);
+      return {
+        ...state,
+        masterminds
       }
 
     case 'ADD_VILLAIN_GROUP':

@@ -17,6 +17,14 @@ export const removeMastermind = () => {
   }
 };
 
+export const setMastermind = (id, name) => {
+  return {
+    type: 'SET_MASTERMIND',
+    name,
+    id
+  }
+};
+
 export const addVillainGroup = () => {
   return {
     type: 'ADD_VILLAIN_GROUP'
