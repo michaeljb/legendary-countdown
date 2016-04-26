@@ -7,7 +7,7 @@ import {setVillainGroup} from '../actions';
 
 const mapStateToProps = (state) => {
   return {
-    villainGroups: state.villainGroups
+    villainGroups: state.get('villainGroups')
   }
 };
 
@@ -45,10 +45,10 @@ class VillainGroup extends React.Component {
   renderEdit = () => {
     return <input type="text"
       ref={
-        (e) => e ? e.selectionStart = this.props.villainGroup.name.length : null
+        (e) => e ? e.selectionStart = this.props.villainGroup.get('name').size : null
       }
       autoFocus={true}
-      defaultValue={this.props.villainGroup.name}
+      defaultValue={this.props.villainGroup.get('name')}
       onBlur={this.finishEdit}
       onKeyPress={this.checkEnter} />;
   };
@@ -57,13 +57,13 @@ class VillainGroup extends React.Component {
     return (
       <div>
         <span onClick={this.edit}>
-          {this.props.villainGroup.name}
+          {this.props.villainGroup.get('name')}
         </span>
 
-        <button onClick={() => this.props.onClickPlus(this.props.villainGroup.id)}>
+        <button onClick={() => this.props.onClickPlus(this.props.villainGroup.get('id'))}>
           +
         </button>
-        <button onClick={() => this.props.onClickMinus(this.props.villainGroup.id)}>
+        <button onClick={() => this.props.onClickMinus(this.props.villainGroup.get('id'))}>
           -
         </button>
       </div>
@@ -86,7 +86,7 @@ class VillainGroup extends React.Component {
     const value = e.target.value;
 
     if (this.props.onEdit) {
-      this.props.onEdit(this.props.villainGroup.id, value);
+      this.props.onEdit(this.props.villainGroup.get('id'), value);
 
       this.setState({
         editing: false
@@ -103,7 +103,7 @@ const VillainGroups = ({
   onEditVillainGroup
 }) => (
   <ul>{villainGroups.map((villainGroup) =>
-    <li key={villainGroup.id}>
+    <li key={villainGroup.get('id')}>
       <VillainGroup
         villainGroup={villainGroup}
         onClickPlus={onClickPlusVillainGroup}

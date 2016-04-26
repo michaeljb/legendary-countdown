@@ -7,7 +7,7 @@ import {setHenchmenGroup} from '../actions';
 
 const mapStateToProps = (state) => {
   return {
-    henchmenGroups: state.henchmenGroups
+    henchmenGroups: state.get('henchmenGroups')
   }
 };
 
@@ -45,10 +45,10 @@ class HenchmenGroup extends React.Component {
   renderEdit = () => {
     return <input type="text"
       ref={
-        (e) => e ? e.selectionStart = this.props.henchmenGroup.name.length : null
+        (e) => e ? e.selectionStart = this.props.henchmenGroup.get('name').size : null
       }
       autoFocus={true}
-      defaultValue={this.props.henchmenGroup.name}
+      defaultValue={this.props.henchmenGroup.get('name')}
       onBlur={this.finishEdit}
       onKeyPress={this.checkEnter} />;
   };
@@ -57,13 +57,13 @@ class HenchmenGroup extends React.Component {
     return (
       <div>
         <span onClick={this.edit}>
-          {this.props.henchmenGroup.name}
+          {this.props.henchmenGroup.get('name')}
         </span>
 
-        <button onClick={() => this.props.onClickPlus(this.props.henchmenGroup.id)}>
+        <button onClick={() => this.props.onClickPlus(this.props.henchmenGroup.get('id'))}>
           +
         </button>
-        <button onClick={() => this.props.onClickMinus(this.props.henchmenGroup.id)}>
+        <button onClick={() => this.props.onClickMinus(this.props.henchmenGroup.get('id'))}>
           -
         </button>
       </div>
@@ -86,7 +86,7 @@ class HenchmenGroup extends React.Component {
     const value = e.target.value;
 
     if (this.props.onEdit) {
-      this.props.onEdit(this.props.henchmenGroup.id, value);
+      this.props.onEdit(this.props.henchmenGroup.get('id'), value);
 
       this.setState({
         editing: false
@@ -103,7 +103,7 @@ const HenchmenGroups = ({
   onEditHenchmenGroup
 }) => (
   <ul>{henchmenGroups.map((henchmenGroup) =>
-    <li key={henchmenGroup.id}>
+    <li key={henchmenGroup.get('id')}>
       <HenchmenGroup
         henchmenGroup={henchmenGroup}
         onClickPlus={onClickPlusHenchmenGroup}

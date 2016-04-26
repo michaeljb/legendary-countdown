@@ -9,7 +9,10 @@ import HenchmenGroups from './HenchmenGroups.jsx';
 import Output from './Output.jsx';
 import store from '../store';
 
-store.subscribe(() => console.log(store.getState()));
+const logit = () => console.log(store.getState().toJS());
+
+store.subscribe(logit);
+logit();
 
 const App = () => (
   <div>

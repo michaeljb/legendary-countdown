@@ -5,7 +5,7 @@ import {setMastermind} from '../actions';
 
 const mapStateToProps = (state) => {
   return {
-    masterminds: state.masterminds
+    masterminds: state.get('masterminds')
   }
 };
 
@@ -37,10 +37,10 @@ class Mastermind extends React.Component {
   renderEdit = () => {
     return <input type="text"
       ref={
-        (e) => e ? e.selectionStart = this.props.mastermind.name.length : null
+        (e) => e ? e.selectionStart = this.props.mastermind.get('name').size : null
       }
       autoFocus={true}
-      defaultValue={this.props.mastermind.name}
+    defaultValue={this.props.mastermind.get('name')}
       onBlur={this.finishEdit}
       onKeyPress={this.checkEnter} />;
   };
@@ -48,7 +48,7 @@ class Mastermind extends React.Component {
   renderMastermind = () => {
     return (
       <div onClick={this.edit}>
-	<span>{this.props.mastermind.name}</span>
+	<span>{this.props.mastermind.get('name')}</span>
       </div>
     )
   };
@@ -69,7 +69,7 @@ class Mastermind extends React.Component {
     const value = e.target.value;
 
     if (this.props.onEdit) {
-      this.props.onEdit(this.props.mastermind.id, value);
+      this.props.onEdit(this.props.mastermind.get('id'), value);
 
       this.setState({
         editing: false
@@ -83,7 +83,7 @@ const Masterminds = ({
   onEditMastermind
 }) =>  { return (
   <ul>{masterminds.map((mastermind) =>
-    <li key={mastermind.id}>
+    <li key={mastermind.get('id')}>
       <Mastermind
         mastermind={mastermind}
         onEdit={onEditMastermind}

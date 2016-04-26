@@ -1,162 +1,97 @@
 import {createStore} from 'redux';
+import {List, Map} from 'immutable';
 
 let mastermindID = 0;
 let villainGroupID = 0;
 let henchmenGroupID = 0;
 
-const newMastermind = (id, name = 'Any Mastermind') => {
-  return {
-    name,
-    id
-  }
-}
+const mastermind = Map({id: mastermindID++, name: 'Any Mastermind'});
+const villainGroup = Map({id: villainGroupID++, name: 'Any VillainGroup'});
+const henchmenGroup = Map({id: henchmenGroupID++, name: 'Any HenchmenGroup'});
 
-const newVillainGroup = (id, name = 'Any Villain Group') => {
-  return {
-    name,
-    id
-  }
-}
-
-const newHenchmenGroup = (id, name = 'Any Henchmen Group') => {
-  return {
-    name,
-    id
-  }
-}
-
-const defaultState = {
-  mode: 'Advanced Solo mode',
-  scheme: 'Any Scheme',
-  masterminds: [newMastermind(mastermindID++)],
-  villainGroups: [newVillainGroup(villainGroupID++)],
-  henchmenGroups: [newHenchmenGroup(henchmenGroupID++)],
-
+const defaultState = Map({
+  mode: 'Advanced Solo Mode',
+  scheme: 'Unleash the Power of the Cosmic Cube',
+  masterminds: List.of(mastermind),
+  villainGroups: List.of(villainGroup),
+  henchmenGroups: List.of(henchmenGroup),
   villainDeckContents: '8 Scheme Twists, 5 Master Strikes, 8 Villains, 3 Henchmen, 1 Bystander',
-  turnsToEmpty: [20, 21],
+  turnsToEmpty: List.of(20, 21),
   maximumWinningTurn: 19
-};
+});
 
 const reducer = (state = defaultState, action) => {
-  switch (action.type) {
+  const {id, name, text, type} = action;
+
+  switch (type) {
+
   case 'SET_MODE':
-    return {
-      ...state,
-      mode: action.text
-    };
+    return state.set('mode', text);
 
-  case 'ADD_MASTERMIND':
-    return {
-      ...state,
-      masterminds: [
-        ...state.masterminds,
-        newMastermind(mastermindID++)
-      ]
-    }
-  case 'REMOVE_MASTERMIND':
-    if (state.masterminds.length === 1) {
-      return state;
-    }
-
-    return {
-      ...state,
-      masterminds: state.masterminds.slice(0, -1)
-    }
   case 'SET_MASTERMIND':
-    var index;
-    for (var i = 0; i < state.masterminds.length; i++) {
-      if (state.masterminds[i].id === action.id) {
-        index = i;
-      }
-    }
-    var masterminds = state.masterminds.slice();
-    masterminds[index] = newMastermind(action.id, action.name);
-    return {
-      ...state,
-      masterminds
-    }
+    return state.updateIn(
+      ['masterminds'],
+      (masterminds) => masterminds.map((m) => {
+        if (id === m.get('id')) {
+          return m.set('name', name);
+        }
+        return m;
+      })
+    );
 
   case 'ADD_VILLAIN_GROUP':
-    return {
-      ...state,
-      villainGroups: [
-        ...state.villainGroups,
-        newVillainGroup(villainGroupID++)
-      ]
-    }
+    return state.updateIn(
+      ['villainGroups'],
+      (villainGroups) => {
+        return villainGroups.push(villainGroup.set('id', villainGroupID++));
+      }
+    );
+
   case 'REMOVE_VILLAIN_GROUP':
-    var villainGroups = state.villainGroups.slice();
-    index = -1;
-    for (i = 0; i < villainGroups.length; i++) {
-      if (villainGroups[i].id === action.id) {
-        index = i;
+    return state.updateIn(
+      ['villainGroups'],
+      (villainGroups) => {
+        return villainGroups.filterNot((v) => id === v.get('id'));
       }
-    }
+    );
 
-    if (index > -1) {
-      villainGroups.splice(index, 1)
-
-      return {
-        ...state,
-        villainGroups
-      };
-    } else {
-      return state;
-    }
   case 'SET_VILLAIN_GROUP':
-    index;
-    for (i = 0; i < state.villainGroups.length; i++) {
-      if (state.villainGroups[i].id === action.id) {
-        index = i;
-      }
-    }
-    villainGroups = state.villainGroups.slice();
-    villainGroups[index] = newVillainGroup(action.id, action.name);
-    return {
-      ...state,
-      villainGroups
-    }
+    return state.updateIn(
+      ['villainGroups'],
+      (villainGroups) => villainGroups.map((v) => {
+        if (id === v.get('id')) {
+          return v.set('name', name);
+        }
+        return v;
+      })
+    );
 
   case 'ADD_HENCHMEN_GROUP':
-    return {
-      ...state,
-      henchmenGroups: [
-        ...state.henchmenGroups,
-        newHenchmenGroup(henchmenGroupID++)
-      ]
-    }
+    return state.updateIn(
+      ['henchmenGroups'],
+      (henchmenGroups) => {
+        return henchmenGroups.push(henchmenGroup.set('id', henchmenGroupID++));
+      }
+    );
+
   case 'REMOVE_HENCHMEN_GROUP':
-    var henchmenGroups = state.henchmenGroups.slice();
-    index = -1;
-    for (i = 0; i < henchmenGroups.length; i++) {
-      if (henchmenGroups[i].id === action.id) {
-        index = i;
+    return state.updateIn(
+      ['henchmenGroups'],
+      (henchmenGroups) => {
+        return henchmenGroups.filterNot((v) => id === v.get('id'));
       }
-    }
+    );
 
-    if (index > -1) {
-      henchmenGroups.splice(index, 1)
-
-      return {
-        ...state,
-        henchmenGroups
-      };
-    } else {
-      return state;
-    }
   case 'SET_HENCHMEN_GROUP':
-    index;
-    for (i = 0; i < state.henchmenGroups.length; i++) {
-      if (state.henchmenGroups[i].id === action.id) {
-        index = i;
-      }
-    }
-    henchmenGroups = state.henchmenGroups.slice();
-    henchmenGroups[index] = newHenchmenGroup(action.id, action.name);
-    return {
-      ...state,
-      henchmenGroups
-    }
+    return state.updateIn(
+      ['henchmenGroups'],
+      (henchmenGroups) => henchmenGroups.map((v) => {
+        if (id === v.get('id')) {
+          return v.set('name', name);
+        }
+        return v;
+      })
+    );
 
   default:
     return state;
