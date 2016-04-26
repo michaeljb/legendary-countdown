@@ -11,10 +11,10 @@ const newMastermind = (id, name = 'Any Mastermind') => {
   }
 }
 
-const newVillainGroup = (name = 'Any Villain Group') => {
+const newVillainGroup = (id, name = 'Any Villain Group') => {
   return {
     name,
-    id: villainGroupID++
+    id
   }
 }
 
@@ -29,7 +29,7 @@ const defaultState = {
   mode: 'Advanced Solo mode',
   scheme: 'Any Scheme',
   masterminds: [newMastermind(mastermindID++)],
-  villainGroups: [newVillainGroup()],
+  villainGroups: [newVillainGroup(villainGroupID++)],
   henchmenGroups: [newHenchmenGroup()],
 
   villainDeckContents: '8 Scheme Twists, 5 Master Strikes, 8 Villains, 3 Henchmen, 1 Bystander',
@@ -81,17 +81,40 @@ const reducer = (state = defaultState, action) => {
       ...state,
       villainGroups: [
         ...state.villainGroups,
-        newVillainGroup()
+        newVillainGroup(villainGroupID++)
       ]
     }
   case 'REMOVE_VILLAIN_GROUP':
-    if (state.villainGroups.length === 1) {
-      return state;
+    var villainGroups = state.villainGroups.slice();
+    index = -1;
+    for (i = 0; i < villainGroups.length; i++) {
+      if (villainGroups[i].id === action.id) {
+        index = i;
+      }
     }
 
+    if (index > -1) {
+      villainGroups.splice(index, 1)
+
+      return {
+        ...state,
+        villainGroups
+      };
+    } else {
+      return state;
+    }
+  case 'SET_VILLAIN_GROUP':
+    index;
+    for (i = 0; i < state.villainGroups.length; i++) {
+      if (state.villainGroups[i].id === action.id) {
+        index = i;
+      }
+    }
+    villainGroups = state.villainGroups.slice();
+    villainGroups[index] = newVillainGroup(action.id, action.name);
     return {
       ...state,
-      villainGroups: state.villainGroups.slice(0, -1)
+      villainGroups
     }
 
   case 'ADD_HENCHMEN_GROUP':

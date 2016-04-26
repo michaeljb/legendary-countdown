@@ -31,9 +31,18 @@ export const addVillainGroup = () => {
   }
 };
 
-export const removeVillainGroup = () => {
+export const removeVillainGroup = (id) => {
   return {
-    type: 'REMOVE_VILLAIN_GROUP'
+    type: 'REMOVE_VILLAIN_GROUP',
+    id
+  }
+};
+
+export const setVillainGroup = (id, name) => {
+  return {
+    type: 'SET_VILLAIN_GROUP',
+    name,
+    id
   }
 };
 
