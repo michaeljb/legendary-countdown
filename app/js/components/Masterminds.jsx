@@ -21,8 +21,6 @@ class Mastermind extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props.mastermind);
-
     this.state = {
       editing: false
     };
