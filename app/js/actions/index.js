@@ -52,8 +52,17 @@ export const addHenchmenGroup = () => {
   }
 };
 
-export const removeHenchmenGroup = () => {
+export const removeHenchmenGroup = (id) => {
   return {
-    type: 'REMOVE_HENCHMEN_GROUP'
+    type: 'REMOVE_HENCHMEN_GROUP',
+    id
+  }
+};
+
+export const setHenchmenGroup = (id, name) => {
+  return {
+    type: 'SET_HENCHMEN_GROUP',
+    name,
+    id
   }
 };

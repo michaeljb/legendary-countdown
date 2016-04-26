@@ -18,10 +18,10 @@ const newVillainGroup = (id, name = 'Any Villain Group') => {
   }
 }
 
-const newHenchmenGroup = (name = 'Any Henchmen Group') => {
+const newHenchmenGroup = (id, name = 'Any Henchmen Group') => {
   return {
     name,
-    id: henchmenGroupID++
+    id
   }
 }
 
@@ -30,7 +30,7 @@ const defaultState = {
   scheme: 'Any Scheme',
   masterminds: [newMastermind(mastermindID++)],
   villainGroups: [newVillainGroup(villainGroupID++)],
-  henchmenGroups: [newHenchmenGroup()],
+  henchmenGroups: [newHenchmenGroup(henchmenGroupID++)],
 
   villainDeckContents: '8 Scheme Twists, 5 Master Strikes, 8 Villains, 3 Henchmen, 1 Bystander',
   turnsToEmpty: [20, 21],
@@ -122,17 +122,40 @@ const reducer = (state = defaultState, action) => {
       ...state,
       henchmenGroups: [
         ...state.henchmenGroups,
-        newHenchmenGroup()
+        newHenchmenGroup(henchmenGroupID++)
       ]
     }
   case 'REMOVE_HENCHMEN_GROUP':
-    if (state.henchmenGroups.length === 1) {
-      return state;
+    var henchmenGroups = state.henchmenGroups.slice();
+    index = -1;
+    for (i = 0; i < henchmenGroups.length; i++) {
+      if (henchmenGroups[i].id === action.id) {
+        index = i;
+      }
     }
 
+    if (index > -1) {
+      henchmenGroups.splice(index, 1)
+
+      return {
+        ...state,
+        henchmenGroups
+      };
+    } else {
+      return state;
+    }
+  case 'SET_HENCHMEN_GROUP':
+    index;
+    for (i = 0; i < state.henchmenGroups.length; i++) {
+      if (state.henchmenGroups[i].id === action.id) {
+        index = i;
+      }
+    }
+    henchmenGroups = state.henchmenGroups.slice();
+    henchmenGroups[index] = newHenchmenGroup(action.id, action.name);
     return {
       ...state,
-      henchmenGroups: state.henchmenGroups.slice(0, -1)
+      henchmenGroups
     }
 
   default:
