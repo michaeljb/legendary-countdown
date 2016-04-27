@@ -1,40 +1,64 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
 import {setMode} from '../actions';
 
-const mapStateToProps = (state) => {
-  return {
-    mode: state.mode
-  }
-};
+export default class Mode extends React.Component {
+  constructor(props) {
+    super(props);
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onBlur: (text) => {
-      dispatch(setMode(text));
+    this.state = {
+      editing: false
+    };
+  }
+
+  render() {
+    if (this.state.editing) {
+      return this.renderEdit();
+    } else {
+      return this.renderMode();
+    }
+  }
+
+  renderEdit = () => {
+    return <input type="text"
+      ref={
+        (e) => e ? e.selectionStart = this.props.store.getState().get('mode').size : null
+      }
+      autoFocus={true}
+      defaultValue={this.props.store.getState().get('mode')}
+      onBlur={this.finishEdit}
+      onKeyPress={this.checkEnter} />;
+  };
+
+  renderMode = () => {
+    return (
+      <div onClick={this.edit}>
+	<span>{this.props.store.getState().get('mode')}</span>
+      </div>
+    )
+  };
+
+  edit = () => {
+    this.setState({
+      editing: true
+    });
+  };
+
+  checkEnter = (e) => {
+    if (e.key === 'Enter') {
+      this.finishEdit(e);
     }
   };
-};
 
-const Mode = ({mode, onBlur}) => {
-  let input;
+  finishEdit = (e) => {
+    const value = e.target.value;
 
-  return (
-    <div>
-      <input
-        ref={(node) => {
-          input = node;
-        }}
-        onBlur={() => { onBlur(input.value)}}
-	/>
-	Mode
-	<span>{mode}</span>
-    </div>
-  )
-};
+    this.props.store.dispatch(setMode(value));
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Mode);
+    this.setState({
+      editing: false
+    })
+
+  };
+
+}

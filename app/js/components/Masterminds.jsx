@@ -40,7 +40,7 @@ class Mastermind extends React.Component {
         (e) => e ? e.selectionStart = this.props.mastermind.get('name').size : null
       }
       autoFocus={true}
-    defaultValue={this.props.mastermind.get('name')}
+      defaultValue={this.props.mastermind.get('name')}
       onBlur={this.finishEdit}
       onKeyPress={this.checkEnter} />;
   };
