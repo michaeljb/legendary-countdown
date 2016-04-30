@@ -5,6 +5,13 @@ export const setMode = (text) => {
   };
 };
 
+export const setScheme = (text) => {
+  return {
+    type: 'SET_SCHEME',
+    text
+  };
+};
+
 export const addMastermind = () => {
   return {
     type: 'ADD_MASTERMIND'

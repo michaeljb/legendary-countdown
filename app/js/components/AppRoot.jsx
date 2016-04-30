@@ -17,7 +17,7 @@ logit();
 const App = () => (
   <div>
     <Mode store={store} />
-    <Scheme />
+    <Scheme store={store} />
     <Masterminds />
     <VillainGroups />
     <HenchmenGroups />

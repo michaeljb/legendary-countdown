@@ -28,6 +28,9 @@ const reducer = (state = defaultState, action) => {
   case 'SET_MODE':
     return state.set('mode', text);
 
+  case 'SET_SCHEME':
+    return state.set('scheme', text);
+
   case 'SET_MASTERMIND':
     return state.updateIn(
       ['masterminds'],
