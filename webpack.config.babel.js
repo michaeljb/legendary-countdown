@@ -17,11 +17,11 @@ const common = {
   // Entry accepts a path or an object of entries. We'll be using the
   // latter form given it's convenient with more complex configurations.
   entry: {
-    javascript: './app/js/app.js',
+    javascript: './app/ts/app.ts',
     html: './app/index.html'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
   output: {
     path: PATHS.build,
@@ -53,9 +53,10 @@ const common = {
         include: PATHS.app
       },
       {
-	test: /\.jsx?$/,
-	loaders: ['babel?cacheDirectory'],
-	include: PATHS.app
+        test: /\.tsx?$/,
+        loader: 'babel-loader!ts-loader',
+        include: PATHS.app,
+        exclude: /node_modules|typings/
       }
     ]
   },

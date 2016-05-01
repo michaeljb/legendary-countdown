@@ -2,7 +2,7 @@
   "name": "legendary-countdown",
   "version": "1.0.0",
   "description": "",
-  "main": "app/index.jsx",
+  "main": "build/js/app.js",
   "scripts": {
     "build": "webpack",
     "lint": "eslint . --ext .js --ext .jsx",
@@ -57,6 +57,8 @@
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.5",
     "react-selectize": "^2.0.1",
-    "redux": "^3.5.1"
+    "redux": "^3.5.1",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10"
   }
 }

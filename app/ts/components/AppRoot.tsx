@@ -1,12 +1,12 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 
-import Mode from './Mode.jsx';
-import Scheme from './Scheme.jsx';
-import Masterminds from './Masterminds.jsx';
-import VillainGroups from './VillainGroups.jsx';
-import HenchmenGroups from './HenchmenGroups.jsx';
-import Output from './Output.jsx';
+import Mode from './Mode.tsx';
+import Scheme from './Scheme.tsx';
+import Masterminds from './Masterminds.tsx';
+import VillainGroups from './VillainGroups.tsx';
+import HenchmenGroups from './HenchmenGroups.tsx';
+import Output from './Output.tsx';
 import store from '../store';
 
 const logit = () => console.log(store.getState().toJS());

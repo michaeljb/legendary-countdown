@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "React",
+    "module": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "files": [
+    "app/ts/app.ts",
+    "typings/main.d.ts"
+  ],
+  "exclude": [
+    "node_modules/",
+    "typings/"
+  ]
+}
