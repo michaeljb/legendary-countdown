@@ -3,13 +3,13 @@ import React from 'react';
 import {SimpleSelect} from 'react-selectize';
 
 const Selector = (props) => {
-  const {state, placeholder, optionList, onValueChange} = props;
+  const {theState, placeholder, optionList, onValueChange} = props;
 
   const options = optionList.map((opt) => {return {label: opt, value: opt}});
 
-  const stateOption = {label: state, value: state}
+  const theStateOption = {label: theState, value: theState}
 
-  const value = typeof state === 'undefined' ? null : stateOption;
+  const value = typeof theState === 'undefined' ? null : theStateOption;
 
   return (
     <SimpleSelect

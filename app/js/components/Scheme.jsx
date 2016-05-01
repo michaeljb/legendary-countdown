@@ -86,7 +86,7 @@ const Scheme = ({
 
   return (
     <Selector
-      state = {scheme}
+      theState = {scheme}
       optionList = {optionList}
       placeholder = "Scheme"
       onValueChange = {onValueChange}

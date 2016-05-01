@@ -34,7 +34,7 @@ const Mode = ({
 
   return (
     <Selector
-      state = {mode}
+      theState = {mode}
       optionList = {optionList}
       placeholder = "Mode"
       onValueChange = {onValueChange}
