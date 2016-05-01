@@ -30,20 +30,20 @@ const common = {
   module: {
     preLoaders: [
       {
-	test: /\.jsx?$/,
-	loaders: ['eslint'],
-	include: PATHS.app
+        test: /\.jsx?$/,
+        loaders: ['eslint'],
+        include: PATHS.app
       },
       {
-	test: /\.css$/,
-	loaders: ['postcss'],
-	include: PATHS.app
+        test: /\.css$/,
+        loaders: ['postcss'],
+        include: PATHS.app
       }
     ],
     loaders: [
       {
-	test: /\.html$/,
-	loader: 'file?name=[name].[ext]'
+        test: /\.html$/,
+        loader: 'file?name=[name].[ext]'
       },
       {
         // Test expects a RegExp! Note the slashes!
