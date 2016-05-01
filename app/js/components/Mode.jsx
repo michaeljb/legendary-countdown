@@ -1,7 +1,7 @@
 import React from 'react';
-import {SimpleSelect} from 'react-selectize';
 import {connect} from 'react-redux';
 
+import Selector from './Selector';
 import {setMode} from '../actions';
 
 const mapStateToProps = (state) => {
@@ -18,41 +18,31 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-class Thing extends React.Component {
-  render() {
-    const mode = this.props.mode;
+const Mode = ({
+  mode,
+  onValueChange
+}) => {
+  const optionList = [
+    'Advanced Solo Mode',
+    'Solo Mode',
+    '2p',
+    '3p',
+    '4p',
+    '5p',
+    'Golden Solo Mode'
+  ];
 
-    const placeholder = 'Mode';
+  return (
+    <Selector
+      state = {mode}
+      optionList = {optionList}
+      placeholder = "Mode"
+      onValueChange = {onValueChange}
+    />
+  );
+};
 
-    const options = [
-      'Advanced Solo Mode',
-      'Solo Mode',
-      '2p',
-      '3p',
-      '4p',
-      '5p',
-      'Golden Solo Mode'
-    ].map((opt) => {return {label: opt, value: opt}});
-
-
-    const value = typeof mode === 'undefined' ? null : {label: mode, value: mode};
-
-    const onValueChange = (val) => this.props.onValueChange(val && val.value);
-
-    const props = {placeholder, options, value, onValueChange};
-
-    return (
-      <SimpleSelect {...props} />
-    );
-  }
-}
-
-
-const ConnectedThing = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Thing);
-
-class Mode extends ConnectedThing {};
-
-export default Mode;
+)(Mode);
