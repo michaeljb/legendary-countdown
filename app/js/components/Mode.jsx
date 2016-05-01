@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-class Mode extends React.Component {
+class Thing extends React.Component {
   render() {
     const mode = this.props.mode;
 
@@ -47,7 +47,12 @@ class Mode extends React.Component {
   }
 }
 
-export default connect(
+
+const ConnectedThing = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Mode);
+)(Thing);
+
+class Mode extends ConnectedThing {};
+
+export default Mode;
