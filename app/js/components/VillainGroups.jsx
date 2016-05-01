@@ -56,7 +56,7 @@ const VillainGroup = ({
     <Selector
       theState = {villainGroup.get('name')}
       optionList = {optionList}
-      placeholder = "VillainGroup"
+      placeholder = "Villain Group"
       onValueChange = {onValueChange}
     />
   );

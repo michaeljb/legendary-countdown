@@ -31,7 +31,7 @@ const HenchmenGroup = ({
     <Selector
       theState = {henchmenGroup.get('name')}
       optionList = {optionList}
-      placeholder = "HenchmenGroup"
+      placeholder = "Henchmen Group"
       onValueChange = {onValueChange}
     />
   );
