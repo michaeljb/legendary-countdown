@@ -1,64 +1,56 @@
 import React from 'react';
+import {SimpleSelect} from 'react-selectize';
+import {connect} from 'react-redux';
 
 import {setMode} from '../actions';
 
-export default class Mode extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      editing: false
-    };
+const mapStateToProps = (state) => {
+  return {
+    mode: state.get('mode')
   }
+};
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onValueChange: (name) => {
+      dispatch(setMode(name));
+    }
+  }
+};
+
+class Mode extends React.Component {
   render() {
-    if (this.state.editing) {
-      return this.renderEdit();
-    } else {
-      return this.renderMode();
+    const options = [
+      'Advanced Solo Mode',
+      'Solo Mode',
+      '2p',
+      '3p',
+      '4p',
+      '5p',
+      'Golden Solo Mode'
+    ].map((opt) => {return {label: opt, value: opt}});
+
+    const placeholder = 'Mode';
+
+    const val = {
+      label: this.props.mode,
+      value: this.props.mode
     }
-  }
 
-  renderEdit = () => {
-    return <input type="text"
-      ref={
-        (e) => e ? e.selectionStart = this.props.store.getState().get('mode').size : null
-      }
-      autoFocus={true}
-      defaultValue={this.props.store.getState().get('mode')}
-      onBlur={this.finishEdit}
-      onKeyPress={this.checkEnter} />;
-  };
+    const onValueChange = (value) => this.props.onValueChange(value && value.value);
 
-  renderMode = () => {
     return (
-      <div onClick={this.edit}>
-	<span>{this.props.store.getState().get('mode')}</span>
-      </div>
-    )
-  };
-
-  edit = () => {
-    this.setState({
-      editing: true
-    });
-  };
-
-  checkEnter = (e) => {
-    if (e.key === 'Enter') {
-      this.finishEdit(e);
-    }
-  };
-
-  finishEdit = (e) => {
-    const value = e.target.value;
-
-    this.props.store.dispatch(setMode(value));
-
-    this.setState({
-      editing: false
-    })
-
-  };
-
+      <SimpleSelect
+        placeholder={placeholder}
+        options = {options}
+	value = {typeof this.props.mode === 'undefined' ? null : val}
+	onValueChange = {onValueChange}
+      />
+    );
+  }
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Mode);
