@@ -69,20 +69,19 @@ const Masterminds = ({
   masterminds,
   onValueChange
 }) =>  (
-  <ul>
+  <div>
     {masterminds.map((mastermind) => {
       const id = mastermind.get('id');
 
       return (
-        <li key={id}>
-          <Mastermind
-            mastermind={mastermind}
-            onValueChange={onValueChange.bind(null, id)}
-          />
-        </li>
+        <Mastermind
+          key = {id}
+          mastermind={mastermind}
+          onValueChange={onValueChange.bind(null, id)}
+        />
       );
     })}
-  </ul>
+  </div>
 );
 
 

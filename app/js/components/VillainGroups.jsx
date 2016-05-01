@@ -80,20 +80,19 @@ const VillainGroups = ({
   villainGroups,
   onValueChange
 }) =>  (
-  <ul>
+  <div>
     {villainGroups.map((villainGroup) => {
       const id = villainGroup.get('id');
 
       return (
-        <li key={id}>
-          <VillainGroup
-            villainGroup={villainGroup}
-            onValueChange={onValueChange.bind(null, id)}
-          />
-        </li>
+        <VillainGroup
+          key = {id}
+          villainGroup={villainGroup}
+          onValueChange={onValueChange.bind(null, id)}
+        />
       );
     })}
-  </ul>
+  </div>
 );
 
 

@@ -55,20 +55,19 @@ const HenchmenGroups = ({
   henchmenGroups,
   onValueChange
 }) =>  (
-  <ul>
+  <div>
     {henchmenGroups.map((henchmenGroup) => {
       const id = henchmenGroup.get('id');
 
       return (
-        <li key={id}>
-          <HenchmenGroup
-            henchmenGroup={henchmenGroup}
-            onValueChange={onValueChange.bind(null, id)}
-          />
-        </li>
+        <HenchmenGroup
+          key = {id}
+          henchmenGroup={henchmenGroup}
+          onValueChange={onValueChange.bind(null, id)}
+        />
       );
     })}
-  </ul>
+  </div>
 );
 
 
