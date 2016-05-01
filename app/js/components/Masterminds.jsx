@@ -1,7 +1,55 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import Selector from './Selector';
 import {setMastermind} from '../actions';
+
+const Mastermind = ({
+  mastermind,
+  onValueChange
+}) => {
+  const optionList = [
+    'Apocalypse',
+    'Arnim Zola',
+    'Baron Heinrich Zemo',
+    'Carnage',
+    'Dr. Doom',
+    'Dr. Strange',
+    'Galactus',
+    'Immortal Emperor Zheng-Zhu',
+    'King Hyperion',
+    'Kingpin',
+    'Loki',
+    'Madelyne Pryor',
+    'Magneto',
+    'Mephisto',
+    'Mole Man',
+    'Mr. Sinister',
+    'Mysterio',
+    'Nick Fury',
+    'Nimrod',
+    'Odin',
+    'Professor X',
+    'Red Skull',
+    'Shiklah, the Demon Bride',
+    'Spider-Queen',
+    'Stryfe',
+    'Supreme Intelligence of the Kree',
+    'Thanos',
+    'Uru-Enchanted Iron Man',
+    'Wasteland Hulk',
+    'Zombie Green Goblin'
+  ];
+
+  return (
+    <Selector
+      theState = {mastermind.get('name')}
+      optionList = {optionList}
+      placeholder = "Mastermind"
+      onValueChange = {onValueChange}
+    />
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -11,86 +59,32 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onEditMastermind: (id, name) => {
+    onValueChange: (id, name) => {
       dispatch(setMastermind(id, name));
     }
   }
 };
 
-class Mastermind extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      editing: false
-    };
-  }
-
-  render() {
-    if (this.state.editing) {
-      return this.renderEdit();
-    } else {
-      return this.renderMastermind();
-    }
-  }
-
-  renderEdit = () => {
-    return <input type="text"
-      ref={
-        (e) => e ? e.selectionStart = this.props.mastermind.get('name').size : null
-      }
-      autoFocus={true}
-      defaultValue={this.props.mastermind.get('name')}
-      onBlur={this.finishEdit}
-      onKeyPress={this.checkEnter} />;
-  };
-
-  renderMastermind = () => {
-    return (
-      <div onClick={this.edit}>
-	<span>{this.props.mastermind.get('name')}</span>
-      </div>
-    )
-  };
-
-  edit = () => {
-    this.setState({
-      editing: true
-    });
-  };
-
-  checkEnter = (e) => {
-    if (e.key === 'Enter') {
-      this.finishEdit(e);
-    }
-  };
-
-  finishEdit = (e) => {
-    const value = e.target.value;
-
-    if (this.props.onEdit) {
-      this.props.onEdit(this.props.mastermind.get('id'), value);
-
-      this.setState({
-        editing: false
-      })
-    }
-  };
-}
-
 const Masterminds = ({
   masterminds,
-  onEditMastermind
-}) =>  { return (
-  <ul>{masterminds.map((mastermind) =>
-    <li key={mastermind.get('id')}>
-      <Mastermind
-        mastermind={mastermind}
-        onEdit={onEditMastermind}
-        />
-    </li>
-  )}</ul>
-) }
+  onValueChange
+}) =>  (
+  <ul>
+    {masterminds.map((mastermind) => {
+      const id = mastermind.get('id');
+
+      return (
+        <li key={id}>
+          <Mastermind
+            mastermind={mastermind}
+            onValueChange={onValueChange.bind(null, id)}
+          />
+        </li>
+      );
+    })}
+  </ul>
+);
+
 
 export default connect(
   mapStateToProps,
