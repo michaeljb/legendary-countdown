@@ -20,6 +20,10 @@ const mapDispatchToProps = (dispatch) => {
 
 class Mode extends React.Component {
   render() {
+    const mode = this.props.mode;
+
+    const placeholder = 'Mode';
+
     const options = [
       'Advanced Solo Mode',
       'Solo Mode',
@@ -30,22 +34,15 @@ class Mode extends React.Component {
       'Golden Solo Mode'
     ].map((opt) => {return {label: opt, value: opt}});
 
-    const placeholder = 'Mode';
 
-    const val = {
-      label: this.props.mode,
-      value: this.props.mode
-    }
+    const value = typeof mode === 'undefined' ? null : {label: mode, value: mode};
 
-    const onValueChange = (value) => this.props.onValueChange(value && value.value);
+    const onValueChange = (val) => this.props.onValueChange(val && val.value);
+
+    const props = {placeholder, options, value, onValueChange};
 
     return (
-      <SimpleSelect
-        placeholder={placeholder}
-        options = {options}
-	value = {typeof this.props.mode === 'undefined' ? null : val}
-	onValueChange = {onValueChange}
-      />
+      <SimpleSelect {...props} />
     );
   }
 }
