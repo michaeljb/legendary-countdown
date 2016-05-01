@@ -1,8 +1,23 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import {setScheme} from '../actions';
 
-export default class Scheme extends React.Component {
+const mapStateToProps = (state) => {
+  return {
+    scheme: state.get('scheme')
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFinishEdit: (value) => {
+      dispatch(setScheme(value));
+    }
+  }
+};
+
+class Scheme extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,10 +37,10 @@ export default class Scheme extends React.Component {
   renderEdit = () => {
     return <input type="text"
       ref={
-        (e) => e ? e.selectionStart = this.props.store.getState().get('scheme').size : null
+        (e) => e ? e.selectionStart = this.props.scheme.size : null
       }
       autoFocus={true}
-      defaultValue={this.props.store.getState().get('scheme')}
+      defaultValue={this.props.scheme}
       onBlur={this.finishEdit}
       onKeyPress={this.checkEnter} />;
   };
@@ -33,7 +48,7 @@ export default class Scheme extends React.Component {
   renderScheme = () => {
     return (
       <div onClick={this.edit}>
-	<span>{this.props.store.getState().get('scheme')}</span>
+	<span>{this.props.scheme}</span>
       </div>
     )
   };
@@ -53,7 +68,7 @@ export default class Scheme extends React.Component {
   finishEdit = (e) => {
     const value = e.target.value;
 
-    this.props.store.dispatch(setScheme(value));
+    this.props.onFinishEdit(value);
 
     this.setState({
       editing: false
@@ -62,3 +77,8 @@ export default class Scheme extends React.Component {
   };
 
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Scheme);
