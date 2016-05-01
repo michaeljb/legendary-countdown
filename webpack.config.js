@@ -1,9 +1,9 @@
-import merge from 'webpack-merge';
-import path from 'path';
-import webpack from 'webpack';
-import NpmInstallPlugin from 'npm-install-webpack-plugin';
-import stylelint from 'stylelint';
-import configSuitcss from 'stylelint-config-suitcss';
+const merge = require ('webpack-merge');
+const path = require ('path');
+const webpack = require ('webpack');
+const NpmInstallPlugin = require ('npm-install-webpack-plugin');
+const stylelint = require ('stylelint');
+const configSuitcss = require ('stylelint-config-suitcss');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {

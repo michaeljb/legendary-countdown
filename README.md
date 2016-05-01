@@ -1,9 +1,9 @@
 http://michaeljb.github.io/legendary-countdown/
 
 ```
-nvm install 6.0.0
-nvm use 6.0.0
-npm i -g webpack typings
+nvm install 5.1
+nvm use 5.1
+npm i -g webpack@1.12.15 typings
 
 npm i
 typings install
