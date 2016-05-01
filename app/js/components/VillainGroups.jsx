@@ -1,9 +1,66 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {addVillainGroup} from '../actions';
-import {removeVillainGroup} from '../actions';
+import Selector from './Selector';
 import {setVillainGroup} from '../actions';
+
+const VillainGroup = ({
+  villainGroup,
+  onValueChange
+}) => {
+  const optionList = [
+    'Avengers',
+    'Brotherhood',
+    'Deadlands',
+    'Deadpool\'s Secret Secret Wars',
+    'Defenders',
+    'Domain of Apocalypse',
+    'Emissaries of Evil',
+    'Enemies of Asgard',
+    'Four Horsemen',
+    'Guardians of Knowhere',
+    'HYDRA',
+    'Heralds of Galactus',
+    'Infinity Gems',
+    'K\'unlun',
+    'Kree Starforce',
+    'Limbo',
+    'MLF',
+    'Manhattan (Earth-1610)',
+    'Marauders',
+    'Marvel Knights',
+    'Masters of Evil',
+    'Masters of Evil (WWII)',
+    'Maximum Carnage',
+    'Monster Metropolis',
+    'Radiation',
+    'Sentinel Territories',
+    'Sinister Six',
+    'Skrulls',
+    'Spider Friends',
+    'Spider-Foes',
+    'Streets of New York',
+    'Subterranea',
+    'The Mighty',
+    'Uncanny Avengers',
+    'Uncanny X-Men',
+    'Underworld',
+    'Utopolis',
+    'Wasteland',
+    'X-Men \'92',
+    'X-Men First Class',
+    'Zola\'s Creation'
+  ];
+
+  return (
+    <Selector
+      theState = {villainGroup.get('name')}
+      optionList = {optionList}
+      placeholder = "VillainGroup"
+      onValueChange = {onValueChange}
+    />
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -13,106 +70,32 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickPlusVillainGroup: () => {
-      dispatch(addVillainGroup());
-    },
-    onClickMinusVillainGroup: (id) => {
-      dispatch(removeVillainGroup(id));
-    },
-    onEditVillainGroup: (id, name) => {
+    onValueChange: (id, name) => {
       dispatch(setVillainGroup(id, name));
     }
   }
 };
 
-class VillainGroup extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      editing: false
-    };
-  }
-
-  render() {
-    if (this.state.editing) {
-      return this.renderEdit();
-    } else {
-      return this.renderVillainGroup();
-    }
-  }
-
-  renderEdit = () => {
-    return <input type="text"
-      ref={
-        (e) => e ? e.selectionStart = this.props.villainGroup.get('name').size : null
-      }
-      autoFocus={true}
-      defaultValue={this.props.villainGroup.get('name')}
-      onBlur={this.finishEdit}
-      onKeyPress={this.checkEnter} />;
-  };
-
-  renderVillainGroup = () => {
-    return (
-      <div>
-        <span onClick={this.edit}>
-          {this.props.villainGroup.get('name')}
-        </span>
-
-        <button onClick={() => this.props.onClickPlus(this.props.villainGroup.get('id'))}>
-          +
-        </button>
-        <button onClick={() => this.props.onClickMinus(this.props.villainGroup.get('id'))}>
-          -
-        </button>
-      </div>
-    )
-  };
-
-  edit = () => {
-    this.setState({
-      editing: true
-    });
-  };
-
-  checkEnter = (e) => {
-    if (e.key === 'Enter') {
-      this.finishEdit(e);
-    }
-  };
-
-  finishEdit = (e) => {
-    const value = e.target.value;
-
-    if (this.props.onEdit) {
-      this.props.onEdit(this.props.villainGroup.get('id'), value);
-
-      this.setState({
-        editing: false
-      })
-    }
-  };
-
-}
-
 const VillainGroups = ({
   villainGroups,
-  onClickPlusVillainGroup,
-  onClickMinusVillainGroup,
-  onEditVillainGroup
-}) => (
-  <ul>{villainGroups.map((villainGroup) =>
-    <li key={villainGroup.get('id')}>
-      <VillainGroup
-        villainGroup={villainGroup}
-        onClickPlus={onClickPlusVillainGroup}
-        onClickMinus={onClickMinusVillainGroup}
-        onEdit={onEditVillainGroup}
-        />
-    </li>
-  )}</ul>
+  onValueChange
+}) =>  (
+  <ul>
+    {villainGroups.map((villainGroup) => {
+      const id = villainGroup.get('id');
+
+      return (
+        <li key={id}>
+          <VillainGroup
+            villainGroup={villainGroup}
+            onValueChange={onValueChange.bind(null, id)}
+          />
+        </li>
+      );
+    })}
+  </ul>
 );
+
 
 export default connect(
   mapStateToProps,
