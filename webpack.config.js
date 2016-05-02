@@ -2,8 +2,7 @@ const merge = require ('webpack-merge');
 const path = require ('path');
 const webpack = require ('webpack');
 const NpmInstallPlugin = require ('npm-install-webpack-plugin');
-const stylelint = require ('stylelint');
-const configSuitcss = require ('stylelint-config-suitcss');
+const failPlugin = require('webpack-fail-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -25,18 +24,13 @@ const common = {
   },
   output: {
     path: PATHS.build,
-    filename: './js/app.js'
+    filename: 'app.js'
   },
   module: {
     preLoaders: [
       {
         test: /\.jsx?$/,
         loaders: ['eslint'],
-        include: PATHS.app
-      },
-      {
-        test: /\.css$/,
-        loaders: ['postcss'],
         include: PATHS.app
       }
     ],
@@ -59,9 +53,6 @@ const common = {
         exclude: /node_modules|typings/
       }
     ]
-  },
-  postcss: function () {
-    return [stylelint(configSuitcss)];
   }
 };
 
@@ -95,7 +86,8 @@ if (TARGET === 'start' || !TARGET) {
         new webpack.HotModuleReplacementPlugin(),
         new NpmInstallPlugin({
           save: true // --save
-        })
+        }),
+        failPlugin
       ]
   });
 }

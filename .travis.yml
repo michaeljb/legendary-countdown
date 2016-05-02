@@ -1,7 +1,13 @@
 language: node_js
 node_js:
-  - '5.1'
-before_script:
-  - npm install -g webpack@1.12.15 typings
-  - typings install
-script: npm run build
+- 5.1
+env:
+  global:
+  - ENCRYPTION_LABEL: f7d861d05957
+  - COMMIT_AUTHOR_EMAIL: michaelbrandt5+travis@gmail.com
+script: bash ./deploy.sh
+before_install:
+- openssl aes-256-cbc -K $encrypted_f7d861d05957_key -iv $encrypted_f7d861d05957_iv
+  -in deploy_key.enc -out deploy_key -d
+- npm install -g webpack typings
+- typings install
