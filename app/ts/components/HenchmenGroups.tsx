@@ -1,35 +1,35 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React from "react";
+import {connect} from "react-redux";
 
-import Selector from './Selector';
-import {setHenchmenGroup} from '../actions';
+import Selector from "./Selector";
+import {setHenchmenGroup} from "../actions";
 
 const HenchmenGroup = ({
   henchmenGroup,
   onValueChange
 }) => {
   const optionList = [
-    'Asgardian Warriors',
-    'Cops',
-    'Doombot Legion',
-    'Ghost Racers',
-    'Hand Ninjas',
-    'Khonshu Guardians',
-    'M.O.D.O.K.s',
-    'Maggia Goons',
-    'Magma Men',
-    'Multiple Man',
-    'Phalanx',
-    'S.H.I.E.L.D. Assault Squad',
-    'Savage Land Mutates',
-    'Sentinels',
-    'Spider-Infected',
-    'Thor Corps'
+    "Asgardian Warriors",
+    "Cops",
+    "Doombot Legion",
+    "Ghost Racers",
+    "Hand Ninjas",
+    "Khonshu Guardians",
+    "M.O.D.O.K.s",
+    "Maggia Goons",
+    "Magma Men",
+    "Multiple Man",
+    "Phalanx",
+    "S.H.I.E.L.D. Assault Squad",
+    "Savage Land Mutates",
+    "Sentinels",
+    "Spider-Infected",
+    "Thor Corps"
   ];
 
   return (
     <Selector
-      theState = {henchmenGroup.get('name')}
+      theState = {henchmenGroup.get("name")}
       optionList = {optionList}
       placeholder = "Henchmen Group"
       onValueChange = {onValueChange}
@@ -39,8 +39,8 @@ const HenchmenGroup = ({
 
 const mapStateToProps = (state) => {
   return {
-    henchmenGroups: state.get('henchmenGroups')
-  }
+    henchmenGroups: state.get("henchmenGroups")
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -48,7 +48,7 @@ const mapDispatchToProps = (dispatch) => {
     onValueChange: (id, name) => {
       dispatch(setHenchmenGroup(id, name));
     }
-  }
+  };
 };
 
 const HenchmenGroups = ({
@@ -57,7 +57,7 @@ const HenchmenGroups = ({
 }) =>  (
   <div>
     {henchmenGroups.map((henchmenGroup) => {
-      const id = henchmenGroup.get('id');
+      const id = henchmenGroup.get("id");
 
       return (
         <HenchmenGroup

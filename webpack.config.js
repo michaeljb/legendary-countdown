@@ -27,6 +27,12 @@ const common = {
     filename: 'app.js'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.tsx?$/,
+        loaders: ['tslint']
+      }
+    ],
     loaders: [
       {
         test: /\.html$/,
@@ -46,6 +52,10 @@ const common = {
         exclude: /node_modules|typings/
       }
     ]
+  },
+  tslint: {
+    emitErrors: true,
+    failOnHint: true
   }
 };
 
