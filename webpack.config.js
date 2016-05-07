@@ -29,9 +29,8 @@ const common = {
   module: {
     preLoaders: [
       {
-        test: /\.jsx?$/,
-        loaders: ['eslint'],
-        include: PATHS.app
+        test: /\.tsx?$/,
+        loaders: ['tslint']
       }
     ],
     loaders: [
@@ -53,6 +52,10 @@ const common = {
         exclude: /node_modules|typings/
       }
     ]
+  },
+  tslint: {
+    emitErrors: true,
+    failOnHint: true
   }
 };
 
