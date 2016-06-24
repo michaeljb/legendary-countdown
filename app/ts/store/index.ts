@@ -22,6 +22,7 @@ const defaultState = Map({
   maxWinningTurn: 19
 });
 
+// update villain deck contents, turns to empty, and maximum winning turn
 const updateOutput = (state) => {
   return state.merge(countdown(state));
 };
