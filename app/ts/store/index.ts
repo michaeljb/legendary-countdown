@@ -17,7 +17,7 @@ const defaultState = Map({
   henchmenGroups: List.of(henchmenGroup),
   villainDeckContents: "8 Scheme Twists, 5 Master Strikes, 8 Villains, 3 Henchmen, 1 Bystander",
   turnsToEmpty: List.of(20, 21),
-  maximumWinningTurn: 19
+  maxWinningTurn: 19
 });
 
 const reducer = (state = defaultState, action) => {
