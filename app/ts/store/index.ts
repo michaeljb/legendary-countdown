@@ -1,6 +1,8 @@
 import {createStore} from "redux";
 import {List, Map} from "immutable";
 
+import countdown from "../lib/countdown.ts";
+
 let mastermindID = 0;
 let villainGroupID = 0;
 let henchmenGroupID = 0;
@@ -20,85 +22,91 @@ const defaultState = Map({
   maxWinningTurn: 19
 });
 
-const reducer = (state = defaultState, action) => {
-  const {id, name, text, type} = action;
+const updateOutput = (state) => {
+  return state.merge(countdown(state));
+};
 
-  switch (type) {
+const reducer = (oldState = defaultState, action) => {
+  const updatedState = ((state, {id, name, text, type}) => {
+    switch (type) {
 
-  case "SET_MODE":
-    return state.set("mode", text);
+    case "SET_MODE":
+      return state.set("mode", text);
 
-  case "SET_SCHEME":
-    return state.set("scheme", text);
+    case "SET_SCHEME":
+      return state.set("scheme", text);
 
-  case "SET_MASTERMIND":
-    return state.updateIn(
-      ["masterminds"],
-      (masterminds) => masterminds.map((m) => {
-        if (id === m.get("id")) {
-          return m.set("name", name);
+    case "SET_MASTERMIND":
+      return state.updateIn(
+        ["masterminds"],
+        (masterminds) => masterminds.map((m) => {
+          if (id === m.get("id")) {
+            return m.set("name", name);
+          }
+          return m;
+        })
+      );
+
+    case "ADD_VILLAIN_GROUP":
+      return state.updateIn(
+        ["villainGroups"],
+        (villainGroups) => {
+          return villainGroups.push(villainGroup.set("id", villainGroupID++));
         }
-        return m;
-      })
-    );
+      );
 
-  case "ADD_VILLAIN_GROUP":
-    return state.updateIn(
-      ["villainGroups"],
-      (villainGroups) => {
-        return villainGroups.push(villainGroup.set("id", villainGroupID++));
-      }
-    );
-
-  case "REMOVE_VILLAIN_GROUP":
-    return state.updateIn(
-      ["villainGroups"],
-      (villainGroups) => {
-        return villainGroups.filterNot((v) => id === v.get("id"));
-      }
-    );
-
-  case "SET_VILLAIN_GROUP":
-    return state.updateIn(
-      ["villainGroups"],
-      (villainGroups) => villainGroups.map((v) => {
-        if (id === v.get("id")) {
-          return v.set("name", name);
+    case "REMOVE_VILLAIN_GROUP":
+      return state.updateIn(
+        ["villainGroups"],
+        (villainGroups) => {
+          return villainGroups.filterNot((v) => id === v.get("id"));
         }
-        return v;
-      })
-    );
+      );
 
-  case "ADD_HENCHMEN_GROUP":
-    return state.updateIn(
-      ["henchmenGroups"],
-      (henchmenGroups) => {
-        return henchmenGroups.push(henchmenGroup.set("id", henchmenGroupID++));
-      }
-    );
+    case "SET_VILLAIN_GROUP":
+      return state.updateIn(
+        ["villainGroups"],
+        (villainGroups) => villainGroups.map((v) => {
+          if (id === v.get("id")) {
+            return v.set("name", name);
+          }
+          return v;
+        })
+      );
 
-  case "REMOVE_HENCHMEN_GROUP":
-    return state.updateIn(
-      ["henchmenGroups"],
-      (henchmenGroups) => {
-        return henchmenGroups.filterNot((v) => id === v.get("id"));
-      }
-    );
-
-  case "SET_HENCHMEN_GROUP":
-    return state.updateIn(
-      ["henchmenGroups"],
-      (henchmenGroups) => henchmenGroups.map((v) => {
-        if (id === v.get("id")) {
-          return v.set("name", name);
+    case "ADD_HENCHMEN_GROUP":
+      return state.updateIn(
+        ["henchmenGroups"],
+        (henchmenGroups) => {
+          return henchmenGroups.push(henchmenGroup.set("id", henchmenGroupID++));
         }
-        return v;
-      })
-    );
+      );
 
-  default:
-    return state;
-  }
+    case "REMOVE_HENCHMEN_GROUP":
+      return state.updateIn(
+        ["henchmenGroups"],
+        (henchmenGroups) => {
+          return henchmenGroups.filterNot((v) => id === v.get("id"));
+        }
+      );
+
+    case "SET_HENCHMEN_GROUP":
+      return state.updateIn(
+        ["henchmenGroups"],
+        (henchmenGroups) => henchmenGroups.map((v) => {
+          if (id === v.get("id")) {
+            return v.set("name", name);
+          }
+          return v;
+        })
+      );
+
+    default:
+      return state;
+    }
+  })(oldState, action);
+
+  return updateOutput(updatedState);
 };
 
 export default createStore(reducer);
