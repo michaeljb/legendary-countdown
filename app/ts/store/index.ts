@@ -22,9 +22,139 @@ const defaultState = Map({
   maxWinningTurn: 19
 });
 
+// update counts of villains/henchmen etc based on mode and scheme
+const updateCounts = (state) => {
+  let mastermindCount = 1;
+
+  let playerCount = 1;
+  let villainGroupCount = 1;
+  let henchmenGroupCount = 1;
+
+  // mode
+  switch (state.get("mode")) {
+  case "Solo Mode":
+    playerCount = 1;
+    villainGroupCount = 1;
+    henchmenGroupCount = 1;
+    break;
+
+  case "Advanced Solo Mode":
+    playerCount = 1;
+    villainGroupCount = 1;
+    henchmenGroupCount = 1;
+    break;
+
+  case "Golden Solo Mode":
+    playerCount = 1;
+    villainGroupCount = 2;
+    henchmenGroupCount = 1;
+    break;
+
+  case "2p":
+    playerCount = 2;
+    villainGroupCount = 2;
+    henchmenGroupCount = 1;
+    break;
+
+  case "3p":
+    playerCount = 3;
+    villainGroupCount = 3;
+    henchmenGroupCount = 1;
+    break;
+
+  case "4p":
+    playerCount = 4;
+    villainGroupCount = 3;
+    henchmenGroupCount = 2;
+    break;
+
+  case "5p":
+    playerCount = 5;
+    villainGroupCount = 4;
+    henchmenGroupCount = 2;
+    break;
+
+  // treat Advanced Solo Mode as default
+  default:
+    playerCount = 1;
+    villainGroupCount = 1;
+    henchmenGroupCount = 1;
+    break;
+  }
+
+  // scheme
+
+  // update state with numbers figured from mode & scheme
+
+  // masterminds
+  const mastermindFn = mastermindCount - state.get("masterminds").size > 0 ?
+    addMastermind :
+    popMastermind;
+  while (state.get("masterminds").size !== mastermindCount) {
+    state = mastermindFn(state);
+  }
+
+  // villain groups
+  const villainGroupFn = villainGroupCount - state.get("villainGroups").size > 0 ?
+    addVillainGroup :
+    popVillainGroup;
+  while (state.get("villainGroups").size !== villainGroupCount) {
+    state = villainGroupFn(state);
+  }
+
+  // henchmen
+  const henchmenGroupFn = henchmenGroupCount - state.get("henchmenGroups").size > 0 ?
+    addHenchmenGroup :
+    popHenchmenGroup;
+  while (state.get("henchmenGroups").size !== henchmenGroupCount) {
+    state = henchmenGroupFn(state);
+  }
+
+  return state;
+};
+
 // update villain deck contents, turns to empty, and maximum winning turn
 const updateOutput = (state) => {
   return state.merge(countdown(state));
+};
+
+const addVillainGroup = (state) => {
+  return state.updateIn(
+    ["villainGroups"],
+    (villainGroups) => {
+      return villainGroups.push(villainGroup.set("id", villainGroupID++));
+    }
+  );
+};
+
+const popVillainGroup = (state) => {
+  return state.updateIn(["villainGroups"], (villainGroups) => villainGroups.pop());
+};
+
+const addHenchmenGroup = (state) => {
+  return state.updateIn(
+    ["henchmenGroups"],
+    (henchmenGroups) => {
+      return henchmenGroups.push(henchmenGroup.set("id", henchmenGroupID++));
+    }
+  );
+};
+
+const popHenchmenGroup = (state) => {
+  return state.updateIn(["henchmenGroups"], (henchmenGroups) => henchmenGroups.pop());
+};
+
+const addMastermind = (state) => {
+  return state.updateIn(
+    ["masterminds"],
+    (masterminds) => {
+      return masterminds.push(mastermind.set("id", mastermindID++));
+    }
+  );
+};
+
+const popMastermind = (state) => {
+  return state.updateIn(["masterminds"], (masterminds) => masterminds.pop());
 };
 
 const reducer = (oldState = defaultState, action) => {
@@ -48,22 +178,6 @@ const reducer = (oldState = defaultState, action) => {
         })
       );
 
-    case "ADD_VILLAIN_GROUP":
-      return state.updateIn(
-        ["villainGroups"],
-        (villainGroups) => {
-          return villainGroups.push(villainGroup.set("id", villainGroupID++));
-        }
-      );
-
-    case "REMOVE_VILLAIN_GROUP":
-      return state.updateIn(
-        ["villainGroups"],
-        (villainGroups) => {
-          return villainGroups.filterNot((v) => id === v.get("id"));
-        }
-      );
-
     case "SET_VILLAIN_GROUP":
       return state.updateIn(
         ["villainGroups"],
@@ -73,22 +187,6 @@ const reducer = (oldState = defaultState, action) => {
           }
           return v;
         })
-      );
-
-    case "ADD_HENCHMEN_GROUP":
-      return state.updateIn(
-        ["henchmenGroups"],
-        (henchmenGroups) => {
-          return henchmenGroups.push(henchmenGroup.set("id", henchmenGroupID++));
-        }
-      );
-
-    case "REMOVE_HENCHMEN_GROUP":
-      return state.updateIn(
-        ["henchmenGroups"],
-        (henchmenGroups) => {
-          return henchmenGroups.filterNot((v) => id === v.get("id"));
-        }
       );
 
     case "SET_HENCHMEN_GROUP":
@@ -107,7 +205,7 @@ const reducer = (oldState = defaultState, action) => {
     }
   })(oldState, action);
 
-  return updateOutput(updatedState);
+  return updateOutput(updateCounts(updatedState));
 };
 
 export default createStore(reducer);
