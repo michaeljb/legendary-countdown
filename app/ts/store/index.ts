@@ -113,6 +113,12 @@ const updateCounts = (state) => {
   return state;
 };
 
+// update villain/henchmen groups based on Mastermind "always lead" abilities
+// and groups specifically required by the Scheme
+const updateRequiredGroups = (state) => {
+  return state;
+};
+
 // update villain deck contents, turns to empty, and maximum winning turn
 const updateOutput = (state) => {
   return state.merge(countdown(state));
@@ -158,7 +164,7 @@ const popMastermind = (state) => {
 };
 
 const reducer = (oldState = defaultState, action) => {
-  const updatedState = ((state, {id, name, text, type}) => {
+  let updatedState = ((state, {id, name, text, type}) => {
     switch (type) {
 
     case "SET_MODE":
@@ -205,7 +211,11 @@ const reducer = (oldState = defaultState, action) => {
     }
   })(oldState, action);
 
-  return updateOutput(updateCounts(updatedState));
+  updatedState = updateCounts(updatedState);
+  updatedState = updateRequiredGroups(updatedState);
+  updatedState = updateOutput(updatedState);
+
+  return updatedState;
 };
 
 export default createStore(reducer);
