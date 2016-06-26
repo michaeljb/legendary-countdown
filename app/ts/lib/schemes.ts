@@ -358,4 +358,3 @@ export const schemes = List.of(...[
   XCutionersSong
 ]);
 export const schemeNames = schemes.map(s => s.get("name"));
-console.log(schemeNames);
