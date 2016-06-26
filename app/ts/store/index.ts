@@ -2,6 +2,7 @@ import {createStore} from "redux";
 import {List, Map} from "immutable";
 
 import countdown from "../lib/countdown.ts";
+import {schemeByName} from "../lib/schemes.ts";
 
 let mastermindID = 0;
 let villainGroupID = 0;
@@ -83,6 +84,12 @@ const updateCounts = (state) => {
   }
 
   // scheme
+  const scheme = schemeByName(state.get("scheme"));
+  if (scheme !== undefined) {
+    mastermindCount = scheme.updateMastermindCount(mastermindCount);
+    villainGroupCount = scheme.updateVillainGroupCount(villainGroupCount);
+    henchmenGroupCount = scheme.updateHenchmenGroupCount(henchmenGroupCount);
+  }
 
   // update state with numbers figured from mode & scheme
 

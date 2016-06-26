@@ -1,4 +1,15 @@
-import {List, Map} from "immutable";
+import {List} from "immutable";
+
+const Scheme = (obj) => {
+  const base = {
+    name: "AnyScheme",
+    updateMastermindCount: (count) => count,
+    updateVillainGroupCount: (count) => count,
+    updateHenchmenGroupCount: (count) => count
+  };
+
+  return Object.assign({}, base, obj)
+};
 
 const BATHE_THE_EARTH_IN_COSMIC_RAYS = "Bathe the Earth in Cosmic Rays";
 const BRAINWASH_THE_MILITARY = "Brainwash the Military";
@@ -60,239 +71,240 @@ const UNLEASH_THE_POWER_OF_THE_COSMIC_CUBE = "Unleash the Power of the Cosmic Cu
 const WEAVE_A_WEB_OF_LIES = "Weave a Web of Lies";
 const X_CUTIONERS_SONG = "X-Cutioner's Song";
 
-const BatheTheEarthInCosmicRays = Map({
+const BatheTheEarthInCosmicRays = Scheme({
   name: BATHE_THE_EARTH_IN_COSMIC_RAYS
 });
 
-const BrainwashTheMilitary = Map({
+const BrainwashTheMilitary = Scheme({
   name: BRAINWASH_THE_MILITARY
 });
 
-const BuildAnArmyOfAnnihilation = Map({
+const BuildAnArmyOfAnnihilation = Scheme({
   name: BUILD_AN_ARMY_OF_ANNIHILATION
 });
 
-const BuildAnUndergroundMegavaultPrison = Map({
+const BuildAnUndergroundMegavaultPrison = Scheme({
   name: BUILD_AN_UNDERGROUND_MEGAVAULT_PRISON
 });
 
-const CageVillainsInPowerSupressingCells = Map({
+const CageVillainsInPowerSupressingCells = Scheme({
   name: CAGE_VILLAINS_IN_POWER_SUPRESSING_CELLS
 });
 
-const CaptureBabyHope = Map({
+const CaptureBabyHope = Scheme({
   name: CAPTURE_BABY_HOPE
 });
 
-const ChangeTheOutcomeOfWwii = Map({
+const ChangeTheOutcomeOfWwii = Scheme({
   name: CHANGE_THE_OUTCOME_OF_WWII
 });
 
-const CorruptTheNextGenerationOfHeroes = Map({
+const CorruptTheNextGenerationOfHeroes = Scheme({
   name: CORRUPT_THE_NEXT_GENERATION_OF_HEROES
 });
 
-const CrownThorKingOfAsgard = Map({
+const CrownThorKingOfAsgard = Scheme({
   name: CROWN_THOR_KING_OF_ASGARD
 });
 
-const CrushHydra = Map({
+const CrushHydra = Scheme({
   name: CRUSH_HYDRA
 });
 
-const CrushThemWithMyBareHands = Map({
+const CrushThemWithMyBareHands = Scheme({
   name: CRUSH_THEM_WITH_MY_BARE_HANDS
 });
 
-const DarkAlliance = Map({
+const DarkAlliance = Scheme({
   name: DARK_ALLIANCE
 });
 
-const DeadlandsHordesChargeTheWall = Map({
+const DeadlandsHordesChargeTheWall = Scheme({
   name: DEADLANDS_HORDES_CHARGE_THE_WALL
 });
 
-const DetonateTheHelicarrier = Map({
+const DetonateTheHelicarrier = Scheme({
   name: DETONATE_THE_HELICARRIER
 });
 
-const EnthroneTheBaronsOfBattleworld = Map({
+const EnthroneTheBaronsOfBattleworld = Scheme({
   name: ENTHRONE_THE_BARONS_OF_BATTLEWORLD
 });
 
-const FearItself = Map({
+const FearItself = Scheme({
   name: FEAR_ITSELF
 });
 
-const FloodThePlanetWithMeltedGlaciers = Map({
+const FloodThePlanetWithMeltedGlaciers = Scheme({
   name: FLOOD_THE_PLANET_WITH_MELTED_GLACIERS
 });
 
-const ForgeTheInfinityGauntlet = Map({
+const ForgeTheInfinityGauntlet = Scheme({
   name: FORGE_THE_INFINITY_GAUNTLET
 });
 
-const FragmentedRealities = Map({
+const FragmentedRealities = Scheme({
   name: FRAGMENTED_REALITIES
 });
 
-const GoBackInTimeToSlayHeroesAncestors = Map({
+const GoBackInTimeToSlayHeroesAncestors = Scheme({
   name: GO_BACK_IN_TIME_TO_SLAY_HEROES_ANCESTORS
 });
 
-const GraduationAtXaviersXAcademy = Map({
+const GraduationAtXaviersXAcademy = Scheme({
   name: GRADUATION_AT_XAVIERS_X_ACADEMY
 });
 
-const InfiltrateTheLairWithSpies = Map({
+const InfiltrateTheLairWithSpies = Scheme({
   name: INFILTRATE_THE_LAIR_WITH_SPIES
 });
 
-const IntergalacticKreeNegaBomb = Map({
+const IntergalacticKreeNegaBomb = Scheme({
   name: INTERGALACTIC_KREE_NEGA_BOMB
 });
 
-const InvadeTheDailyBugleNewsHq = Map({
+const InvadeTheDailyBugleNewsHq = Scheme({
   name: INVADE_THE_DAILY_BUGLE_NEWS_HQ
 });
 
-const InvincibleForceField = Map({
+const InvincibleForceField = Scheme({
   name: INVINCIBLE_FORCE_FIELD
 });
 
-const LastStandAtAvengersTower = Map({
+const LastStandAtAvengersTower = Scheme({
   name: LAST_STAND_AT_AVENGERS_TOWER
 });
 
-const MassProduceWarMachineArmor = Map({
+const MassProduceWarMachineArmor = Scheme({
   name: MASS_PRODUCE_WAR_MACHINE_ARMOR
 });
 
-const MassiveEarthquakeGenerator = Map({
+const MassiveEarthquakeGenerator = Scheme({
   name: MASSIVE_EARTHQUAKE_GENERATOR
 });
 
-const MasterOfTyrants = Map({
+const MasterOfTyrants = Scheme({
   name: MASTER_OF_TYRANTS
 });
 
-const MasterTheMysteriesOfKungFu = Map({
+const MasterTheMysteriesOfKungFu = Scheme({
   name: MASTER_THE_MYSTERIES_OF_KUNG_FU
 });
 
-const MidtownBankRobbery = Map({
+const MidtownBankRobbery = Scheme({
   name: MIDTOWN_BANK_ROBBERY
 });
 
-const NegativeZonePrisonBreakout = Map({
-  name: NEGATIVE_ZONE_PRISON_BREAKOUT
+const NegativeZonePrisonBreakout = Scheme({
+  name: NEGATIVE_ZONE_PRISON_BREAKOUT,
+  updateHenchmenGroupCount: (count) => count + 1
 });
 
-const OrganizedCrimeWave = Map({
+const OrganizedCrimeWave = Scheme({
   name: ORGANIZED_CRIME_WAVE
 });
 
-const PanDimensionalPlague = Map({
+const PanDimensionalPlague = Scheme({
   name: PAN_DIMENSIONAL_PLAGUE
 });
 
-const PortalsToDarkDimension = Map({
+const PortalsToDarkDimension = Scheme({
   name: PORTALS_TO_DARK_DIMENSION
 });
 
-const PullRealityIntoTheNegativeZone = Map({
+const PullRealityIntoTheNegativeZone = Scheme({
   name: PULL_REALITY_INTO_THE_NEGATIVE_ZONE
 });
 
-const ReplaceEarthsLeadersWithKillbots = Map({
+const ReplaceEarthsLeadersWithKillbots = Scheme({
   name: REPLACE_EARTHS_LEADERS_WITH_KILLBOTS
 });
 
-const ResurrectHeroesWithNornStones = Map({
+const ResurrectHeroesWithNornStones = Scheme({
   name: RESURRECT_HEROES_WITH_NORN_STONES
 });
 
-const SaveHumanity = Map({
+const SaveHumanity = Scheme({
   name: SAVE_HUMANITY
 });
 
-const SecretInvasionOfTheSkrullShapeshifters = Map({
+const SecretInvasionOfTheSkrullShapeshifters = Scheme({
   name: SECRET_INVASION_OF_THE_SKRULL_SHAPESHIFTERS
 });
 
-const SecretWars = Map({
+const SecretWars = Scheme({
   name: SECRET_WARS
 });
 
-const SinisterAmbitions = Map({
+const SinisterAmbitions = Scheme({
   name: SINISTER_AMBITIONS
 });
 
-const SmashTwoDimensionsTogether = Map({
+const SmashTwoDimensionsTogether = Scheme({
   name: SMASH_TWO_DIMENSIONS_TOGETHER
 });
 
-const SpliceHumansWithSpiderDna = Map({
+const SpliceHumansWithSpiderDna = Scheme({
   name: SPLICE_HUMANS_WITH_SPIDER_DNA
 });
 
-const StealTheWeaponizedPlutonium = Map({
+const StealTheWeaponizedPlutonium = Scheme({
   name: STEAL_THE_WEAPONIZED_PLUTONIUM
 });
 
-const SuperHeroCivilWar = Map({
+const SuperHeroCivilWar = Scheme({
   name: SUPER_HERO_CIVIL_WAR
 });
 
-const TheCloneSaga = Map({
+const TheCloneSaga = Scheme({
   name: THE_CLONE_SAGA
 });
 
-const TheFountainOfEternalLife = Map({
+const TheFountainOfEternalLife = Scheme({
   name: THE_FOUNTAIN_OF_ETERNAL_LIFE
 });
 
-const TheGodEmperorOfBattleworld = Map({
+const TheGodEmperorOfBattleworld = Scheme({
   name: THE_GOD_EMPEROR_OF_BATTLEWORLD
 });
 
-const TheKreeSkrullWar = Map({
+const TheKreeSkrullWar = Scheme({
   name: THE_KREE_SKRULL_WAR
 });
 
-const TheLegacyVirus = Map({
+const TheLegacyVirus = Scheme({
   name: THE_LEGACY_VIRUS
 });
 
-const TheMarkOfKhonshu = Map({
+const TheMarkOfKhonshu = Scheme({
   name: THE_MARK_OF_KHONSHU
 });
 
-const TheTraitor = Map({
+const TheTraitor = Scheme({
   name: THE_TRAITOR
 });
 
-const TheUnbreakableEnigmaCode = Map({
+const TheUnbreakableEnigmaCode = Scheme({
   name: THE_UNBREAKABLE_ENIGMA_CODE
 });
 
-const TransformCitizensIntoDemons = Map({
+const TransformCitizensIntoDemons = Scheme({
   name: TRANSFORM_CITIZENS_INTO_DEMONS
 });
 
-const UniteTheShards = Map({
+const UniteTheShards = Scheme({
   name: UNITE_THE_SHARDS
 });
 
-const UnleashThePowerOfTheCosmicCube = Map({
+const UnleashThePowerOfTheCosmicCube = Scheme({
   name: UNLEASH_THE_POWER_OF_THE_COSMIC_CUBE
 });
 
-const WeaveAWebOfLies = Map({
+const WeaveAWebOfLies = Scheme({
   name: WEAVE_A_WEB_OF_LIES
 });
 
-const XCutionersSong = Map({
+const XCutionersSong = Scheme({
   name: X_CUTIONERS_SONG
 });
 
@@ -357,4 +369,6 @@ export const schemes = List.of(...[
   WeaveAWebOfLies,
   XCutionersSong
 ]);
-export const schemeNames = schemes.map(s => s.get("name"));
+export const schemeNames = schemes.map(s => s.name);
+
+export const schemeByName = (name) => schemes.find(s => s.name === name);
