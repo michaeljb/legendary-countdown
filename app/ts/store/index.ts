@@ -123,6 +123,37 @@ const updateCounts = (state) => {
 // update villain/henchmen groups based on Mastermind "always lead" abilities
 // and groups specifically required by the Scheme
 const updateRequiredGroups = (state) => {
+  const scheme = schemeByName(state.get("scheme"));
+
+  let villainGroups = state.get("villainGroups");
+
+  if (scheme !== undefined) {
+    scheme.requiredVillainGroups.forEach((villainGroup) => {
+      const villainGroupNames = villainGroups.map((g) => g.get("name"))
+
+      if (!villainGroupNames.includes(villainGroup)) {
+	const indexUndefined: number = villainGroupNames.indexOf(undefined);
+	const indexAny: number = villainGroupNames.indexOf("Any VillainGroup");
+
+	const indices: List<number> = List.of(indexAny, indexUndefined);
+
+	const filteredIndices = indices.filterNot((i) => i == -1).toArray();
+
+	const index = Math.min(...filteredIndices);
+
+	villainGroups = villainGroups.set(index, Map({id: villainGroups.last().get("id") + 1, name: villainGroup}))
+      }
+    });
+  }
+
+  state = state.set("villainGroups", villainGroups);
+
+  // for villain group in scheme's required villain groups
+  //   if villain group not in villaingroups
+  //     replace first undefined/any group with villain group
+  //
+  // update villain groups on state
+
   return state;
 };
 

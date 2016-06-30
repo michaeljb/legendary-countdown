@@ -2,9 +2,11 @@ import {List} from "immutable";
 
 const defaultScheme = {
   name: "AnyScheme",
+  requiredHenchmenGroups: List(),
+  requiredVillainGroups: List(),
+  updateHenchmenGroupCount: (count) => count,
   updateMastermindCount: (count) => count,
-  updateVillainGroupCount: (count) => count,
-  updateHenchmenGroupCount: (count) => count
+  updateVillainGroupCount: (count) => count
 }
 
 const Scheme = (obj) => {
@@ -12,6 +14,7 @@ const Scheme = (obj) => {
 };
 
 export const schemes = List.of(...[
+
   Scheme({
     name: "Bathe the Earth in Cosmic Rays"
   }),
@@ -136,6 +139,11 @@ export const schemes = List.of(...[
     name: "Midtown Bank Robbery"
   }),
 
+  // Setup: 8 Twists. Add an extra Henchman group to the Villain Deck.
+  //
+  // Twist: Play the top 2 cards of the Villain Deck.
+  //
+  // Evil Wins: If 12 Villains escape.
   Scheme({
     name: "Negative Zone Prison Breakout",
     updateHenchmenGroupCount: (count) => count + 1
@@ -169,8 +177,19 @@ export const schemes = List.of(...[
     name: "Save Humanity"
   }),
 
+  // Setup: 8 Twists. 6 Heroes. Skrull Villain Group required. Shuffle 12 random
+  // Heroes from the Hero Deck into the Villain Deck.
+  //
+  // Special Rules: Heroes in the Villain Deck count as Skrull Villains with
+  // Attack equal to the Hero's Cost +2. If you defeat that Hero, you gain it.
+  //
+  // Twist: The highest-cost Hero from the HQ moves into the Sewers as a Skrull
+  // Villain, as above.
+  //
+  // Evil Wins: If 6 Heroes get into the Escaped Villains pile.
   Scheme({
-    name: "Secret Invasion of the Skrull Shapeshifters"
+    name: "Secret Invasion of the Skrull Shapeshifters",
+    requiredVillainGroups: List.of("Skrulls")
   }),
 
   Scheme({
@@ -248,6 +267,7 @@ export const schemes = List.of(...[
   Scheme({
     name: "X-Cutioner's Song"
   })
+
 ]);
 
 export const schemeNames = schemes.map(s => s.name);
