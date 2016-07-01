@@ -1,7 +1,7 @@
 import {List} from "immutable";
 
 const defaultScheme = {
-  name: "AnyScheme",
+  name: undefined,
   requiredHenchmenGroups: List(),
   requiredVillainGroups: List(),
   updateHenchmenGroupCount: (count, state?) => count,
@@ -63,7 +63,8 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Dark Alliance"
+    name: "Dark Alliance",
+    updateMastermindCount: (count) => count + 1
   }),
 
   Scheme({
@@ -135,8 +136,7 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Master of Tyrants",
-    updateMastermindCount: (count) => count + 3
+    name: "Master of Tyrants"
   }),
 
   Scheme({

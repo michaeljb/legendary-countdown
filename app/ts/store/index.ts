@@ -8,13 +8,13 @@ let mastermindID = 0;
 let villainGroupID = 0;
 let henchmenGroupID = 0;
 
-const mastermind = Map({id: mastermindID++, name: "Any Mastermind"});
-const villainGroup = Map({id: villainGroupID++, name: "Any VillainGroup"});
-const henchmenGroup = Map({id: henchmenGroupID++, name: "Any HenchmenGroup"});
+const mastermind = Map({});
+const villainGroup = Map({});
+const henchmenGroup = Map({});
 
 const defaultState = Map({
   mode: "Advanced Solo Mode",
-  scheme: "Unleash the Power of the Cosmic Cube",
+  scheme: undefined,
   masterminds: List.of(mastermind),
   villainGroups: List.of(villainGroup),
   henchmenGroups: List.of(henchmenGroup),
@@ -131,16 +131,9 @@ const updateRequiredGroups = (state) => {
       const villainGroupNames = villainGroups.map((g) => g.get("name"))
 
       if (!villainGroupNames.includes(villainGroup)) {
-	const indexUndefined: number = villainGroupNames.indexOf(undefined);
-	const indexAny: number = villainGroupNames.indexOf("Any VillainGroup");
+	const index: number = villainGroupNames.indexOf(undefined);
 
-	const indices: List<number> = List.of(indexAny, indexUndefined);
-
-	const filteredIndices = indices.filterNot((i) => i == -1).toArray();
-
-	if (filteredIndices.length > 0) {
-	  const index = Math.min(...filteredIndices);
-
+	if (index > -1) {
 	  villainGroups = villainGroups.set(index, Map({id: villainGroups.get(index).get("id"), name: villainGroup}))
 	}
       }
@@ -154,16 +147,9 @@ const updateRequiredGroups = (state) => {
       const henchmenGroupNames = henchmenGroups.map((g) => g.get("name"))
 
       if (!henchmenGroupNames.includes(henchmenGroup)) {
-	const indexUndefined: number = henchmenGroupNames.indexOf(undefined);
-	const indexAny: number = henchmenGroupNames.indexOf("Any HenchmenGroup");
+	const index: number = henchmenGroupNames.indexOf(undefined);
 
-	const indices: List<number> = List.of(indexAny, indexUndefined);
-
-	const filteredIndices = indices.filterNot((i) => i == -1).toArray();
-
-	if (filteredIndices.length > 0) {
-	  const index = Math.min(...filteredIndices);
-
+	if (index > -1) {
 	  henchmenGroups = henchmenGroups.set(index, Map({id: henchmenGroups.get(index).get("id"), name: henchmenGroup}))
 	}
       }
