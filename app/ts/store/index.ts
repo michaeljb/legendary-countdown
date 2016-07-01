@@ -86,9 +86,9 @@ const updateCounts = (state) => {
   // scheme
   const scheme = schemeByName(state.get("scheme"));
   if (scheme !== undefined) {
-    mastermindCount = scheme.updateMastermindCount(mastermindCount);
-    villainGroupCount = scheme.updateVillainGroupCount(villainGroupCount);
-    henchmenGroupCount = scheme.updateHenchmenGroupCount(henchmenGroupCount);
+    mastermindCount = scheme.updateMastermindCount(mastermindCount, state);
+    villainGroupCount = scheme.updateVillainGroupCount(villainGroupCount, state);
+    henchmenGroupCount = scheme.updateHenchmenGroupCount(henchmenGroupCount, state);
   }
 
   // update state with numbers figured from mode & scheme
@@ -126,7 +126,6 @@ const updateRequiredGroups = (state) => {
   const scheme = schemeByName(state.get("scheme"));
 
   let villainGroups = state.get("villainGroups");
-
   if (scheme !== undefined) {
     scheme.requiredVillainGroups.forEach((villainGroup) => {
       const villainGroupNames = villainGroups.map((g) => g.get("name"))
@@ -147,8 +146,30 @@ const updateRequiredGroups = (state) => {
       }
     });
   }
-
   state = state.set("villainGroups", villainGroups);
+
+  let henchmenGroups = state.get("henchmenGroups");
+  if (scheme !== undefined) {
+    scheme.requiredHenchmenGroups.forEach((henchmenGroup) => {
+      const henchmenGroupNames = henchmenGroups.map((g) => g.get("name"))
+
+      if (!henchmenGroupNames.includes(henchmenGroup)) {
+	const indexUndefined: number = henchmenGroupNames.indexOf(undefined);
+	const indexAny: number = henchmenGroupNames.indexOf("Any HenchmenGroup");
+
+	const indices: List<number> = List.of(indexAny, indexUndefined);
+
+	const filteredIndices = indices.filterNot((i) => i == -1).toArray();
+
+	if (filteredIndices.length > 0) {
+	  const index = Math.min(...filteredIndices);
+
+	  henchmenGroups = henchmenGroups.set(index, Map({id: henchmenGroups.get(index).get("id"), name: henchmenGroup}))
+	}
+      }
+    });
+  }
+  state = state.set("henchmenGroups", henchmenGroups);
 
   // for villain group in scheme's required villain groups
   //   if villain group not in villaingroups

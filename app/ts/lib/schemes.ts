@@ -4,9 +4,9 @@ const defaultScheme = {
   name: "AnyScheme",
   requiredHenchmenGroups: List(),
   requiredVillainGroups: List(),
-  updateHenchmenGroupCount: (count) => count,
-  updateMastermindCount: (count) => count,
-  updateVillainGroupCount: (count) => count
+  updateHenchmenGroupCount: (count, state?) => count,
+  updateMastermindCount: (count, state?) => count,
+  updateVillainGroupCount: (count, state?) => count
 }
 
 const Scheme = (obj) => {
@@ -40,7 +40,8 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Change the Outcome of WWII"
+    name: "Change the Outcome of WWII",
+    updateVillainGroupCount: (count) => count + 1
   }),
 
   Scheme({
@@ -56,7 +57,9 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Crush Them With My Bare Hands"
+    name: "Crush Them With My Bare Hands",
+    updateVillainGroupCount: (count, state) =>
+      state.get("mode").includes("Solo") ? count + 1 : count
   }),
 
   Scheme({
@@ -64,7 +67,8 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Deadlands Hordes Charge the Wall"
+    name: "Deadlands Hordes Charge the Wall",
+    updateVillainGroupCount: (count) => count + 1
   }),
 
   Scheme({
@@ -84,11 +88,13 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Forge the Infinity Gauntlet"
+    name: "Forge the Infinity Gauntlet",
+    requiredVillainGroups: List.of("Infinity Gems")
   }),
 
   Scheme({
-    name: "Fragmented Realities"
+    name: "Fragmented Realities",
+    updateVillainGroupCount: (count) => count + 1
   }),
 
   Scheme({
@@ -120,7 +126,8 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Mass Produce War Machine Armor"
+    name: "Mass Produce War Machine Armor",
+    requiredHenchmenGroups: List.of("S.H.I.E.L.D. Assault Squad")
   }),
 
   Scheme({
@@ -128,7 +135,8 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Master of Tyrants"
+    name: "Master of Tyrants",
+    updateMastermindCount: (count) => count + 3
   }),
 
   Scheme({
@@ -139,18 +147,14 @@ export const schemes = List.of(...[
     name: "Midtown Bank Robbery"
   }),
 
-  // Setup: 8 Twists. Add an extra Henchman group to the Villain Deck.
-  //
-  // Twist: Play the top 2 cards of the Villain Deck.
-  //
-  // Evil Wins: If 12 Villains escape.
   Scheme({
     name: "Negative Zone Prison Breakout",
     updateHenchmenGroupCount: (count) => count + 1
   }),
 
   Scheme({
-    name: "Organized Crime Wave"
+    name: "Organized Crime Wave",
+    requiredHenchmenGroups: List.of("Maggia Goons")
   }),
 
   Scheme({
@@ -177,16 +181,6 @@ export const schemes = List.of(...[
     name: "Save Humanity"
   }),
 
-  // Setup: 8 Twists. 6 Heroes. Skrull Villain Group required. Shuffle 12 random
-  // Heroes from the Hero Deck into the Villain Deck.
-  //
-  // Special Rules: Heroes in the Villain Deck count as Skrull Villains with
-  // Attack equal to the Hero's Cost +2. If you defeat that Hero, you gain it.
-  //
-  // Twist: The highest-cost Hero from the HQ moves into the Sewers as a Skrull
-  // Villain, as above.
-  //
-  // Evil Wins: If 6 Heroes get into the Escaped Villains pile.
   Scheme({
     name: "Secret Invasion of the Skrull Shapeshifters",
     requiredVillainGroups: List.of("Skrulls")
@@ -201,15 +195,18 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Smash Two Dimensions Together"
+    name: "Smash Two Dimensions Together",
+    updateVillainGroupCount: (count) => count + 1
   }),
 
   Scheme({
-    name: "Splice Humans with Spider DNA"
+    name: "Splice Humans with Spider DNA",
+    requiredVillainGroups: List.of("Sinister Six")
   }),
 
   Scheme({
-    name: "Steal the Weaponized Plutonium"
+    name: "Steal the Weaponized Plutonium",
+    updateVillainGroupCount: (count) => count + 1
   }),
 
   Scheme({
@@ -239,7 +236,8 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "The Mark of Khonshu"
+    name: "The Mark of Khonshu",
+    requiredHenchmennGroups: List.of("Khonshu Guardians")
   }),
 
   Scheme({
