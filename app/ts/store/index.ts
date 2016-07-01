@@ -139,9 +139,11 @@ const updateRequiredGroups = (state) => {
 
 	const filteredIndices = indices.filterNot((i) => i == -1).toArray();
 
-	const index = Math.min(...filteredIndices);
+	if (filteredIndices.length > 0) {
+	  const index = Math.min(...filteredIndices);
 
-	villainGroups = villainGroups.set(index, Map({id: villainGroups.last().get("id") + 1, name: villainGroup}))
+	  villainGroups = villainGroups.set(index, Map({id: villainGroups.get(index).get("id"), name: villainGroup}))
+	}
       }
     });
   }

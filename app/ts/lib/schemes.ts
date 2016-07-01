@@ -229,7 +229,9 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "The Kree-Skrull War"
+    name: "The Kree-Skrull War",
+    requiredVillainGroups: List.of("Kree Starforce", "Skrulls"),
+    updateVillainGroupCount: (count) => Math.max(2, count)
   }),
 
   Scheme({
