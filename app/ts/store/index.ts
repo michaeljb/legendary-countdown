@@ -86,7 +86,6 @@ const updateCounts = (state) => {
   // scheme
   const scheme = schemeByName(state.get("scheme"));
   if (scheme !== undefined) {
-    mastermindCount = scheme.updateMastermindCount(mastermindCount, state);
     villainGroupCount = scheme.updateVillainGroupCount(villainGroupCount, state);
     henchmenGroupCount = scheme.updateHenchmenGroupCount(henchmenGroupCount, state);
   }

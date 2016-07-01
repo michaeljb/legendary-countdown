@@ -5,7 +5,6 @@ const defaultScheme = {
   requiredHenchmenGroups: List(),
   requiredVillainGroups: List(),
   updateHenchmenGroupCount: (count, state?) => count,
-  updateMastermindCount: (count, state?) => count,
   updateVillainGroupCount: (count, state?) => count
 }
 
@@ -63,8 +62,7 @@ export const schemes = List.of(...[
   }),
 
   Scheme({
-    name: "Dark Alliance",
-    updateMastermindCount: (count) => count + 1
+    name: "Dark Alliance"
   }),
 
   Scheme({
