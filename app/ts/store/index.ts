@@ -24,7 +24,7 @@ const defaultState = Map({
 });
 
 // update counts of villains/henchmen etc based on mode and scheme
-const updateCounts = (state) => {
+const updateVillainCounts = (state) => {
   let mastermindCount = 1;
 
   let playerCount = 1;
@@ -257,7 +257,7 @@ const reducer = (oldState = defaultState, action) => {
     }
   })(oldState, action);
 
-  updatedState = updateCounts(updatedState);
+  updatedState = updateVillainCounts(updatedState);
   updatedState = updateRequiredGroups(updatedState);
   updatedState = updateOutput(updatedState);
 
