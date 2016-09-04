@@ -28,10 +28,10 @@ const common = {
   },
   module: {
     preLoaders: [
-      {
-        test: /\.tsx?$/,
-        loaders: ['tslint']
-      }
+      // {
+      //   test: /\.tsx?$/,
+      //   loaders: ['tslint']
+      // }
     ],
     loaders: [
       {
