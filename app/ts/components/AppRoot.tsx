@@ -9,7 +9,8 @@ import HenchmenGroups from "./HenchmenGroups.tsx";
 import Output from "./Output.tsx";
 import store from "../store";
 
-const logit = () => console.log(store.getState().toJS());
+const logit = () => console.log(JSON.stringify(store.getState().toJS()),
+				store.getState().toJS());
 
 store.subscribe(logit);
 logit();
