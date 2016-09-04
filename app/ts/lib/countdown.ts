@@ -1,9 +1,15 @@
 import {List, Map} from "immutable";
 
 export default (state) => {
+
+  const villainDeckContents = state.get("villainDeckContents");
+  const turnsToEmpty = state.get("turnsToEmpty");
+  const maxWinningTurn = state.get("maxWinningTurn");
+
   return Map({
-    villainDeckContents: state.get("villainDeckContents"),
-    turnsToEmpty: state.get("turnsToEmpty"),
-    maxWinningTurn: state.get("maxWinningTurn")
+    villainDeckContents: villainDeckContents,
+    turnsToEmpty: turnsToEmpty,
+    maxWinningTurn: maxWinningTurn
   });
+
 };
