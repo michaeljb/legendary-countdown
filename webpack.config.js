@@ -75,6 +75,8 @@ if (TARGET === 'start' || !TARGET) {
         // Display only errors to reduce the amount of output.
         stats: 'errors-only',
 
+        disableHostCheck: true,
+
         // Parse host and port from env so this is easy to customize.
         //
         // If you use Vagrant or Cloud9, set
@@ -82,7 +84,7 @@ if (TARGET === 'start' || !TARGET) {
         //
         // 0.0.0.0 is available to all network devices unlike default
         // localhost
-        host: process.env.HOST,
+        host: process.env.HOST || '0.0.0.0',
         port: process.env.PORT
       },
       plugins: [
