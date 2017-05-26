@@ -4,12 +4,7 @@ For the code currently deployed to heroku, see
 http://michaeljb.github.io/legendary-countdown/
 
 ```
-nvm install 5.1
-nvm use 5.1
-npm i -g webpack@1.12.15 typings
-
-npm i
-typings install
-npm run build
-npm run start
+docker build -t legendary-countdown:dev .
+docker run --name lc --rm -p 8080:8080 legendary-countdown:dev
+# visit http://localhost:8080
 ```
