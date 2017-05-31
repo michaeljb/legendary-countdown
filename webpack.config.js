@@ -28,7 +28,7 @@ module.exports = {
     'webpack-dev-server/client?http://vm:8080',
 
     'webpack/hot/only-dev-server',
-    './src/index.js'
+    './src/index.tsx'
   ],
 
   output: {
@@ -38,10 +38,45 @@ module.exports = {
   },
 
   module: {
-    loaders: [
-      { test: /\.js$/, use: ['babel-loader'], exclude: /node_modules/ },
-      { test: /\.css$/, use: ['style-loader', 'css-loader?modules'], exclude: /node_modules/ }
+    rules: [
+      {
+	test: /\.tsx$/,
+	use: 'awesome-typescript-loader',
+	exclude: /node_modules/
+      },
+      {
+	test: /\.tsx$/,
+	loader: 'source-map-loader',
+	exclude: /node_modules/,
+	enforce: 'pre'
+      },
+      {
+	test: /\.js$/,
+	loader: 'source-map-loader',
+	enforce: 'pre',
+	exclude: /node_modules/
+      },
+      {
+	test: /\.css$/,
+	use: ['typings-for-css-modules-loader'],
+	include: path.join(__dirname, 'src/components'),
+	exclude: /node_modules/,
+	use: [
+	  'style-loader',
+	  {
+	    loader: 'typings-for-css-modules-loader',
+	    options: {
+	      modules: true,
+	      namedExport: true
+	    }
+	  }
+	]
+      }
     ]
+  },
+
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json', '.css']
   },
 
   plugins: [
