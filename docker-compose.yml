@@ -14,5 +14,5 @@ services:
           cp -a /tmp/node_modules /app;
         fi &&
         yarn install &&
-        /app/node_modules/.bin/webpack-dev-server
+        yarn run dev-server
       '
