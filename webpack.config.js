@@ -40,15 +40,12 @@ module.exports = {
   module: {
     rules: [
       {
-	test: /\.tsx$/,
-	use: 'awesome-typescript-loader',
+	test: /\.tsx?$/,
+	use: [
+	  'react-hot-loader/webpack',
+	  'awesome-typescript-loader'
+	],
 	exclude: /node_modules/
-      },
-      {
-	test: /\.tsx$/,
-	loader: 'source-map-loader',
-	exclude: /node_modules/,
-	enforce: 'pre'
       },
       {
 	test: /\.js$/,
