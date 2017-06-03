@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: docker:17.06.0
+    steps:
+      - setup_remote_docker
+      - run: |
+          ./bundle.sh
+          ls -la dist
