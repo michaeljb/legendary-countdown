@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/legendary-countdown
     docker:
-      - image: docker:17.06.0
+      - image: docker:17.06.0-git
     steps:
       - setup_remote_docker
       - checkout
