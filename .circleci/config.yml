@@ -6,6 +6,7 @@ jobs:
       - image: docker:17.06.0
     steps:
       - setup_remote_docker
+      - checkout
       - run: |
           ./bundle.sh
           ls -la dist
