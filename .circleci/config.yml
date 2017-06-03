@@ -9,10 +9,6 @@ jobs:
       - checkout
       - run:
           name: bundle
-          command: |
-            pwd
-            ls -la
-            ./bundle.sh
-            ls -la dist
+          command: docker-compose up --build bundle
       - store_artifacts:
           path: ./dist/
