@@ -1,5 +1,7 @@
 FROM node:8.0.0
 
+RUN yarn add global webpack
+
 ENV APP_DIR /app
 
 EXPOSE 8080
