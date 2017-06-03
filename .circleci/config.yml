@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/legendary-countdown
     docker:
       - image: docker:17.06.0
     steps:
