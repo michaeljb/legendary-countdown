@@ -15,5 +15,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 script:
+  - docker --version
+  - docker-compose --version
   - ./bundle.sh
   - ls -la dist
