@@ -7,6 +7,12 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - run: |
-          ./bundle.sh
-          ls -la dist
+      - run:
+          name: bundle
+          command: |
+            pwd
+            ls -la
+            ./bundle.sh
+            ls -la dist
+      - store_artifacts:
+          path: ./dist/
