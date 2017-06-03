@@ -1,14 +1,16 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/legendary-countdown
     docker:
       - image: docker:17.06.0-git
+    working_directory: /root/legendary-countdown
     steps:
-      - setup_remote_docker
       - checkout
+      - setup_remote_docker
       - run:
           name: bundle
-          command: docker-compose up --build bundle
+          command: |
+            set -x
+            docker-compose up --build bundle
       - store_artifacts:
           path: ./dist/
