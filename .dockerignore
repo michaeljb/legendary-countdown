@@ -1,6 +1,9 @@
 .git/
 node_modules/
+
 .gitignore
+Dockerfile
 README.md
 bundle.sh
 dev-server.sh
+docker-compose.yml
