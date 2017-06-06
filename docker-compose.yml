@@ -4,7 +4,7 @@ services:
   bundle:
     build: .
     volumes:
-    - .:/app/:rw
+    - ./dist:/app/dist:rw
     command: yarn run build
 
   dev:
