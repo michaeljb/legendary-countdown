@@ -1,3 +1,5 @@
+language: generic
+
 sudo: required
 
 env:
@@ -14,6 +16,4 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-script:
-  - ./bundle.sh
-  - ls -la dist
+script: ./bundle.sh
