@@ -34,7 +34,7 @@ module.exports = {
   output: {
     path: path.resolve('dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: './'
   },
 
   module: {
@@ -55,7 +55,6 @@ module.exports = {
       },
       {
 	test: /\.css$/,
-	use: ['typings-for-css-modules-loader'],
 	include: path.join(__dirname, 'src/components'),
 	exclude: /node_modules/,
 	use: [
