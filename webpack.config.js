@@ -10,24 +10,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  devtool: 'inline-source-map',
-  devServer: {
-    hot: true,
-    disableHostCheck: true,
-    host: '0.0.0.0',
-    proxy: {
-      '*': 'http://0.0.0.0:8080/dist/'
-    },
-    publicPath: '/'
-  },
-
   entry: [
-    'react-hot-loader/patch',
-
-    // must be a host accessible from the client
-    'webpack-dev-server/client?http://vm:8080',
-
-    'webpack/hot/only-dev-server',
     './src/index.tsx'
   ],
 
@@ -41,10 +24,7 @@ module.exports = {
     rules: [
       {
 	test: /\.tsx?$/,
-	use: [
-	  'react-hot-loader/webpack',
-	  'awesome-typescript-loader'
-	],
+	loader: 'awesome-typescript-loader',
 	exclude: /node_modules/
       },
       {

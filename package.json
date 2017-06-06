@@ -6,8 +6,8 @@
   "author": "Michael Brandt",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "dev-server": "nodemon --watch webpack.config.js --watch package.json ./node_modules/.bin/webpack-dev-server"
+    "build": "webpack --config=webpack.config.js",
+    "dev-server": "nodemon --watch webpack.config.js --watch webpack.dev.config.js --watch package.json ./node_modules/.bin/webpack-dev-server --config=webpack.dev.config.js"
   },
   "dependencies": {
     "@types/node": "^7.0.22",
