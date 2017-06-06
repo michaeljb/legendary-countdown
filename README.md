@@ -1,5 +1,7 @@
 http://michaeljb.github.io/legendary-countdown/
 
+[![Build Status](https://travis-ci.org/michaeljb/legendary-countdown.svg?branch=rewrite)](https://travis-ci.org/michaeljb/legendary-countdown)
+
 ## Development
 
 * `./dev-server.sh start` - start a Docker container with webpack-dev-server
