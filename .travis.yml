@@ -16,4 +16,6 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-script: ./bundle.sh
+script:
+  - ./bundle.sh
+  - ls -l dist/
