@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-rm -rfv dist/bundle.js dist/index.js
+rm -rfv dist/bundle.js
+rm -rfv dist/index.html
 
 docker-compose up --build bundle
 
