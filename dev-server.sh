@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./clean.sh
+
 case "$1" in
     start)
 	docker-compose up --build dev

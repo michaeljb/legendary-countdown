@@ -1,8 +1,7 @@
 #!/bin/bash
 set -e
 
-rm -rfv dist/bundle.js
-rm -rfv dist/index.html
+./clean.sh
 
 docker-compose up --build bundle
 
