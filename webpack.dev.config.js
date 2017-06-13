@@ -24,9 +24,13 @@ config.entry = [
   './src/index.tsx'
 ];
 
-config.module.rules[0].use = [
-  'react-hot-loader/webpack',
-  'awesome-typescript-loader'
-];
+config.module.rules[0] = {
+  test: /\.tsx?$/,
+  exclude: /node_modules/ ,
+  use: [
+    'react-hot-loader/webpack',
+    'awesome-typescript-loader'
+  ]
+};
 
 module.exports = config;
